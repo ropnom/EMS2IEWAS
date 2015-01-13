@@ -29,14 +29,14 @@ public class MapGrid {
 	private void CreateMap() {
 
 		int lat = 85;
-		int lon = 180;
+		int lon = -180;
 
 		for (int i = 0; i < max_row; i++) {
 
-			lon = 180;
+			lon = -180;
 			for (int j = 0; j < max_colum; j++) {
 				grid[i][j] = new Gridpoint(lat, lon);
-				lon -= interval;
+				lon += interval;
 			}
 			lat -= interval;
 		}
@@ -60,10 +60,10 @@ public class MapGrid {
 					// split varaiable of point
 					variables = points[j].split(",");
 					if (variables[3] == "null")
-						grid[i][j] = new Gridpoint(Integer.parseInt(variables[1]), Integer.parseInt(variables[0]), Float.parseFloat(variables[2]), null);
+						grid[i][j] = new Gridpoint(Integer.parseInt(variables[1]), Integer.parseInt(variables[0]), Integer.parseInt(variables[2]), Integer.parseInt(variables[3]), null);
 					else {
 						DateFormat df = new SimpleDateFormat("E, MMM dd yyyy HH:mm:ss");
-						grid[i][j] = new Gridpoint(Integer.parseInt(variables[1]), Integer.parseInt(variables[0]), Float.parseFloat(variables[2]), df.parse(variables[3]));
+						grid[i][j] = new Gridpoint(Integer.parseInt(variables[1]), Integer.parseInt(variables[0]), Integer.parseInt(variables[2]), Integer.parseInt(variables[3]), df.parse(variables[3]));
 					}
 
 				}
@@ -77,7 +77,9 @@ public class MapGrid {
 	}
 
 	// FUNCIONES DE TRADUCCION DE COORDENADAS
-	private void PutPoint(int band, int iodi, float vtec) {
+	private void PutPoint(int band, int iodi, int vtec, int rms) {
+		
+		//int[] xy = getXY( band,  num);
 
 	}
 
@@ -401,7 +403,7 @@ public class MapGrid {
 
 			break;
 
-		case 4:	// BAND 4
+		case 4: // BAND 4
 			// -75 + (num)*5
 			constante = 31;
 			if (num < 28) {
@@ -472,34 +474,368 @@ public class MapGrid {
 				xy[1] = 2;
 				break;
 			case 128:
-				// S85
+				// N85
 				xy[1] = 0;
 				break;
 			}
 
 			break;
 
-		case 5:
+		case 5:// BAND 5
+				// -75 + (num)*5
+			constante = 31;
+			if (num < 28) {
+				// 180W
+				xy[0] = band * 8;
+				constante = 31;
+			} else if (num < 51) {
+				// 175W
+				xy[0] = 1 + band * 8;
+				constante = 56;
+			} else if (num < 78) {
+				// 170W
+				xy[0] = 2 + band * 8;
+				constante = 81;
+			} else if (num < 101) {
+				// 165W
+				xy[0] = 3 + band * 8;
+				constante = 106;
+			} else if (num < 129) {
+				// 160W
+				xy[0] = 4 + band * 8;
+				constante = 132;
+			} else if (num < 152) {
+				// 155W
+				xy[0] = 5 + band * 8;
+				constante = 157;
+			} else if (num < 179) {
+				// 150W
+				xy[0] = 6 + band * 8;
+				constante = 182;
+			} else {
+				// 145W
+				xy[0] = 7 + band * 8;
+				constante = 207;
+			}
+
+			xy[1] = constante - num;
+
+			// remplace exception cases
+			switch (num) {
+
+			case 1:
+			case 51:
+			case 102:
+			case 152:
+				// S75 => -75 es la antepenultima fila
+				xy[1] = (max_row - 1) - 2;
+				break;
+			case 2:
+			case 52:
+			case 103:
+			case 153:
+				// dos filas antes
+				xy[1] = (max_row - 1) - 4;
+				break;
+			case 26:
+			case 76:
+			case 127:
+			case 177:
+				xy[1] = 4;
+				break;
+
+			case 27:
+			case 77:
+			case 128:
+			case 178:
+				// N75
+				xy[1] = 2;
+				break;
+			case 101:
+				// N85
+				xy[1] = 34;
+				break;
+			}
 
 			break;
 
-		case 6:
+		case 6: // BAND 6
+			// -75 + (num)*5
+			constante = 31;
+			if (num < 28) {
+				// 180W
+				xy[0] = band * 8;
+				constante = 31;
+			} else if (num < 51) {
+				// 175W
+				xy[0] = 1 + band * 8;
+				constante = 56;
+			} else if (num < 78) {
+				// 170W
+				xy[0] = 2 + band * 8;
+				constante = 81;
+			} else if (num < 101) {
+				// 165W
+				xy[0] = 3 + band * 8;
+				constante = 106;
+			} else if (num < 128) {
+				// 160W
+				xy[0] = 4 + band * 8;
+				constante = 131;
+			} else if (num < 151) {
+				// 155W
+				xy[0] = 5 + band * 8;
+				constante = 156;
+			} else if (num < 179) {
+				// 150W
+				xy[0] = 6 + band * 8;
+				constante = 181;
+			} else {
+				// 145W
+				xy[0] = 7 + band * 8;
+				constante = 207;
+			}
+
+			xy[1] = constante - num;
+
+			// remplace exception cases
+			switch (num) {
+
+			case 1:
+			case 51:
+			case 101:
+			case 151:
+				// S75 => -75 es la antepenultima fila
+				xy[1] = (max_row - 1) - 2;
+				break;
+			case 2:
+			case 52:
+			case 102:
+			case 152:
+				// dos filas antes
+				xy[1] = (max_row - 1) - 4;
+				break;
+			case 26:
+			case 76:
+			case 126:
+			case 176:
+				xy[1] = 4;
+				break;
+
+			case 27:
+			case 77:
+			case 127:
+			case 177:
+				// N75
+				xy[1] = 2;
+				break;
+			case 178:
+				// N85
+				xy[1] = 34;
+				break;
+			}
 
 			break;
 
-		case 7:
+		case 7:// BAND 7
+				// -75 + (num)*5
+			constante = 31;
+			if (num < 28) {
+				// 180W
+				xy[0] = band * 8;
+				constante = 31;
+			} else if (num < 51) {
+				// 175W
+				xy[0] = 1 + band * 8;
+				constante = 56;
+			} else if (num < 78) {
+				// 170W
+				xy[0] = 2 + band * 8;
+				constante = 81;
+			} else if (num < 101) {
+				// 165W
+				xy[0] = 3 + band * 8;
+				constante = 106;
+			} else if (num < 128) {
+				// 160W
+				xy[0] = 4 + band * 8;
+				constante = 132;
+			} else if (num < 151) {
+				// 155W
+				xy[0] = 5 + band * 8;
+				constante = 157;
+			} else if (num < 179) {
+				// 150W
+				xy[0] = 6 + band * 8;
+				constante = 182;
+			} else {
+				// 145W
+				xy[0] = 7 + band * 8;
+				constante = 207;
+			}
+
+			xy[1] = constante - num;
+
+			// remplace exception cases
+			switch (num) {
+
+			case 1:
+			case 51:
+			case 101:
+			case 152:
+				// S75 => -75 es la antepenultima fila
+				xy[1] = (max_row - 1) - 2;
+				break;
+			case 2:
+			case 52:
+			case 102:
+			case 153:
+				// dos filas antes
+				xy[1] = (max_row - 1) - 4;
+				break;
+			case 26:
+			case 76:
+			case 126:
+			case 177:
+				xy[1] = 4;
+				break;
+
+			case 27:
+			case 77:
+			case 127:
+			case 178:
+				// N75
+				xy[1] = 2;
+				break;
+			case 151:
+				// N85
+				xy[1] = 34;
+				break;
+			}
 
 			break;
 
-		case 8:
+		case 8:// BAND 8
+				// -75 + (num)*5
+			constante = 31;
+			if (num < 28) {
+				// 180W
+				xy[0] = band * 8;
+				constante = 31;
+			} else if (num < 51) {
+				// 175W
+				xy[0] = 1 + band * 8;
+				constante = 56;
+			} else if (num < 78) {
+				// 170W
+				xy[0] = 2 + band * 8;
+				constante = 81;
+			} else if (num < 101) {
+				// 165W
+				xy[0] = 3 + band * 8;
+				constante = 106;
+			} else if (num < 128) {
+				// 160W
+				xy[0] = 4 + band * 8;
+				constante = 131;
+			} else if (num < 151) {
+				// 155W
+				xy[0] = 5 + band * 8;
+				constante = 156;
+			} else if (num < 178) {
+				// 150W
+				xy[0] = 6 + band * 8;
+				constante = 181;
+			} else {
+				// 145W
+				xy[0] = 7 + band * 8;
+				constante = 206;
+			}
+
+			xy[1] = constante - num;
+
+			// remplace exception cases
+			switch (num) {
+
+			case 1:
+			case 51:
+			case 101:
+			case 151:
+				// S75 => -75 es la antepenultima fila
+				xy[1] = (max_row - 1) - 2;
+				break;
+			case 2:
+			case 52:
+			case 102:
+			case 152:
+				// dos filas antes
+				xy[1] = (max_row - 1) - 4;
+				break;
+			case 26:
+			case 76:
+			case 126:
+			case 176:
+				xy[1] = 4;
+				break;
+
+			case 27:
+			case 77:
+			case 127:
+			case 177:
+				// N75
+				xy[1] = 2;
+				break;
+			}
 
 			break;
 
 		case 9:
 
+			if (num < 73) {
+				xy[1] = 5;
+				xy[0] = num - 1;
+
+			} else if (num < 109) {
+				xy[1] = 4;
+				xy[0] = (num - 74) * 2;
+
+			} else if (num < 145) {
+				xy[1] = 3;
+				xy[0] = (num - 110) * 2;
+
+			} else if (num < 181) {
+				xy[1] = 2;
+				xy[0] = (num - 147) * 2;
+
+			} else {
+				xy[1] = 0;
+				xy[0] = (num - 147) * 4;
+			}
+
 			break;
 
 		case 10:
+
+			if (num < 73) {
+				xy[1] = 29;
+				xy[0] = num - 1;
+
+			} else if (num < 109) {
+				xy[1] = 30;
+				xy[0] = (num - 74) * 2;
+
+			} else if (num < 145) {
+				xy[1] = 31;
+				xy[0] = (num - 110) * 2;
+
+			} else if (num < 181) {
+				xy[1] = 32;
+				xy[0] = (num - 147) * 2;
+
+			} else {
+				xy[1] = 34;
+				xy[0] = (num - 147) * 4;
+			}
 
 			break;
 		}

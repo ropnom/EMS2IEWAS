@@ -7,7 +7,8 @@ public class Gridpoint {
 	// revisar inicializacionde valores
 	protected int lat = 0;
 	protected int lon = 0;
-	protected float vtec = 0;
+	protected int vtec = 0;
+	protected int rms = 0;
 	protected Date timestamp = null;
 
 	public Gridpoint() {
@@ -20,7 +21,7 @@ public class Gridpoint {
 		this.lon = lon;
 	}
 
-	public Gridpoint(int lat, int lon, float vtec, Date timestap) {
+	public Gridpoint(int lat, int lon, int vtec, int rms, Date timestap) {
 
 		this.lat = lat;
 		this.lon = lon;
@@ -44,11 +45,11 @@ public class Gridpoint {
 		this.lon = lon;
 	}
 
-	public float getVtec() {
+	public int getVtec() {
 		return vtec;
 	}
 
-	public void setVtec(float vtec) {
+	public void setVtec(int vtec) {
 		this.vtec = vtec;
 	}
 
@@ -60,8 +61,16 @@ public class Gridpoint {
 		this.timestamp = timestamp;
 	}
 
+	public int getRms() {
+		return rms;
+	}
+
+	public void setRms(int rms) {
+		this.rms = rms;
+	}
+
 	public String ToFile() {		
-		return(""+this.lon+","+this.lat+","+this.vtec+","+this.timestamp+";");
+		return(""+this.lon+","+this.lat+","+this.vtec+","+this.rms+","+this.timestamp+";");
 
 	}
 
