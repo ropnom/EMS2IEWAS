@@ -134,7 +134,7 @@ public class emsdecoder {
 		// Load propierties file
 
 		boolean debug = true;
-		mode = 0;
+		mode = 1;
 
 		if (debug) {
 			// DEMO debug
@@ -301,9 +301,9 @@ public class emsdecoder {
 		}
 		// Write Current Data
 		WriteCurrentData writer = new WriteCurrentData();
-		// writer.setFilename("ionohumanmessage.txt");
-		// writer.Write(human);
-		writer.setFilename("ionosphericdates.txt");
+		 writer.setFilename("ionohumanmessage.txt");
+		 writer.Write(human);
+		//writer.setFilename("ionosphericdates.txt");
 		//writer.Write(ionosphericdata);
 		
 		// Cargamos la matrix de datos
