@@ -3,6 +3,7 @@ package Model.map;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import Model.LoadDataFile;
@@ -14,10 +15,15 @@ import Model.message.Message;
 public class MapGrid {
 
 	// static variables
-	public final static int max_row = 35;
-	public final static int max_colum = 72;
-	public final static int interval = 5;
-	public static String file = "gridmap.txt";
+	protected final static int max_row = 35;
+	protected final static int max_colum = 72;
+	protected final static int interval = 5;
+	protected static String file = "gridmap.txt";
+	
+	protected int timeinterval;
+	protected Date init;
+	protected Date finish;
+	protected int matrixversion = 0;
 
 	// map with 5ºx5º
 	Gridpoint[][] grid = new Gridpoint[max_row][max_colum];
@@ -46,7 +52,7 @@ public class MapGrid {
 	private void LoadMap() {
 		// load grid forma file
 		List<String> lines = new ArrayList<String>();
-		LoadDataFile load = new LoadDataFile();
+		LoadDataFile load = new LoadDataFile(file);
 		lines = load.LoadData();
 
 		try {
@@ -881,5 +887,71 @@ public class MapGrid {
 		writer.Write(savedate);
 
 	}
+	
+	public void ToIONEXinput(){
+		
+	}
+
+	public static String getFile() {
+		return file;
+	}
+
+	public static void setFile(String file) {
+		MapGrid.file = file;
+	}
+
+	public int getTimeinterval() {
+		return timeinterval;
+	}
+
+	public void setTimeinterval(int timeinterval) {
+		this.timeinterval = timeinterval;
+	}
+
+	public Date getInit() {
+		return init;
+	}
+
+	public void setInit(Date init) {
+		this.init = init;
+	}
+
+	public Date getFinish() {
+		return finish;
+	}
+
+	public void setFinish(Date finish) {
+		this.finish = finish;
+	}
+
+	public int getMatrixversion() {
+		return matrixversion;
+	}
+
+	public void setMatrixversion(int matrixversion) {
+		this.matrixversion = matrixversion;
+	}
+
+	public Gridpoint[][] getGrid() {
+		return grid;
+	}
+
+	public void setGrid(Gridpoint[][] grid) {
+		this.grid = grid;
+	}
+
+	public static int getMaxRow() {
+		return max_row;
+	}
+
+	public static int getMaxColum() {
+		return max_colum;
+	}
+
+	public static int getInterval() {
+		return interval;
+	}
+	
+	
 
 }

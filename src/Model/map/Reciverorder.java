@@ -8,6 +8,7 @@ import java.util.List;
 
 import Model.LoadDataFile;
 import Model.WriteCurrentData;
+import Model.TypeMessage.MessageType18;
 
 public class Reciverorder {
 
@@ -16,9 +17,17 @@ public class Reciverorder {
 
 		protected List<Integer> bandX;
 		protected Date lastupdate;
+		protected boolean isblock = true;
+
+		public Bandorder(List<Integer> bandnumbers, Date lastupdate) {
+			this.bandX = bandnumbers;
+			this.lastupdate = lastupdate;
+			this.isblock = false;
+		}
 
 		public Bandorder() {
 			this.bandX = new ArrayList<Integer>();
+			isblock = true;
 		}
 
 		public List<Integer> getBandX() {
@@ -41,6 +50,14 @@ public class Reciverorder {
 			this.bandX.add(num);
 		}
 
+		public boolean isIsblock() {
+			return isblock;
+		}
+
+		public void setIsblock(boolean isblock) {
+			this.isblock = isblock;
+		}
+
 		public String ToFile() {
 
 			String line = "";
@@ -55,6 +72,8 @@ public class Reciverorder {
 	// declaramos 10 bandas por cada iodi
 	protected Bandorder[][] matrix;
 	protected String file = "reciverorder.txt";
+	protected int numberofbands;
+	protected boolean[] allmt18resiver = {false,false,false};
 
 	public Reciverorder() {
 
@@ -66,10 +85,10 @@ public class Reciverorder {
 		}
 
 	}
-	
+
 	public Reciverorder(String file) {
 
-		//load file
+		// load file
 		this.file = file;
 
 	}
@@ -82,6 +101,30 @@ public class Reciverorder {
 		this.matrix = matrix;
 	}
 
+	public String getFile() {
+		return file;
+	}
+
+	public void setFile(String file) {
+		this.file = file;
+	}
+
+	public int getNumberofbands() {
+		return numberofbands;
+	}
+
+	public void setNumberofbands(int numberofbands) {
+		this.numberofbands = numberofbands;
+	}
+
+	public boolean[] isAllmt18resiver() {
+		return allmt18resiver;
+	}
+
+	public void setAllmt18resiver(boolean[] allmt18resiver) {
+		this.allmt18resiver = allmt18resiver;
+	}
+
 	public void Save() {
 
 		List<String> savedates = new ArrayList<String>();
@@ -91,8 +134,8 @@ public class Reciverorder {
 			line = "";
 			for (int j = 0; j < 11; j++) {
 				line += matrix[i][j].ToFile() + ";";
-				savedates.add(line);
 			}
+			savedates.add(line);
 
 		}
 
@@ -110,7 +153,7 @@ public class Reciverorder {
 
 		// load file
 		List<String> lines = new ArrayList<String>();
-		LoadDataFile load = new LoadDataFile();
+		LoadDataFile load = new LoadDataFile(file);
 		lines = load.LoadData();
 
 		try {
@@ -124,14 +167,14 @@ public class Reciverorder {
 				for (int j = 0; j < 11; j++) {
 					// split varaiable of point
 					values = bandx[j].split(",");
-					
-					for(int m = 0 ; m<values.length ; m++){
-						//agregar la lista
+
+					for (int m = 0; m < values.length; m++) {
+						// agregar la lista
 					}
-					//ponerlista en el band
+					// ponerlista en el band
 
 				}
-				
+
 			}
 		} catch (Exception e) {
 
@@ -140,5 +183,31 @@ public class Reciverorder {
 		}
 
 	}
+
+	public void ProcessMT18(MessageType18 mt18, Date time) {
+
+		// get iodi
+		int iodi = mt18.getIodi();
+		// get band
+		int band = mt18.getIodi();
+
+		if (iodi == -1 || band == -1) {
+
+			// LOG error message decoding
+		} else {
+
+			if (mt18.getOrden().size() > 0) {
+
+				matrix[iodi][band] = new Bandorder(mt18.getOrden(),time);
+
+			} else {
+				// LOG error not found information in mt18
+			}
+		}
+		// get list
+
+	}
+	
+	
 
 }

@@ -11,21 +11,21 @@ import Model.TypeMessage.MessageType26;
 public class Message {
 
 	//parameters
-	private int num = 0;
-	private short prn = 0;
-	private short year = 0;
-	private short month = 0;
-	private short day = 0;
-	private short hour = 0;
-	private short minute = 0;
-	private short seconds = 0;
-	private short messagetype = 0;
-	private String egnosmessage = "";
-	private String linefeedd = "";
-	private Payload payload;
-	private Date time;
-	private int typemessage;
-	private String original;
+	protected int num = 0;
+	protected short prn = 0;
+	protected short year = 0;
+	protected short month = 0;
+	protected short day = 0;
+	protected short hour = 0;
+	protected short minute = 0;
+	protected short seconds = 0;
+	protected short messagetype = 0;
+	protected String egnosmessage = "";
+	protected String linefeedd = "";
+	protected Payload payload;
+	protected Date time;
+	protected int typemessage;
+	protected String original;
 
 
 
@@ -295,6 +295,8 @@ public class Message {
 	public void setOriginal(String original) {
 		this.original = original;
 	}
+	
+	
 	
 	
 }

@@ -9,9 +9,9 @@ import Model.message.Payload;
 public class MessageType18 extends Payload {
 
 	// parameters
-	private int numberofbands;
-	private int bandnumber;
-	private int iodi;
+	private int numberofbands=-1;
+	private int bandnumber=-1;
+	private int iodi=-1;
 	private byte[] igpmask;
 	private List<Integer> orden;
 	
@@ -112,6 +112,15 @@ public class MessageType18 extends Payload {
 		this.igpmask = igpmask;
 	}
 
+	public List<Integer> getOrden() {
+		return orden;
+	}
+
+	public void setOrden(List<Integer> orden) {
+		this.orden = orden;
+	}
+
+	
 	
 	
 }
