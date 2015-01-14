@@ -852,27 +852,6 @@ public class MapGrid {
 		return xy;
 	}
 
-	public void ProcessMessage(Message message) {
-
-		switch (message.getTypemessage()) {
-
-		case 18:
-			// Procesamos mascaras
-			MessageType18 mt18 = (MessageType18) message.getPayload();
-			// obtener las mascaras para cada banda.
-
-			break;
-
-		case 26:
-			// procesamos delays
-			MessageType26 mt26 = (MessageType26) message.getPayload();
-
-			break;
-
-		}
-
-	}
-
 	public void Save() {
 
 		List<String> savedate = new ArrayList<String>();

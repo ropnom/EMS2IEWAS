@@ -184,23 +184,23 @@ public class Reciverorder {
 
 	}
 
-	public void ProcessMT18(MessageType18 mt18, Date time) {
+	public void ProcessMT18(MessageType18 messageType18, Date time) {
 
 		// get iodi
-		int iodi = mt18.getIodi();
+		int iodi = messageType18.getIodi();
 		// get band
-		int band = mt18.getIodi();
+		int band = messageType18.getIodi();
 
 		if (iodi == -1 || band == -1) {
 
 			// LOG error message decoding
 		} else {
 			
-			this.numberofbands = mt18.getNumberofbands();
+			this.numberofbands = messageType18.getNumberofbands();
 
-			if (mt18.getOrden().size() > 0) {
+			if (messageType18.getOrden().size() > 0) {
 
-				matrix[iodi][band] = new Bandorder(mt18.getOrden(),time);
+				matrix[iodi][band] = new Bandorder(messageType18.getOrden(),time);
 
 			} else {
 				// LOG error not found information in mt18

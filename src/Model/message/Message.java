@@ -24,7 +24,6 @@ public class Message {
 	protected String linefeedd = "";
 	protected Payload payload;
 	protected Date time;
-	protected int typemessage;
 	protected String original;
 
 
@@ -95,18 +94,18 @@ public class Message {
 		case 18:
 			//type = "IONOSPHERIC grid point mask";
 			this.payload = new MessageType18(egnosmessage);
-			this.typemessage = 18;
+
 			break;
 		
 		case 26:
 			//type = "IONOSPHERIC DELAY CORRECTIONS";
 			this.payload = new MessageType26(egnosmessage);
-			this.typemessage = 16;
+
 			break;
 		
 		default:
 			this.payload = new Payload(egnosmessage);
-			this.typemessage = -1;
+			this.messagetype = -1;
 			break;
 		}
 		
@@ -281,13 +280,7 @@ public class Message {
 	public void setTime(Date time) {
 		this.time = time;
 	}
-	public int getTypemessage() {
-		return typemessage;
-	}
 
-	public void setTypemessage(int typemessage) {
-		this.typemessage = typemessage;
-	}
 	public String getOriginal() {
 		return original;
 	}

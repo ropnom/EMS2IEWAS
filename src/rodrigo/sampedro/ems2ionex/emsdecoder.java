@@ -240,7 +240,6 @@ public class emsdecoder {
 		// ********* END ARGUMENT INPUT ********
 		// ----------------------------------------------
 
-
 		// PREPARE DOWNLOAD LIST FILES AND GET IT
 		if (mode == 0) {
 			// Configure Jget
@@ -273,18 +272,17 @@ public class emsdecoder {
 					day = 1;
 				}
 			}
-			
+
 			// Write Current Data
 			WriteCurrentData writer = new WriteCurrentData();
 			writer.Write(originalmessage);
-			
+
 		} else if (mode == 1) {
 			// LOAD DATA FROM FILE
 			LoadDataFile load = new LoadDataFile();
 			originalmessage = load.LoadData();
 		}
 
-		
 		// -----------------------------------
 		// ********* DECODING DATA ***********
 		// -----------------------------------
@@ -293,7 +291,7 @@ public class emsdecoder {
 			// filtramos los mensajes tipo 18 y 26
 			message = new Message(originalmessage.get(i), i);
 
-			if (message.getTypemessage() > 0) {
+			if (message.getMessagetype() > 0) {
 				ionosfericmessage.add(message);
 				ionosphericdata.add(message.getOriginal());
 				human.addAll(message.WriteHumanFile());
@@ -302,51 +300,48 @@ public class emsdecoder {
 		}
 		// Write Current Data
 		WriteCurrentData writer = new WriteCurrentData();
-		 writer.setFilename("ionohumanmessage.txt");
-		 writer.Write(human);
-		//writer.setFilename("ionosphericdates.txt");
-		//writer.Write(ionosphericdata);
-		
+		writer.setFilename("ionohumanmessage.txt");
+		writer.Write(human);
+		// writer.setFilename("ionosphericdates.txt");
+		// writer.Write(ionosphericdata);
+
 		// Cargamos la matrix de datos
 		int intervaloseg = 900;
 		mygrid = new MapGrid();
-		
-		
-		//generamos el date de referencia inicio
-		Date referencia = (Date) ionosfericmessage.get(0).getTime().clone();		
+
+		// generamos el date de referencia inicio
+		Date referencia = (Date) ionosfericmessage.get(0).getTime().clone();
 		referencia.setMinutes(0);
 		referencia.setSeconds(0);
-		
-		System.out.println("Referencia inicia a: "+ referencia);
+
+		System.out.println("Referencia inicia a: " + referencia);
 		referencia = FunctionsExtra.addSecondsToDate(intervaloseg, referencia);
-		System.out.println("intervalo hasta : "+ referencia);
+		System.out.println("intervalo hasta : " + referencia);
 		System.out.println();
-		
+
 		reorder = new Reciverorder();
-		for(int i = 0; referencia.compareTo(ionosfericmessage.get(i).getTime()) > 0;i++){
-			
+		for (int i = 0; referencia.compareTo(ionosfericmessage.get(i).getTime()) > 0; i++) {
+
 			System.out.println();
 			System.out.println(ionosfericmessage.get(i).getTime());
-			
-			//Procesamos el mensaje
-			if (ionosfericmessage.get(i).getTypemessage() == 18) {	
-				//procesamos el mensaje
-				//reorder.ProcessMT18((MessageType18) message.getPayload(), message.getTime());	
-				System.out.println(" 18  IODI: "+((MessageType18) ionosfericmessage.get(i).getPayload()).getIodi()+ " Band: "+((MessageType18) ionosfericmessage.get(i).getPayload()).getBandnumber());
-			}else{
-				//miramos el iodi
-				System.out.println(" 26  IODI: "+((MessageType26) ionosfericmessage.get(i).getPayload()).getIoid()+" Band: "+((MessageType26) ionosfericmessage.get(i).getPayload()).getBandnumber());
+
+			// Procesamos el mensaje
+			if (ionosfericmessage.get(i).getMessagetype() == 18) {
+				// procesamos el mensaje
+								
+				System.out.println(" 18  IODI: " + ((MessageType18) ionosfericmessage.get(i).getPayload()).getIodi() + " Band: " + ((MessageType18) ionosfericmessage.get(i).getPayload()).getBandnumber());
+				System.out.println(((MessageType18) ionosfericmessage.get(i).getPayload()).PrintMessage());				
+				 //reorder.ProcessMT18( ((MessageType18) message.getPayload()),message.getTime());
+			} else {
+				// miramos el iodi
+				System.out.println(" 26  IODI: " + ((MessageType26) ionosfericmessage.get(i).getPayload()).getIoid() + " Band: " + ((MessageType26) ionosfericmessage.get(i).getPayload()).getBandnumber() + " BlockID: " + ((MessageType26) ionosfericmessage.get(i).getPayload()).getBlockid());
 			}
-			
-			
+
 		}
-		
-		
-		
+
 		// rellenamos los huecos correspondientes
-		
-		
-		//Generamos el archivo de output para generar ionex.
+
+		// Generamos el archivo de output para generar ionex.
 
 		System.out.println("FIN **");
 
