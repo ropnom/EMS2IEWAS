@@ -10,6 +10,7 @@ import Model.Jget;
 import Model.LoadDataFile;
 import Model.WriteCurrentData;
 import Model.TypeMessage.MessageType18;
+import Model.TypeMessage.MessageType26;
 import Model.map.MapGrid;
 import Model.map.Reciverorder;
 import Model.message.Message;
@@ -324,17 +325,18 @@ public class emsdecoder {
 		reorder = new Reciverorder();
 		for(int i = 0; referencia.compareTo(ionosfericmessage.get(i).getTime()) > 0;i++){
 			
+			System.out.println();
 			System.out.println(ionosfericmessage.get(i).getTime());
 			
-//			//Procesamos el mensaje
-//			if (message.getTypemessage() == 18) {	
-//				//procesamos el mensaje
-//				reorder.ProcessMT18((MessageType18) message.getPayload(), message.getTime());				
-//			}else{
-//				//miramos el iodi
-//				
-//				
-//			}
+			//Procesamos el mensaje
+			if (ionosfericmessage.get(i).getTypemessage() == 18) {	
+				//procesamos el mensaje
+				//reorder.ProcessMT18((MessageType18) message.getPayload(), message.getTime());	
+				System.out.println(" 18  IODI: "+((MessageType18) ionosfericmessage.get(i).getPayload()).getIodi()+ " Band: "+((MessageType18) ionosfericmessage.get(i).getPayload()).getBandnumber());
+			}else{
+				//miramos el iodi
+				System.out.println(" 26  IODI: "+((MessageType26) ionosfericmessage.get(i).getPayload()).getIoid()+" Band: "+((MessageType26) ionosfericmessage.get(i).getPayload()).getBandnumber());
+			}
 			
 			
 		}
