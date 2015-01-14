@@ -2,12 +2,16 @@ package rodrigo.sampedro.ems2ionex;
 
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
+import Model.FunctionsExtra;
 import Model.Jget;
 import Model.LoadDataFile;
 import Model.WriteCurrentData;
+import Model.TypeMessage.MessageType18;
 import Model.map.MapGrid;
+import Model.map.Reciverorder;
 import Model.message.Message;
 
 public class emsdecoder {
@@ -44,6 +48,7 @@ public class emsdecoder {
 	private static List<String> ionosphericdata = new ArrayList<String>();
 	private static List<Message> ionosfericmessage = new ArrayList<Message>();
 	private static MapGrid mygrid;
+	private static Reciverorder reorder;
 
 	// -------------------------------------
 	// ******** SCREEN FUNCTIONS ********
@@ -302,9 +307,37 @@ public class emsdecoder {
 		writer.Write(ionosphericdata);
 		
 		// Cargamos la matrix de datos
-		
+		int intervaloseg = 900;
 		mygrid = new MapGrid();
-		mygrid.Save();
+		reorder = new Reciverorder();
+		
+		//generamos el date de referencia inicio
+		Date referencia = (Date) ionosfericmessage.get(0).getTime().clone();		
+		referencia.setMinutes(0);
+		referencia.setSeconds(0);
+		
+		System.out.println("Referencia inicia a: "+ referencia);
+		referencia = FunctionsExtra.addSecondsToDate(intervaloseg, referencia);
+		System.out.println("intervalo hasta : "+ referencia);
+		System.out.println();
+		for(int i = 0; referencia.compareTo(ionosfericmessage.get(i).getTime()) > 0;i++){
+			
+			System.out.println(ionosfericmessage.get(i).getTime());
+			
+			//Procesamos el mensaje
+			if (message.getTypemessage() == 18) {	
+				//procesamos el mensaje
+				reorder.ProcessMT18((MessageType18) message.getPayload(), message.getTime());				
+			}else{
+				//miramos el iodi
+				
+				
+			}
+			
+			
+		}
+		
+		
 		
 		// rellenamos los huecos correspondientes
 		

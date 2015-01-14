@@ -83,9 +83,12 @@ public class MapGrid {
 	}
 
 	// FUNCIONES DE TRADUCCION DE COORDENADAS
-	private void PutPoint(int band, int iodi, int vtec, int rms) {
+	public void PutPoint(int band, int num, int vtec, int rms, Date time) {
 		
-		//int[] xy = getXY( band,  num);
+		int[] xy = getXY( band,  num);		
+		grid[xy[0]][xy[1]].setVtec(vtec);
+		grid[xy[0]][xy[1]].setRms(rms);
+		grid[xy[0]][xy[1]].setTimestamp(time);		
 
 	}
 

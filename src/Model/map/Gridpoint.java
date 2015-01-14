@@ -28,6 +28,8 @@ public class Gridpoint {
 		this.vtec = vtec;
 		this.timestamp = timestap;
 	}
+	
+	
 
 	public int getLat() {
 		return lat;
