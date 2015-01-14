@@ -1,6 +1,5 @@
 package Model.TypeMessage;
 
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,12 +8,12 @@ import Model.message.Payload;
 public class MessageType18 extends Payload {
 
 	// parameters
-	private int numberofbands=-1;
-	private int bandnumber=-1;
-	private int iodi=-1;
+	private int numberofbands = -1;
+	private int bandnumber = -1;
+	private int iodi = -1;
 	private byte[] igpmask;
 	private List<Integer> orden;
-	
+
 	public MessageType18() {
 
 		this.orden = new ArrayList<Integer>();
@@ -22,16 +21,17 @@ public class MessageType18 extends Payload {
 
 	public MessageType18(String message) {
 
-		super(message);
-		
+		this.binarymessage = Payload.toByteArray(message);
+		decode();
 	}
 
 	@Override
 	public void decode() {
 
-		this.currentbit = 0;
+		// preambulo 8 bits
+		// type 6
+		this.currentbit = 14;
 		// DECODE MESSAGE TYPE 18
-
 		// Number of Bands (4 bits)
 		this.numberofbands = byteToInt(Getbits(4));
 		// Band Number (4 bits)
@@ -44,25 +44,23 @@ public class MessageType18 extends Payload {
 		getordenmask();
 
 	}
-	
-	private void getordenmask(){
-		
+
+	private void getordenmask() {
+
 		byte info;
 		byte ref = 0x01;
-	
-		for (int i = 0; i<201; i++){
-			//obtener byte que lo contien
-			info = igpmask[i/8];
-			info = (byte) (info << i%8);
+
+		for (int i = 0; i < 201; i++) {
+			// obtener byte que lo contien
+			info = igpmask[i / 8];
+			info = (byte) (info << i % 8);
 			info = (byte) ((info & 0xFF) >>> 7);
-			if( info == ref){
-				orden.add(i+1);
+			if (info == ref) {
+				orden.add(i + 1);
 			}
-				
-			
+
 		}
 	}
-
 
 	@Override
 	public String PrintMessage() {
@@ -74,7 +72,7 @@ public class MessageType18 extends Payload {
 		}
 		this.message += " \n ORDEN: ";
 		for (int i = 0; i < orden.size(); i++) {
-			this.message += " "+this.orden.get(i)+",";
+			this.message += " " + this.orden.get(i) + ",";
 		}
 
 		return this.message;
@@ -120,7 +118,4 @@ public class MessageType18 extends Payload {
 		this.orden = orden;
 	}
 
-	
-	
-	
 }

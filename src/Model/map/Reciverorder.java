@@ -195,6 +195,8 @@ public class Reciverorder {
 
 			// LOG error message decoding
 		} else {
+			
+			this.numberofbands = mt18.getNumberofbands();
 
 			if (mt18.getOrden().size() > 0) {
 

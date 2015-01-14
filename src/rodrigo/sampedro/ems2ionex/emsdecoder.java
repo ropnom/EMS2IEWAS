@@ -134,7 +134,7 @@ public class emsdecoder {
 		// Load propierties file
 
 		boolean debug = true;
-		mode = 1;
+		mode = 0;
 
 		if (debug) {
 			// DEMO debug
@@ -142,7 +142,7 @@ public class emsdecoder {
 			// *********** INPUT TEST PROGRAM AND MENUS ***********
 			// args = new String[] { "-PRN120", "-TODAY" };
 			// args = new String[] { "-PRN126", "-TODAY" };
-			args = new String[] { "-PRN120", "-D", "6" };
+			args = new String[] { "-PRN120", "-D", "5" };
 			// args = new String[] { "-PRN120", "-D" , "25", "-H", "14"};
 
 			// *************************************************
@@ -295,7 +295,7 @@ public class emsdecoder {
 			if (message.getTypemessage() > 0) {
 				ionosfericmessage.add(message);
 				ionosphericdata.add(message.getOriginal());
-				// human.addAll(message.WriteHumanFile());
+				human.addAll(message.WriteHumanFile());
 			}
 
 		}
@@ -304,12 +304,12 @@ public class emsdecoder {
 		// writer.setFilename("ionohumanmessage.txt");
 		// writer.Write(human);
 		writer.setFilename("ionosphericdates.txt");
-		writer.Write(ionosphericdata);
+		//writer.Write(ionosphericdata);
 		
 		// Cargamos la matrix de datos
 		int intervaloseg = 900;
 		mygrid = new MapGrid();
-		reorder = new Reciverorder();
+		
 		
 		//generamos el date de referencia inicio
 		Date referencia = (Date) ionosfericmessage.get(0).getTime().clone();		
@@ -320,19 +320,21 @@ public class emsdecoder {
 		referencia = FunctionsExtra.addSecondsToDate(intervaloseg, referencia);
 		System.out.println("intervalo hasta : "+ referencia);
 		System.out.println();
+		
+		reorder = new Reciverorder();
 		for(int i = 0; referencia.compareTo(ionosfericmessage.get(i).getTime()) > 0;i++){
 			
 			System.out.println(ionosfericmessage.get(i).getTime());
 			
-			//Procesamos el mensaje
-			if (message.getTypemessage() == 18) {	
-				//procesamos el mensaje
-				reorder.ProcessMT18((MessageType18) message.getPayload(), message.getTime());				
-			}else{
-				//miramos el iodi
-				
-				
-			}
+//			//Procesamos el mensaje
+//			if (message.getTypemessage() == 18) {	
+//				//procesamos el mensaje
+//				reorder.ProcessMT18((MessageType18) message.getPayload(), message.getTime());				
+//			}else{
+//				//miramos el iodi
+//				
+//				
+//			}
 			
 			
 		}

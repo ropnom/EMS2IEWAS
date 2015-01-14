@@ -77,7 +77,9 @@ public class Payload {
 
 		// to compact byte response
 		if (initbits == 0 & numbytes == 1) {
+			//System.out.println(toBinaryString(ram[0]));
 			required[0] = (byte) ((ram[0] & 0xff) >>> (8 - numbits));
+			//System.out.println(toBinaryString(required[0]));
 		} else if (initbits == 0 & numbytes > 1) {
 			// igual solo que hay que mover en todos el desfase hacia la derecha
 			for (int i = ram.length - 1; i >= 0; i--) {
@@ -92,7 +94,7 @@ public class Payload {
 		} else if (initbits > 0 && numbytes == 1) {
 			if (rambytes == 1) {
 				// primero ajustamos depsues hacemos lo mismo que antes
-				// System.out.println(toBinaryString(ram[0]));
+				 //System.out.println(toBinaryString(ram[0]));
 				ram[0] = (byte) (ram[0] << initbits);
 				// System.out.println(toBinaryString(ram[0]));
 				required[0] = (byte) ((ram[0] & 0xFF) >>> movidos);

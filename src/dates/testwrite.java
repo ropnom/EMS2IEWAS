@@ -125,7 +125,7 @@ public class testwrite {
 		System.out.println();
 		System.out.println();
 		
-		Message message = new Message("120 15 01 05 04 00 09 18 5349540000FF80007FC0003FE0001FF00007FC0003FE0000FF00007F89DC1D80", 1);
+		Message message = new Message("120 15 01 05 04 00 05 18 C6495800003F800007C0000000000000000000000000000000000000353BCA80", 1);
 		for (String print : message.WriteHumanFile()) {
 			System.out.println(print);
 		}
