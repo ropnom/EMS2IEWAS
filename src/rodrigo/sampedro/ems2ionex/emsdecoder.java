@@ -333,10 +333,14 @@ public class emsdecoder {
 			if (ionosfericmessage.get(i).getMessagetype() == 18) {
 				// procesamos el mensaje
 
-				//System.out.println(" 18  IODI: " + ((MessageType18) ionosfericmessage.get(i).getPayload()).getIodi() + " Band: " + ((MessageType18) ionosfericmessage.get(i).getPayload()).getBandnumber());
-				//System.out.println(((MessageType18) ionosfericmessage.get(i).getPayload()).PrintMessage());
+				// System.out.println(" 18  IODI: " + ((MessageType18)
+				// ionosfericmessage.get(i).getPayload()).getIodi() + " Band: "
+				// + ((MessageType18)
+				// ionosfericmessage.get(i).getPayload()).getBandnumber());
+				// System.out.println(((MessageType18)
+				// ionosfericmessage.get(i).getPayload()).PrintMessage());
 				reorder.ProcessMT18(((MessageType18) ionosfericmessage.get(i).getPayload()), ionosfericmessage.get(i).getTime());
-				
+
 			} else {
 				// miramos el iodi y fecha para saber si es valido
 				mt26 = (MessageType26) ionosfericmessage.get(i).getPayload();
@@ -347,8 +351,8 @@ public class emsdecoder {
 					referenceblockid = 15 * (1 + mt26.getBlockid()) + 1;
 					for (int m = 0; m < bandnumbers.size(); m++) {
 
-						if ((15 * mt26.getBlockid() < bandnumbers.get(m) && bandnumbers.get(m) < referenceblockid) && mt26.getGridpoints()[m % 15 + 1].getVtec() >= 0) {
-							mygrid.PutPoint(mt26.getBandnumber(), bandnumbers.get(m), mt26.getGridpoints()[m % 15 + 1].getVtec(), mt26.getGridpoints()[m % 15 + 1].getRms(), ionosfericmessage.get(i).getTime());
+						if ((15 * mt26.getBlockid() < bandnumbers.get(m) && bandnumbers.get(m) < referenceblockid) && mt26.getGridpoints()[m % 14 + 1].getVtec() >= 0) {
+							mygrid.PutPoint(mt26.getBandnumber(), bandnumbers.get(m), mt26.getGridpoints()[m % 14 + 1].getVtec(), mt26.getGridpoints()[m % 14 + 1].getRms(), ionosfericmessage.get(i).getTime());
 						} else if (bandnumbers.get(m) >= referenceblockid) {
 							break;
 						}
@@ -365,6 +369,8 @@ public class emsdecoder {
 			}
 
 		}
+		mygrid.Save();
+		reorder.Save();
 
 		// rellenamos los huecos correspondientes
 

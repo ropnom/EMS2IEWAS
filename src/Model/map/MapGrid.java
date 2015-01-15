@@ -86,9 +86,9 @@ public class MapGrid {
 	public void PutPoint(int band, int num, int vtec, int rms, Date time) {
 		
 		int[] xy = getXY( band,  num);		
-		grid[xy[0]][xy[1]].setVtec(vtec);
-		grid[xy[0]][xy[1]].setRms(rms);
-		grid[xy[0]][xy[1]].setTimestamp(time);		
+		grid[xy[1]][xy[0]].setVtec(vtec);
+		grid[xy[1]][xy[0]].setRms(rms);
+		grid[xy[1]][xy[0]].setTimestamp(time);		
 
 	}
 
