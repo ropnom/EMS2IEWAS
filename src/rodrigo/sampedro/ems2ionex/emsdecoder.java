@@ -302,8 +302,9 @@ public class emsdecoder {
 		WriteCurrentData writer = new WriteCurrentData();
 		writer.setFilename("ionohumanmessage.txt");
 		writer.Write(human);
-		// writer.setFilename("ionosphericdates.txt");
-		// writer.Write(ionosphericdata);
+		
+		writer.setFilename("ionosphericdates.txt");
+		writer.Write(ionosphericdata);
 
 		// Cargamos la matrix de datos
 		int intervaloseg = 900;
@@ -320,6 +321,9 @@ public class emsdecoder {
 		System.out.println();
 
 		reorder = new Reciverorder();
+
+		MessageType26 mt26;
+		int referenceblockid;
 		for (int i = 0; referencia.compareTo(ionosfericmessage.get(i).getTime()) > 0; i++) {
 
 			System.out.println();
@@ -328,18 +332,39 @@ public class emsdecoder {
 			// Procesamos el mensaje
 			if (ionosfericmessage.get(i).getMessagetype() == 18) {
 				// procesamos el mensaje
-								
-				//System.out.println(" 18  IODI: " + ((MessageType18) ionosfericmessage.get(i).getPayload()).getIodi() + " Band: " + ((MessageType18) ionosfericmessage.get(i).getPayload()).getBandnumber());
-				//System.out.println(((MessageType18) ionosfericmessage.get(i).getPayload()).PrintMessage());				
-				 reorder.ProcessMT18( ((MessageType18) message.getPayload()),message.getTime());
+
+				// System.out.println(" 18  IODI: " + ((MessageType18)
+				// ionosfericmessage.get(i).getPayload()).getIodi() + " Band: "
+				// + ((MessageType18)
+				// ionosfericmessage.get(i).getPayload()).getBandnumber());
+				// System.out.println(((MessageType18)
+				// ionosfericmessage.get(i).getPayload()).PrintMessage());
+				reorder.ProcessMT18(((MessageType18) message.getPayload()), message.getTime());
 			} else {
 				// miramos el iodi y fecha para saber si es valido
-				if(reorder.IsValidMessage( ionosfericmessage.get(i).getTime(), ((MessageType26) ionosfericmessage.get(i).getPayload()).getIoid(), ((MessageType26) ionosfericmessage.get(i).getPayload()).getBandnumber())){
-					
-					//mygrid.PutPoint(band, num, vtec, rms, time);
+				mt26 = (MessageType26) ionosfericmessage.get(i).getPayload();
+				if (reorder.IsValidMessage(ionosfericmessage.get(i).getTime(), mt26.getIoid(), mt26.getBandnumber())) {
+
+					// obtenemos la lista de valores a obtener
+					List<Integer> bandnumbers = reorder.getMatrix()[mt26.getIoid()][mt26.getBandnumber()].getBandX();
+					referenceblockid = 15 * (1 + mt26.getBlockid()) + 1;
+					for (int m = 0; m < bandnumbers.size(); m++) {
+
+						if ((15 * mt26.getBlockid() < bandnumbers.get(m) && bandnumbers.get(m) < referenceblockid) && mt26.getGridpoints()[m % 15 + 1].getVtec() >=0) {
+							mygrid.PutPoint(mt26.getBandnumber(), bandnumbers.get(m), mt26.getGridpoints()[m % 15 + 1].getVtec(), mt26.getGridpoints()[m % 15 + 1].getRms(), ionosfericmessage.get(i).getTime());
+						} else if (bandnumbers.get(m) >= referenceblockid) {
+							break;
+						}
+					}
+
 				}
-				
-				//System.out.println(" 26  IODI: " + ((MessageType26) ionosfericmessage.get(i).getPayload()).getIoid() + " Band: " + ((MessageType26) ionosfericmessage.get(i).getPayload()).getBandnumber() + " BlockID: " + ((MessageType26) ionosfericmessage.get(i).getPayload()).getBlockid());
+
+				// System.out.println(" 26  IODI: " + ((MessageType26)
+				// ionosfericmessage.get(i).getPayload()).getIoid() + " Band: "
+				// + ((MessageType26)
+				// ionosfericmessage.get(i).getPayload()).getBandnumber() +
+				// " BlockID: " + ((MessageType26)
+				// ionosfericmessage.get(i).getPayload()).getBlockid());
 			}
 
 		}
