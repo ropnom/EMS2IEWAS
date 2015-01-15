@@ -136,7 +136,7 @@ public class Reciverorder {
 
 	public boolean IsValidMessage(Date messagetime, int iodi, int band) {
 
-		return (matrix[iodi][band].isIsblock() && IsDataValid(messagetime, iodi, band));
+		return (!matrix[iodi][band].isIsblock() && IsDataValid(messagetime, iodi, band));
 	}
 
 	public boolean IsDataValid(Date messagetime, int oidi, int band) {
@@ -204,6 +204,17 @@ public class Reciverorder {
 
 	}
 
+	protected int calcounterband(int iodi) {
+		int count = 0;
+
+		for (int j = 0; j < 11; j++) {
+			if (!matrix[iodi][j].isIsblock())
+				count++;
+		}
+
+		return count;
+	}
+
 	protected void IsMT18allreciver(int iodi) {
 
 		for (int i = 0; i < 3; i++) {
@@ -232,7 +243,7 @@ public class Reciverorder {
 			if (messageType18.getOrden().size() > 0) {
 
 				matrix[iodi][band] = new Bandorder(messageType18.getOrden(), time);
-				counters[iodi]++;
+				counters[iodi] = calcounterband(iodi);
 				IsMT18allreciver(iodi);
 
 			} else {

@@ -1,16 +1,16 @@
 package Model.TypeMessage;
 
+import Model.FunctionsExtra;
 import Model.message.Payload;
 
 public class MessageType26 extends Payload {
 
 	// subclass inside
 	public class GridPoint {
-
 		protected float IGP_VerticalDelay = 0;
 		protected short GIVEI = 0;
-		protected int vtec;
-		protected int rms;
+		protected int vtec = 0;
+		protected int rms = 0;
 
 		public GridPoint() {
 
@@ -65,7 +65,7 @@ public class MessageType26 extends Payload {
 				this.vtec = (int) Math.round(this.IGP_VerticalDelay * 6.17f);
 				if (IGP_VerticalDelay >= 0) {
 					// calculate RMS
-					this.rms = (int) Math.round(Math.sqrt((double) IGP_VerticalDelay) * 6.17f);
+					this.rms = (int) Math.round(Math.sqrt((double) FunctionsExtra.getGIVEITABLE((int)this.GIVEI)) * 6.17f);
 				} else {
 					this.rms = -1;
 				}
@@ -125,7 +125,7 @@ public class MessageType26 extends Payload {
 		this.message = "BANDNUMBER: " + this.bandnumber + " BLOCKID: " + this.blockid;
 		this.message += " \n ";
 		for (int i = 0; i < BLOCK_GRID_POINTS; i++) {
-			this.message += " IGP" + (i + 1) + ": " + this.gridpoints[i].getIGP_VerticalDelay() + " GIVEI" + (i + 1) + ": " + this.gridpoints[i].getGIVEI() + "  VTEC" + (i + 1) + ": " + this.gridpoints[i].getVtec() + " RMS" + (i + 1)+ ": " + this.gridpoints[i].getRms() + " |";
+			this.message += " IGP" + (i + 1) + ": " + this.gridpoints[i].getIGP_VerticalDelay() + " GIVEI" + (i + 1) + ": " + this.gridpoints[i].getGIVEI() + "  VTEC" + (i + 1) + ": " + this.gridpoints[i].getVtec() + " RMS" + (i + 1) + ": " + this.gridpoints[i].getRms() + " |";
 			if (i % 5 == 0 && i != 0) {
 				this.message += " \n ";
 			}
