@@ -7,8 +7,8 @@ public class Gridpoint {
 	// revisar inicializacionde valores
 	protected int lat = 0;
 	protected int lon = 0;
-	protected int vtec = 0;
-	protected int rms = 0;
+	protected int vtec = 9999;
+	protected int rms = 9999;
 	protected Date timestamp = null;
 
 	public Gridpoint() {
