@@ -72,8 +72,9 @@ public class Reciverorder {
 	// declaramos 10 bandas por cada iodi
 	protected Bandorder[][] matrix;
 	protected String file = "reciverorder.txt";
-	protected int numberofbands;
-	protected boolean[] allmt18resiver = {false,false,false};
+	protected int[] numberofbands = new int[3];
+	protected int[] counters = { 0, 0, 0 };
+	protected boolean[] allmt18resiver = { false, false, false };
 
 	public Reciverorder() {
 
@@ -109,20 +110,39 @@ public class Reciverorder {
 		this.file = file;
 	}
 
-	public int getNumberofbands() {
+	public int[] getNumberofbands() {
 		return numberofbands;
 	}
 
-	public void setNumberofbands(int numberofbands) {
+	public void setNumberofbands(int[] numberofbands) {
 		this.numberofbands = numberofbands;
 	}
 
-	public boolean[] isAllmt18resiver() {
+	public int[] getCounters() {
+		return counters;
+	}
+
+	public void setCounters(int[] counters) {
+		this.counters = counters;
+	}
+
+	public boolean[] getAllmt18resiver() {
 		return allmt18resiver;
 	}
 
 	public void setAllmt18resiver(boolean[] allmt18resiver) {
 		this.allmt18resiver = allmt18resiver;
+	}
+
+	public boolean IsValidMessage(Date messagetime, int iodi, int band) {
+
+		return (matrix[iodi][band].isIsblock() && IsDataValid(messagetime, iodi, band));
+	}
+
+	public boolean IsDataValid(Date messagetime, int oidi, int band) {
+
+		// compare dates and say if is valid
+		return true;
 	}
 
 	public void Save() {
@@ -145,7 +165,7 @@ public class Reciverorder {
 
 	}
 
-	private void Load() {
+	public void Load() {
 
 		// generator of matrix
 		List<Integer> bandnumbers = new ArrayList<Integer>();
@@ -184,32 +204,42 @@ public class Reciverorder {
 
 	}
 
+	protected void IsMT18allreciver(int iodi) {
+
+		for (int i = 0; i < 3; i++) {
+			if (counters[iodi] >= numberofbands[iodi]) {
+				allmt18resiver[iodi] = true;
+				counters[iodi] = 0;
+			}
+		}
+
+	}
+
 	public void ProcessMT18(MessageType18 messageType18, Date time) {
 
 		// get iodi
 		int iodi = messageType18.getIodi();
 		// get band
-		int band = messageType18.getIodi();
+		int band = messageType18.getBandnumber();
 
 		if (iodi == -1 || band == -1) {
 
 			// LOG error message decoding
 		} else {
-			
-			this.numberofbands = messageType18.getNumberofbands();
+
+			this.numberofbands[iodi] = messageType18.getNumberofbands();
 
 			if (messageType18.getOrden().size() > 0) {
 
-				matrix[iodi][band] = new Bandorder(messageType18.getOrden(),time);
+				matrix[iodi][band] = new Bandorder(messageType18.getOrden(), time);
+				counters[iodi]++;
+				IsMT18allreciver(iodi);
 
 			} else {
 				// LOG error not found information in mt18
 			}
 		}
-		// get list
 
 	}
-	
-	
 
 }

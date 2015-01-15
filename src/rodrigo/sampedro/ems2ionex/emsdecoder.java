@@ -329,12 +329,17 @@ public class emsdecoder {
 			if (ionosfericmessage.get(i).getMessagetype() == 18) {
 				// procesamos el mensaje
 								
-				System.out.println(" 18  IODI: " + ((MessageType18) ionosfericmessage.get(i).getPayload()).getIodi() + " Band: " + ((MessageType18) ionosfericmessage.get(i).getPayload()).getBandnumber());
-				System.out.println(((MessageType18) ionosfericmessage.get(i).getPayload()).PrintMessage());				
-				 //reorder.ProcessMT18( ((MessageType18) message.getPayload()),message.getTime());
+				//System.out.println(" 18  IODI: " + ((MessageType18) ionosfericmessage.get(i).getPayload()).getIodi() + " Band: " + ((MessageType18) ionosfericmessage.get(i).getPayload()).getBandnumber());
+				//System.out.println(((MessageType18) ionosfericmessage.get(i).getPayload()).PrintMessage());				
+				 reorder.ProcessMT18( ((MessageType18) message.getPayload()),message.getTime());
 			} else {
-				// miramos el iodi
-				System.out.println(" 26  IODI: " + ((MessageType26) ionosfericmessage.get(i).getPayload()).getIoid() + " Band: " + ((MessageType26) ionosfericmessage.get(i).getPayload()).getBandnumber() + " BlockID: " + ((MessageType26) ionosfericmessage.get(i).getPayload()).getBlockid());
+				// miramos el iodi y fecha para saber si es valido
+				if(reorder.IsValidMessage( ionosfericmessage.get(i).getTime(), ((MessageType26) ionosfericmessage.get(i).getPayload()).getIoid(), ((MessageType26) ionosfericmessage.get(i).getPayload()).getBandnumber())){
+					
+					//mygrid.PutPoint(band, num, vtec, rms, time);
+				}
+				
+				//System.out.println(" 26  IODI: " + ((MessageType26) ionosfericmessage.get(i).getPayload()).getIoid() + " Band: " + ((MessageType26) ionosfericmessage.get(i).getPayload()).getBandnumber() + " BlockID: " + ((MessageType26) ionosfericmessage.get(i).getPayload()).getBlockid());
 			}
 
 		}
