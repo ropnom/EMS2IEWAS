@@ -55,7 +55,7 @@ public class IonexInputFile {
 		for (int j = 0; j < MapGrid.getMaxColum(); j++) {
 			// check temporal
 			if (s.IsValidGridPoint(i, j)) {
-				line += (i + 1) + " " + (j + 1) + " " + s.getGrid()[i][j].getVtec() + " " + s.getGrid()[i][j].getLon() + " " + s.getGrid()[i][j].getLat();
+				line = (i + 1) + " " + (j + 1) + " " + s.getGrid()[i][j].getVtec() + " " + s.getGrid()[i][j].getLon() + " " + s.getGrid()[i][j].getLat();
 				savedate.add(line);
 			}
 
