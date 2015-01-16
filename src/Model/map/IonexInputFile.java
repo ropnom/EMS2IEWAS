@@ -36,6 +36,63 @@ public class IonexInputFile {
 
 	public void GridToInput(MapGrid s) {
 
+		List<String> savedate = new ArrayList<String>();
+		String line = "";
+
+		int i = 0;
+		for (i = 0; i < MapGrid.getMaxRow(); i++) {
+			for (int j = 0; j < MapGrid.getMaxColum(); j++) {
+				// check temporal
+				if (s.IsValidGridPoint(i, j)) {
+					line = (i + 1) + " " + (j + 1) + " " + s.getGrid()[i][j].getVtec() + " " + s.getGrid()[i][j].getLon() + " " + s.getGrid()[i][j].getLat();
+					savedate.add(line);
+				}
+			}
+		}
+
+		// repeat firts colum for 180 = -180
+		i = 0;
+		for (int j = 0; j < MapGrid.getMaxColum(); j++) {
+			// check temporal
+			if (s.IsValidGridPoint(i, j)) {
+				line += (i + 1) + " " + (j + 1) + " " + s.getGrid()[i][j].getVtec() + " " + s.getGrid()[i][j].getLon() + " " + s.getGrid()[i][j].getLat();
+				savedate.add(line);
+			}
+
+		}
+
+		WriteCurrentData writer = new WriteCurrentData();
+		writer.setFilename(filenames[1] + s.getInit() + ".txt");
+		writer.Write(savedate);
+		
+		savedate = new ArrayList<String>();
+		line = "";
+
+		for (i = 0; i < MapGrid.getMaxRow(); i++) {
+			for (int j = 0; j < MapGrid.getMaxColum(); j++) {
+				// check temporal
+				if (s.IsValidGridPoint(i, j)) {
+					line = (i + 1) + " " + (j + 1) + " " + s.getGrid()[i][j].getRms() + " " + s.getGrid()[i][j].getLon() + " " + s.getGrid()[i][j].getLat();
+					savedate.add(line);
+				}
+			}
+		}
+
+		// repeat firts colum for 180 = -180
+		i = 0;
+		for (int j = 0; j < MapGrid.getMaxColum(); j++) {
+			// check temporal
+			if (s.IsValidGridPoint(i, j)) {
+				line += (i + 1) + " " + (j + 1) + " " + s.getGrid()[i][j].getRms() + " " + s.getGrid()[i][j].getLon() + " " + s.getGrid()[i][j].getLat();
+				savedate.add(line);
+			}
+
+		}
+
+		writer = new WriteCurrentData();
+		writer.setFilename(filenames[2] + s.getInit() + ".txt");
+		writer.Write(savedate);
+
 	}
 
 	public void GenParametersInfoFile() {

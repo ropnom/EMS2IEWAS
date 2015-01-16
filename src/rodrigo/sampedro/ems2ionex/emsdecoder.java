@@ -11,6 +11,7 @@ import Model.LoadDataFile;
 import Model.WriteCurrentData;
 import Model.TypeMessage.MessageType18;
 import Model.TypeMessage.MessageType26;
+import Model.map.IonexInputFile;
 import Model.map.MapGrid;
 import Model.map.Reciverorder;
 import Model.message.Message;
@@ -371,6 +372,9 @@ public class emsdecoder {
 		}
 		mygrid.Save();
 		reorder.Save();
+		
+		IonexInputFile makefiles = new IonexInputFile();
+		makefiles.GridToInput(mygrid);
 
 		// rellenamos los huecos correspondientes
 

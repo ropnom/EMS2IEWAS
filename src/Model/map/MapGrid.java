@@ -870,6 +870,13 @@ public class MapGrid {
 
 	}
 	
+	public boolean IsValidGridPoint(int i, int j){
+		
+		//check valid time for grid point
+		
+		return (true);
+	}
+	
 	public void ToIONEXinput(){
 		
 	}
