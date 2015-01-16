@@ -60,12 +60,15 @@ public class MessageType26 extends Payload {
 			// VTEC = IGP * F^2 / (K * C)
 			// F (MHZ) K = 1.34E-3 m^2/s
 			// F(Hz) K= 40.3 m^2/s
+			
+			//VTEC[0.1 TECU] = IGP [m] * 61.5868
 
-			if (IGP_VerticalDelay < 63.875) {
-				this.vtec = (int) Math.round(this.IGP_VerticalDelay * 6.17f);
+			// STANDAR SAYS 63.875 , STeacher EGNOS use 63.75
+			if (IGP_VerticalDelay < 63.75) {
+				this.vtec = (int) Math.round((double)(this.IGP_VerticalDelay * 61.5868));
 				if (IGP_VerticalDelay >= 0) {
 					// calculate RMS
-					this.rms = (int) Math.round(Math.sqrt((double) FunctionsExtra.getGIVEITABLE((int)this.GIVEI)) * 6.17f);
+					this.rms = (int) Math.round(Math.sqrt((double) FunctionsExtra.getGIVEITABLE((int)this.GIVEI)) *  61.5868f);
 				} else {
 					this.rms = -1;
 				}
@@ -125,7 +128,7 @@ public class MessageType26 extends Payload {
 		this.message = "BANDNUMBER: " + this.bandnumber + " BLOCKID: " + this.blockid;
 		this.message += " \n ";
 		for (int i = 0; i < BLOCK_GRID_POINTS; i++) {
-			this.message += " IGP" + (i + 1) + ": " + this.gridpoints[i].getIGP_VerticalDelay() + " GIVEI" + (i + 1) + ": " + this.gridpoints[i].getGIVEI() + "  VTEC" + (i + 1) + ": " + this.gridpoints[i].getVtec() + " RMS" + (i + 1) + ": " + this.gridpoints[i].getRms() + " |";
+			this.message += " IGP" + (this.blockid*i + 1) + ": " + this.gridpoints[i].getIGP_VerticalDelay() + " GIVEI" + (this.blockid*i + 1) + ": " + this.gridpoints[i].getGIVEI() + "  VTEC" + (this.blockid*i + 1) + ": " + this.gridpoints[i].getVtec() + " RMS" + (this.blockid*i + 1) + ": " + this.gridpoints[i].getRms() + " |";
 			if (i % 5 == 0 && i != 0) {
 				this.message += " \n ";
 			}

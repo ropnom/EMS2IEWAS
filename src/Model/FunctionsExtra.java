@@ -48,7 +48,7 @@ public class FunctionsExtra {
 			lat = line[4];
 			lon = line[3];
 
-			if (vtec.length() == 4) {
+			if (Integer.parseInt(vtec) == 9999) {
 
 				kml.add("			<Placemark>");
 				kml.add("				<name>" + vtec + "</name>");

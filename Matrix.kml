@@ -3094,7 +3094,7 @@
 				</Point>
 			</Placemark>
 			<Placemark>
-				<name>393</name>
+				<name>9999</name>
 				<LookAt>
 					<longitude>-20</longitude>
 					<latitude>75</latitude>
@@ -3104,7 +3104,7 @@
 					<range>3252232.201554738</range>
 					<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
 				</LookAt>
-				<styleUrl>#ROJO</styleUrl>
+				<styleUrl>#VERDE</styleUrl>
 				<Point>
 					<gx:drawOrder>1</gx:drawOrder>
 					<coordinates>-20,75,0</coordinates>
@@ -3128,7 +3128,7 @@
 				</Point>
 			</Placemark>
 			<Placemark>
-				<name>0</name>
+				<name>9999</name>
 				<LookAt>
 					<longitude>-10</longitude>
 					<latitude>75</latitude>
@@ -3138,7 +3138,7 @@
 					<range>3252232.201554738</range>
 					<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
 				</LookAt>
-				<styleUrl>#ROJO</styleUrl>
+				<styleUrl>#VERDE</styleUrl>
 				<Point>
 					<gx:drawOrder>1</gx:drawOrder>
 					<coordinates>-10,75,0</coordinates>
@@ -3230,7 +3230,7 @@
 				</Point>
 			</Placemark>
 			<Placemark>
-				<name>9</name>
+				<name>9999</name>
 				<LookAt>
 					<longitude>20</longitude>
 					<latitude>75</latitude>
@@ -3240,7 +3240,7 @@
 					<range>3252232.201554738</range>
 					<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
 				</LookAt>
-				<styleUrl>#ROJO</styleUrl>
+				<styleUrl>#VERDE</styleUrl>
 				<Point>
 					<gx:drawOrder>1</gx:drawOrder>
 					<coordinates>20,75,0</coordinates>
@@ -5338,7 +5338,7 @@
 				</Point>
 			</Placemark>
 			<Placemark>
-				<name>9999</name>
+				<name>0</name>
 				<LookAt>
 					<longitude>-80</longitude>
 					<latitude>65</latitude>
@@ -5348,7 +5348,7 @@
 					<range>3252232.201554738</range>
 					<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
 				</LookAt>
-				<styleUrl>#VERDE</styleUrl>
+				<styleUrl>#ROJO</styleUrl>
 				<Point>
 					<gx:drawOrder>1</gx:drawOrder>
 					<coordinates>-80,65,0</coordinates>
@@ -5372,7 +5372,7 @@
 				</Point>
 			</Placemark>
 			<Placemark>
-				<name>9999</name>
+				<name>0</name>
 				<LookAt>
 					<longitude>-70</longitude>
 					<latitude>65</latitude>
@@ -5382,7 +5382,7 @@
 					<range>3252232.201554738</range>
 					<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
 				</LookAt>
-				<styleUrl>#VERDE</styleUrl>
+				<styleUrl>#ROJO</styleUrl>
 				<Point>
 					<gx:drawOrder>1</gx:drawOrder>
 					<coordinates>-70,65,0</coordinates>
@@ -5542,7 +5542,7 @@
 				</Point>
 			</Placemark>
 			<Placemark>
-				<name>3</name>
+				<name>0</name>
 				<LookAt>
 					<longitude>-20</longitude>
 					<latitude>65</latitude>
@@ -5576,7 +5576,7 @@
 				</Point>
 			</Placemark>
 			<Placemark>
-				<name>0</name>
+				<name>9999</name>
 				<LookAt>
 					<longitude>-10</longitude>
 					<latitude>65</latitude>
@@ -5586,7 +5586,7 @@
 					<range>3252232.201554738</range>
 					<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
 				</LookAt>
-				<styleUrl>#ROJO</styleUrl>
+				<styleUrl>#VERDE</styleUrl>
 				<Point>
 					<gx:drawOrder>1</gx:drawOrder>
 					<coordinates>-10,65,0</coordinates>
@@ -5678,7 +5678,7 @@
 				</Point>
 			</Placemark>
 			<Placemark>
-				<name>3</name>
+				<name>9999</name>
 				<LookAt>
 					<longitude>20</longitude>
 					<latitude>65</latitude>
@@ -5688,7 +5688,7 @@
 					<range>3252232.201554738</range>
 					<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
 				</LookAt>
-				<styleUrl>#ROJO</styleUrl>
+				<styleUrl>#VERDE</styleUrl>
 				<Point>
 					<gx:drawOrder>1</gx:drawOrder>
 					<coordinates>20,65,0</coordinates>
@@ -6630,7 +6630,7 @@
 				</Point>
 			</Placemark>
 			<Placemark>
-				<name>9999</name>
+				<name>31</name>
 				<LookAt>
 					<longitude>-60</longitude>
 					<latitude>60</latitude>
@@ -6640,14 +6640,14 @@
 					<range>3252232.201554738</range>
 					<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
 				</LookAt>
-				<styleUrl>#VERDE</styleUrl>
+				<styleUrl>#ROJO</styleUrl>
 				<Point>
 					<gx:drawOrder>1</gx:drawOrder>
 					<coordinates>-60,60,0</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
-				<name>9999</name>
+				<name>38</name>
 				<LookAt>
 					<longitude>-55</longitude>
 					<latitude>60</latitude>
@@ -6657,14 +6657,14 @@
 					<range>3252232.201554738</range>
 					<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
 				</LookAt>
-				<styleUrl>#VERDE</styleUrl>
+				<styleUrl>#ROJO</styleUrl>
 				<Point>
 					<gx:drawOrder>1</gx:drawOrder>
 					<coordinates>-55,60,0</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
-				<name>9999</name>
+				<name>46</name>
 				<LookAt>
 					<longitude>-50</longitude>
 					<latitude>60</latitude>
@@ -6674,14 +6674,14 @@
 					<range>3252232.201554738</range>
 					<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
 				</LookAt>
-				<styleUrl>#VERDE</styleUrl>
+				<styleUrl>#ROJO</styleUrl>
 				<Point>
 					<gx:drawOrder>1</gx:drawOrder>
 					<coordinates>-50,60,0</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
-				<name>9999</name>
+				<name>54</name>
 				<LookAt>
 					<longitude>-45</longitude>
 					<latitude>60</latitude>
@@ -6691,14 +6691,14 @@
 					<range>3252232.201554738</range>
 					<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
 				</LookAt>
-				<styleUrl>#VERDE</styleUrl>
+				<styleUrl>#ROJO</styleUrl>
 				<Point>
 					<gx:drawOrder>1</gx:drawOrder>
 					<coordinates>-45,60,0</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
-				<name>9999</name>
+				<name>54</name>
 				<LookAt>
 					<longitude>-40</longitude>
 					<latitude>60</latitude>
@@ -6708,14 +6708,14 @@
 					<range>3252232.201554738</range>
 					<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
 				</LookAt>
-				<styleUrl>#VERDE</styleUrl>
+				<styleUrl>#ROJO</styleUrl>
 				<Point>
 					<gx:drawOrder>1</gx:drawOrder>
 					<coordinates>-40,60,0</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
-				<name>9999</name>
+				<name>54</name>
 				<LookAt>
 					<longitude>-35</longitude>
 					<latitude>60</latitude>
@@ -6725,14 +6725,14 @@
 					<range>3252232.201554738</range>
 					<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
 				</LookAt>
-				<styleUrl>#VERDE</styleUrl>
+				<styleUrl>#ROJO</styleUrl>
 				<Point>
 					<gx:drawOrder>1</gx:drawOrder>
 					<coordinates>-35,60,0</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
-				<name>9999</name>
+				<name>46</name>
 				<LookAt>
 					<longitude>-30</longitude>
 					<latitude>60</latitude>
@@ -6742,14 +6742,14 @@
 					<range>3252232.201554738</range>
 					<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
 				</LookAt>
-				<styleUrl>#VERDE</styleUrl>
+				<styleUrl>#ROJO</styleUrl>
 				<Point>
 					<gx:drawOrder>1</gx:drawOrder>
 					<coordinates>-30,60,0</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
-				<name>7</name>
+				<name>54</name>
 				<LookAt>
 					<longitude>-25</longitude>
 					<latitude>60</latitude>
@@ -6766,7 +6766,7 @@
 				</Point>
 			</Placemark>
 			<Placemark>
-				<name>7</name>
+				<name>100</name>
 				<LookAt>
 					<longitude>-20</longitude>
 					<latitude>60</latitude>
@@ -6783,7 +6783,7 @@
 				</Point>
 			</Placemark>
 			<Placemark>
-				<name>5</name>
+				<name>9999</name>
 				<LookAt>
 					<longitude>-15</longitude>
 					<latitude>60</latitude>
@@ -6793,14 +6793,14 @@
 					<range>3252232.201554738</range>
 					<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
 				</LookAt>
-				<styleUrl>#ROJO</styleUrl>
+				<styleUrl>#VERDE</styleUrl>
 				<Point>
 					<gx:drawOrder>1</gx:drawOrder>
 					<coordinates>-15,60,0</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
-				<name>4</name>
+				<name>9999</name>
 				<LookAt>
 					<longitude>-10</longitude>
 					<latitude>60</latitude>
@@ -6810,14 +6810,14 @@
 					<range>3252232.201554738</range>
 					<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
 				</LookAt>
-				<styleUrl>#ROJO</styleUrl>
+				<styleUrl>#VERDE</styleUrl>
 				<Point>
 					<gx:drawOrder>1</gx:drawOrder>
 					<coordinates>-10,60,0</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
-				<name>5</name>
+				<name>9999</name>
 				<LookAt>
 					<longitude>-5</longitude>
 					<latitude>60</latitude>
@@ -6827,14 +6827,14 @@
 					<range>3252232.201554738</range>
 					<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
 				</LookAt>
-				<styleUrl>#ROJO</styleUrl>
+				<styleUrl>#VERDE</styleUrl>
 				<Point>
 					<gx:drawOrder>1</gx:drawOrder>
 					<coordinates>-5,60,0</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
-				<name>5</name>
+				<name>54</name>
 				<LookAt>
 					<longitude>0</longitude>
 					<latitude>60</latitude>
@@ -6851,7 +6851,7 @@
 				</Point>
 			</Placemark>
 			<Placemark>
-				<name>5</name>
+				<name>54</name>
 				<LookAt>
 					<longitude>5</longitude>
 					<latitude>60</latitude>
@@ -6868,7 +6868,7 @@
 				</Point>
 			</Placemark>
 			<Placemark>
-				<name>5</name>
+				<name>69</name>
 				<LookAt>
 					<longitude>10</longitude>
 					<latitude>60</latitude>
@@ -6885,7 +6885,7 @@
 				</Point>
 			</Placemark>
 			<Placemark>
-				<name>10</name>
+				<name>69</name>
 				<LookAt>
 					<longitude>15</longitude>
 					<latitude>60</latitude>
@@ -6902,7 +6902,7 @@
 				</Point>
 			</Placemark>
 			<Placemark>
-				<name>393</name>
+				<name>46</name>
 				<LookAt>
 					<longitude>20</longitude>
 					<latitude>60</latitude>
@@ -6919,7 +6919,7 @@
 				</Point>
 			</Placemark>
 			<Placemark>
-				<name>393</name>
+				<name>38</name>
 				<LookAt>
 					<longitude>25</longitude>
 					<latitude>60</latitude>
@@ -6936,7 +6936,7 @@
 				</Point>
 			</Placemark>
 			<Placemark>
-				<name>393</name>
+				<name>46</name>
 				<LookAt>
 					<longitude>30</longitude>
 					<latitude>60</latitude>
@@ -6953,7 +6953,7 @@
 				</Point>
 			</Placemark>
 			<Placemark>
-				<name>393</name>
+				<name>46</name>
 				<LookAt>
 					<longitude>35</longitude>
 					<latitude>60</latitude>
@@ -6970,7 +6970,7 @@
 				</Point>
 			</Placemark>
 			<Placemark>
-				<name>5</name>
+				<name>46</name>
 				<LookAt>
 					<longitude>40</longitude>
 					<latitude>60</latitude>
@@ -6987,7 +6987,7 @@
 				</Point>
 			</Placemark>
 			<Placemark>
-				<name>6</name>
+				<name>62</name>
 				<LookAt>
 					<longitude>45</longitude>
 					<latitude>60</latitude>
@@ -7004,7 +7004,7 @@
 				</Point>
 			</Placemark>
 			<Placemark>
-				<name>5</name>
+				<name>92</name>
 				<LookAt>
 					<longitude>50</longitude>
 					<latitude>60</latitude>
@@ -7021,7 +7021,7 @@
 				</Point>
 			</Placemark>
 			<Placemark>
-				<name>5</name>
+				<name>9999</name>
 				<LookAt>
 					<longitude>55</longitude>
 					<latitude>60</latitude>
@@ -7031,14 +7031,14 @@
 					<range>3252232.201554738</range>
 					<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
 				</LookAt>
-				<styleUrl>#ROJO</styleUrl>
+				<styleUrl>#VERDE</styleUrl>
 				<Point>
 					<gx:drawOrder>1</gx:drawOrder>
 					<coordinates>55,60,0</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
-				<name>5</name>
+				<name>9999</name>
 				<LookAt>
 					<longitude>60</longitude>
 					<latitude>60</latitude>
@@ -7048,14 +7048,14 @@
 					<range>3252232.201554738</range>
 					<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
 				</LookAt>
-				<styleUrl>#ROJO</styleUrl>
+				<styleUrl>#VERDE</styleUrl>
 				<Point>
 					<gx:drawOrder>1</gx:drawOrder>
 					<coordinates>60,60,0</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
-				<name>5</name>
+				<name>9999</name>
 				<LookAt>
 					<longitude>65</longitude>
 					<latitude>60</latitude>
@@ -7065,14 +7065,14 @@
 					<range>3252232.201554738</range>
 					<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
 				</LookAt>
-				<styleUrl>#ROJO</styleUrl>
+				<styleUrl>#VERDE</styleUrl>
 				<Point>
 					<gx:drawOrder>1</gx:drawOrder>
 					<coordinates>65,60,0</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
-				<name>5</name>
+				<name>9999</name>
 				<LookAt>
 					<longitude>70</longitude>
 					<latitude>60</latitude>
@@ -7082,14 +7082,14 @@
 					<range>3252232.201554738</range>
 					<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
 				</LookAt>
-				<styleUrl>#ROJO</styleUrl>
+				<styleUrl>#VERDE</styleUrl>
 				<Point>
 					<gx:drawOrder>1</gx:drawOrder>
 					<coordinates>70,60,0</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
-				<name>4</name>
+				<name>9999</name>
 				<LookAt>
 					<longitude>75</longitude>
 					<latitude>60</latitude>
@@ -7099,14 +7099,14 @@
 					<range>3252232.201554738</range>
 					<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
 				</LookAt>
-				<styleUrl>#ROJO</styleUrl>
+				<styleUrl>#VERDE</styleUrl>
 				<Point>
 					<gx:drawOrder>1</gx:drawOrder>
 					<coordinates>75,60,0</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
-				<name>6</name>
+				<name>9999</name>
 				<LookAt>
 					<longitude>80</longitude>
 					<latitude>60</latitude>
@@ -7116,14 +7116,14 @@
 					<range>3252232.201554738</range>
 					<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
 				</LookAt>
-				<styleUrl>#ROJO</styleUrl>
+				<styleUrl>#VERDE</styleUrl>
 				<Point>
 					<gx:drawOrder>1</gx:drawOrder>
 					<coordinates>80,60,0</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
-				<name>9</name>
+				<name>9999</name>
 				<LookAt>
 					<longitude>85</longitude>
 					<latitude>60</latitude>
@@ -7133,14 +7133,14 @@
 					<range>3252232.201554738</range>
 					<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
 				</LookAt>
-				<styleUrl>#ROJO</styleUrl>
+				<styleUrl>#VERDE</styleUrl>
 				<Point>
 					<gx:drawOrder>1</gx:drawOrder>
 					<coordinates>85,60,0</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
-				<name>393</name>
+				<name>9999</name>
 				<LookAt>
 					<longitude>90</longitude>
 					<latitude>60</latitude>
@@ -7150,14 +7150,14 @@
 					<range>3252232.201554738</range>
 					<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
 				</LookAt>
-				<styleUrl>#ROJO</styleUrl>
+				<styleUrl>#VERDE</styleUrl>
 				<Point>
 					<gx:drawOrder>1</gx:drawOrder>
 					<coordinates>90,60,0</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
-				<name>393</name>
+				<name>9999</name>
 				<LookAt>
 					<longitude>95</longitude>
 					<latitude>60</latitude>
@@ -7167,14 +7167,14 @@
 					<range>3252232.201554738</range>
 					<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
 				</LookAt>
-				<styleUrl>#ROJO</styleUrl>
+				<styleUrl>#VERDE</styleUrl>
 				<Point>
 					<gx:drawOrder>1</gx:drawOrder>
 					<coordinates>95,60,0</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
-				<name>393</name>
+				<name>9999</name>
 				<LookAt>
 					<longitude>100</longitude>
 					<latitude>60</latitude>
@@ -7184,7 +7184,7 @@
 					<range>3252232.201554738</range>
 					<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
 				</LookAt>
-				<styleUrl>#ROJO</styleUrl>
+				<styleUrl>#VERDE</styleUrl>
 				<Point>
 					<gx:drawOrder>1</gx:drawOrder>
 					<coordinates>100,60,0</coordinates>
@@ -7871,7 +7871,7 @@
 				</Point>
 			</Placemark>
 			<Placemark>
-				<name>9999</name>
+				<name>77</name>
 				<LookAt>
 					<longitude>-55</longitude>
 					<latitude>55</latitude>
@@ -7881,7 +7881,7 @@
 					<range>3252232.201554738</range>
 					<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
 				</LookAt>
-				<styleUrl>#VERDE</styleUrl>
+				<styleUrl>#ROJO</styleUrl>
 				<Point>
 					<gx:drawOrder>1</gx:drawOrder>
 					<coordinates>-55,55,0</coordinates>
@@ -7990,7 +7990,7 @@
 				</Point>
 			</Placemark>
 			<Placemark>
-				<name>5</name>
+				<name>77</name>
 				<LookAt>
 					<longitude>-20</longitude>
 					<latitude>55</latitude>
@@ -8007,7 +8007,7 @@
 				</Point>
 			</Placemark>
 			<Placemark>
-				<name>393</name>
+				<name>62</name>
 				<LookAt>
 					<longitude>-15</longitude>
 					<latitude>55</latitude>
@@ -8024,7 +8024,7 @@
 				</Point>
 			</Placemark>
 			<Placemark>
-				<name>5</name>
+				<name>85</name>
 				<LookAt>
 					<longitude>-10</longitude>
 					<latitude>55</latitude>
@@ -8126,7 +8126,7 @@
 				</Point>
 			</Placemark>
 			<Placemark>
-				<name>3</name>
+				<name>31</name>
 				<LookAt>
 					<longitude>20</longitude>
 					<latitude>55</latitude>
@@ -8143,7 +8143,7 @@
 				</Point>
 			</Placemark>
 			<Placemark>
-				<name>393</name>
+				<name>92</name>
 				<LookAt>
 					<longitude>25</longitude>
 					<latitude>55</latitude>
@@ -8160,7 +8160,7 @@
 				</Point>
 			</Placemark>
 			<Placemark>
-				<name>393</name>
+				<name>0</name>
 				<LookAt>
 					<longitude>30</longitude>
 					<latitude>55</latitude>
@@ -9214,7 +9214,7 @@
 				</Point>
 			</Placemark>
 			<Placemark>
-				<name>7</name>
+				<name>85</name>
 				<LookAt>
 					<longitude>-20</longitude>
 					<latitude>50</latitude>
@@ -9231,7 +9231,7 @@
 				</Point>
 			</Placemark>
 			<Placemark>
-				<name>4</name>
+				<name>9999</name>
 				<LookAt>
 					<longitude>-15</longitude>
 					<latitude>50</latitude>
@@ -9241,14 +9241,14 @@
 					<range>3252232.201554738</range>
 					<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
 				</LookAt>
-				<styleUrl>#ROJO</styleUrl>
+				<styleUrl>#VERDE</styleUrl>
 				<Point>
 					<gx:drawOrder>1</gx:drawOrder>
 					<coordinates>-15,50,0</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
-				<name>393</name>
+				<name>69</name>
 				<LookAt>
 					<longitude>-10</longitude>
 					<latitude>50</latitude>
@@ -9350,7 +9350,7 @@
 				</Point>
 			</Placemark>
 			<Placemark>
-				<name>3</name>
+				<name>38</name>
 				<LookAt>
 					<longitude>20</longitude>
 					<latitude>50</latitude>
@@ -9367,7 +9367,7 @@
 				</Point>
 			</Placemark>
 			<Placemark>
-				<name>393</name>
+				<name>9999</name>
 				<LookAt>
 					<longitude>25</longitude>
 					<latitude>50</latitude>
@@ -9377,14 +9377,14 @@
 					<range>3252232.201554738</range>
 					<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
 				</LookAt>
-				<styleUrl>#ROJO</styleUrl>
+				<styleUrl>#VERDE</styleUrl>
 				<Point>
 					<gx:drawOrder>1</gx:drawOrder>
 					<coordinates>25,50,0</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
-				<name>393</name>
+				<name>0</name>
 				<LookAt>
 					<longitude>30</longitude>
 					<latitude>50</latitude>
@@ -10438,7 +10438,7 @@
 				</Point>
 			</Placemark>
 			<Placemark>
-				<name>6</name>
+				<name>100</name>
 				<LookAt>
 					<longitude>-20</longitude>
 					<latitude>45</latitude>
@@ -10455,7 +10455,7 @@
 				</Point>
 			</Placemark>
 			<Placemark>
-				<name>4</name>
+				<name>9999</name>
 				<LookAt>
 					<longitude>-15</longitude>
 					<latitude>45</latitude>
@@ -10465,14 +10465,14 @@
 					<range>3252232.201554738</range>
 					<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
 				</LookAt>
-				<styleUrl>#ROJO</styleUrl>
+				<styleUrl>#VERDE</styleUrl>
 				<Point>
 					<gx:drawOrder>1</gx:drawOrder>
 					<coordinates>-15,45,0</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
-				<name>393</name>
+				<name>31</name>
 				<LookAt>
 					<longitude>-10</longitude>
 					<latitude>45</latitude>
@@ -10574,7 +10574,7 @@
 				</Point>
 			</Placemark>
 			<Placemark>
-				<name>9999</name>
+				<name>62</name>
 				<LookAt>
 					<longitude>20</longitude>
 					<latitude>45</latitude>
@@ -10584,7 +10584,7 @@
 					<range>3252232.201554738</range>
 					<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
 				</LookAt>
-				<styleUrl>#VERDE</styleUrl>
+				<styleUrl>#ROJO</styleUrl>
 				<Point>
 					<gx:drawOrder>1</gx:drawOrder>
 					<coordinates>20,45,0</coordinates>
@@ -10608,7 +10608,7 @@
 				</Point>
 			</Placemark>
 			<Placemark>
-				<name>9999</name>
+				<name>0</name>
 				<LookAt>
 					<longitude>30</longitude>
 					<latitude>45</latitude>
@@ -10618,7 +10618,7 @@
 					<range>3252232.201554738</range>
 					<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
 				</LookAt>
-				<styleUrl>#VERDE</styleUrl>
+				<styleUrl>#ROJO</styleUrl>
 				<Point>
 					<gx:drawOrder>1</gx:drawOrder>
 					<coordinates>30,45,0</coordinates>
@@ -11662,7 +11662,7 @@
 				</Point>
 			</Placemark>
 			<Placemark>
-				<name>9999</name>
+				<name>100</name>
 				<LookAt>
 					<longitude>-20</longitude>
 					<latitude>40</latitude>
@@ -11672,14 +11672,14 @@
 					<range>3252232.201554738</range>
 					<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
 				</LookAt>
-				<styleUrl>#VERDE</styleUrl>
+				<styleUrl>#ROJO</styleUrl>
 				<Point>
 					<gx:drawOrder>1</gx:drawOrder>
 					<coordinates>-20,40,0</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
-				<name>9999</name>
+				<name>38</name>
 				<LookAt>
 					<longitude>-15</longitude>
 					<latitude>40</latitude>
@@ -11689,14 +11689,14 @@
 					<range>3252232.201554738</range>
 					<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
 				</LookAt>
-				<styleUrl>#VERDE</styleUrl>
+				<styleUrl>#ROJO</styleUrl>
 				<Point>
 					<gx:drawOrder>1</gx:drawOrder>
 					<coordinates>-15,40,0</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
-				<name>9999</name>
+				<name>38</name>
 				<LookAt>
 					<longitude>-10</longitude>
 					<latitude>40</latitude>
@@ -11706,7 +11706,7 @@
 					<range>3252232.201554738</range>
 					<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
 				</LookAt>
-				<styleUrl>#VERDE</styleUrl>
+				<styleUrl>#ROJO</styleUrl>
 				<Point>
 					<gx:drawOrder>1</gx:drawOrder>
 					<coordinates>-10,40,0</coordinates>
@@ -11798,7 +11798,7 @@
 				</Point>
 			</Placemark>
 			<Placemark>
-				<name>9999</name>
+				<name>69</name>
 				<LookAt>
 					<longitude>20</longitude>
 					<latitude>40</latitude>
@@ -11808,7 +11808,7 @@
 					<range>3252232.201554738</range>
 					<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
 				</LookAt>
-				<styleUrl>#VERDE</styleUrl>
+				<styleUrl>#ROJO</styleUrl>
 				<Point>
 					<gx:drawOrder>1</gx:drawOrder>
 					<coordinates>20,40,0</coordinates>
@@ -11832,7 +11832,7 @@
 				</Point>
 			</Placemark>
 			<Placemark>
-				<name>9999</name>
+				<name>0</name>
 				<LookAt>
 					<longitude>30</longitude>
 					<latitude>40</latitude>
@@ -11842,7 +11842,7 @@
 					<range>3252232.201554738</range>
 					<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
 				</LookAt>
-				<styleUrl>#VERDE</styleUrl>
+				<styleUrl>#ROJO</styleUrl>
 				<Point>
 					<gx:drawOrder>1</gx:drawOrder>
 					<coordinates>30,40,0</coordinates>
@@ -12903,7 +12903,7 @@
 				</Point>
 			</Placemark>
 			<Placemark>
-				<name>9999</name>
+				<name>38</name>
 				<LookAt>
 					<longitude>-15</longitude>
 					<latitude>35</latitude>
@@ -12913,14 +12913,14 @@
 					<range>3252232.201554738</range>
 					<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
 				</LookAt>
-				<styleUrl>#VERDE</styleUrl>
+				<styleUrl>#ROJO</styleUrl>
 				<Point>
 					<gx:drawOrder>1</gx:drawOrder>
 					<coordinates>-15,35,0</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
-				<name>9999</name>
+				<name>54</name>
 				<LookAt>
 					<longitude>-10</longitude>
 					<latitude>35</latitude>
@@ -12930,7 +12930,7 @@
 					<range>3252232.201554738</range>
 					<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
 				</LookAt>
-				<styleUrl>#VERDE</styleUrl>
+				<styleUrl>#ROJO</styleUrl>
 				<Point>
 					<gx:drawOrder>1</gx:drawOrder>
 					<coordinates>-10,35,0</coordinates>
@@ -13022,7 +13022,7 @@
 				</Point>
 			</Placemark>
 			<Placemark>
-				<name>9999</name>
+				<name>69</name>
 				<LookAt>
 					<longitude>20</longitude>
 					<latitude>35</latitude>
@@ -13032,7 +13032,7 @@
 					<range>3252232.201554738</range>
 					<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
 				</LookAt>
-				<styleUrl>#VERDE</styleUrl>
+				<styleUrl>#ROJO</styleUrl>
 				<Point>
 					<gx:drawOrder>1</gx:drawOrder>
 					<coordinates>20,35,0</coordinates>
@@ -14144,7 +14144,7 @@
 				</Point>
 			</Placemark>
 			<Placemark>
-				<name>9999</name>
+				<name>77</name>
 				<LookAt>
 					<longitude>-10</longitude>
 					<latitude>30</latitude>
@@ -14154,7 +14154,7 @@
 					<range>3252232.201554738</range>
 					<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
 				</LookAt>
-				<styleUrl>#VERDE</styleUrl>
+				<styleUrl>#ROJO</styleUrl>
 				<Point>
 					<gx:drawOrder>1</gx:drawOrder>
 					<coordinates>-10,30,0</coordinates>
@@ -14246,7 +14246,7 @@
 				</Point>
 			</Placemark>
 			<Placemark>
-				<name>9999</name>
+				<name>92</name>
 				<LookAt>
 					<longitude>20</longitude>
 					<latitude>30</latitude>
@@ -14256,14 +14256,14 @@
 					<range>3252232.201554738</range>
 					<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
 				</LookAt>
-				<styleUrl>#VERDE</styleUrl>
+				<styleUrl>#ROJO</styleUrl>
 				<Point>
 					<gx:drawOrder>1</gx:drawOrder>
 					<coordinates>20,30,0</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
-				<name>9999</name>
+				<name>31</name>
 				<LookAt>
 					<longitude>25</longitude>
 					<latitude>30</latitude>
@@ -14273,7 +14273,7 @@
 					<range>3252232.201554738</range>
 					<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
 				</LookAt>
-				<styleUrl>#VERDE</styleUrl>
+				<styleUrl>#ROJO</styleUrl>
 				<Point>
 					<gx:drawOrder>1</gx:drawOrder>
 					<coordinates>25,30,0</coordinates>
@@ -15334,7 +15334,7 @@
 				</Point>
 			</Placemark>
 			<Placemark>
-				<name>9999</name>
+				<name>31</name>
 				<LookAt>
 					<longitude>-20</longitude>
 					<latitude>25</latitude>
@@ -15344,14 +15344,14 @@
 					<range>3252232.201554738</range>
 					<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
 				</LookAt>
-				<styleUrl>#VERDE</styleUrl>
+				<styleUrl>#ROJO</styleUrl>
 				<Point>
 					<gx:drawOrder>1</gx:drawOrder>
 					<coordinates>-20,25,0</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
-				<name>9999</name>
+				<name>69</name>
 				<LookAt>
 					<longitude>-15</longitude>
 					<latitude>25</latitude>
@@ -15361,14 +15361,14 @@
 					<range>3252232.201554738</range>
 					<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
 				</LookAt>
-				<styleUrl>#VERDE</styleUrl>
+				<styleUrl>#ROJO</styleUrl>
 				<Point>
 					<gx:drawOrder>1</gx:drawOrder>
 					<coordinates>-15,25,0</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
-				<name>9999</name>
+				<name>62</name>
 				<LookAt>
 					<longitude>-10</longitude>
 					<latitude>25</latitude>
@@ -15378,7 +15378,7 @@
 					<range>3252232.201554738</range>
 					<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
 				</LookAt>
-				<styleUrl>#VERDE</styleUrl>
+				<styleUrl>#ROJO</styleUrl>
 				<Point>
 					<gx:drawOrder>1</gx:drawOrder>
 					<coordinates>-10,25,0</coordinates>
@@ -15470,7 +15470,7 @@
 				</Point>
 			</Placemark>
 			<Placemark>
-				<name>9999</name>
+				<name>31</name>
 				<LookAt>
 					<longitude>20</longitude>
 					<latitude>25</latitude>
@@ -15480,14 +15480,14 @@
 					<range>3252232.201554738</range>
 					<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
 				</LookAt>
-				<styleUrl>#VERDE</styleUrl>
+				<styleUrl>#ROJO</styleUrl>
 				<Point>
 					<gx:drawOrder>1</gx:drawOrder>
 					<coordinates>20,25,0</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
-				<name>9999</name>
+				<name>23</name>
 				<LookAt>
 					<longitude>25</longitude>
 					<latitude>25</latitude>
@@ -15497,7 +15497,7 @@
 					<range>3252232.201554738</range>
 					<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
 				</LookAt>
-				<styleUrl>#VERDE</styleUrl>
+				<styleUrl>#ROJO</styleUrl>
 				<Point>
 					<gx:drawOrder>1</gx:drawOrder>
 					<coordinates>25,25,0</coordinates>
@@ -16558,7 +16558,7 @@
 				</Point>
 			</Placemark>
 			<Placemark>
-				<name>9999</name>
+				<name>54</name>
 				<LookAt>
 					<longitude>-20</longitude>
 					<latitude>20</latitude>
@@ -16568,14 +16568,14 @@
 					<range>3252232.201554738</range>
 					<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
 				</LookAt>
-				<styleUrl>#VERDE</styleUrl>
+				<styleUrl>#ROJO</styleUrl>
 				<Point>
 					<gx:drawOrder>1</gx:drawOrder>
 					<coordinates>-20,20,0</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
-				<name>9999</name>
+				<name>62</name>
 				<LookAt>
 					<longitude>-15</longitude>
 					<latitude>20</latitude>
@@ -16585,14 +16585,14 @@
 					<range>3252232.201554738</range>
 					<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
 				</LookAt>
-				<styleUrl>#VERDE</styleUrl>
+				<styleUrl>#ROJO</styleUrl>
 				<Point>
 					<gx:drawOrder>1</gx:drawOrder>
 					<coordinates>-15,20,0</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
-				<name>9999</name>
+				<name>54</name>
 				<LookAt>
 					<longitude>-10</longitude>
 					<latitude>20</latitude>
@@ -16602,7 +16602,7 @@
 					<range>3252232.201554738</range>
 					<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
 				</LookAt>
-				<styleUrl>#VERDE</styleUrl>
+				<styleUrl>#ROJO</styleUrl>
 				<Point>
 					<gx:drawOrder>1</gx:drawOrder>
 					<coordinates>-10,20,0</coordinates>
@@ -16694,7 +16694,7 @@
 				</Point>
 			</Placemark>
 			<Placemark>
-				<name>9999</name>
+				<name>31</name>
 				<LookAt>
 					<longitude>20</longitude>
 					<latitude>20</latitude>
@@ -16704,14 +16704,14 @@
 					<range>3252232.201554738</range>
 					<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
 				</LookAt>
-				<styleUrl>#VERDE</styleUrl>
+				<styleUrl>#ROJO</styleUrl>
 				<Point>
 					<gx:drawOrder>1</gx:drawOrder>
 					<coordinates>20,20,0</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
-				<name>9999</name>
+				<name>54</name>
 				<LookAt>
 					<longitude>25</longitude>
 					<latitude>20</latitude>
@@ -16721,7 +16721,7 @@
 					<range>3252232.201554738</range>
 					<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
 				</LookAt>
-				<styleUrl>#VERDE</styleUrl>
+				<styleUrl>#ROJO</styleUrl>
 				<Point>
 					<gx:drawOrder>1</gx:drawOrder>
 					<coordinates>25,20,0</coordinates>
@@ -17782,7 +17782,7 @@
 				</Point>
 			</Placemark>
 			<Placemark>
-				<name>9999</name>
+				<name>69</name>
 				<LookAt>
 					<longitude>-20</longitude>
 					<latitude>15</latitude>
@@ -17792,14 +17792,14 @@
 					<range>3252232.201554738</range>
 					<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
 				</LookAt>
-				<styleUrl>#VERDE</styleUrl>
+				<styleUrl>#ROJO</styleUrl>
 				<Point>
 					<gx:drawOrder>1</gx:drawOrder>
 					<coordinates>-20,15,0</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
-				<name>9999</name>
+				<name>77</name>
 				<LookAt>
 					<longitude>-15</longitude>
 					<latitude>15</latitude>
@@ -17809,7 +17809,7 @@
 					<range>3252232.201554738</range>
 					<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
 				</LookAt>
-				<styleUrl>#VERDE</styleUrl>
+				<styleUrl>#ROJO</styleUrl>
 				<Point>
 					<gx:drawOrder>1</gx:drawOrder>
 					<coordinates>-15,15,0</coordinates>
@@ -17918,7 +17918,7 @@
 				</Point>
 			</Placemark>
 			<Placemark>
-				<name>9999</name>
+				<name>31</name>
 				<LookAt>
 					<longitude>20</longitude>
 					<latitude>15</latitude>
@@ -17928,14 +17928,14 @@
 					<range>3252232.201554738</range>
 					<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
 				</LookAt>
-				<styleUrl>#VERDE</styleUrl>
+				<styleUrl>#ROJO</styleUrl>
 				<Point>
 					<gx:drawOrder>1</gx:drawOrder>
 					<coordinates>20,15,0</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
-				<name>9999</name>
+				<name>77</name>
 				<LookAt>
 					<longitude>25</longitude>
 					<latitude>15</latitude>
@@ -17945,7 +17945,7 @@
 					<range>3252232.201554738</range>
 					<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
 				</LookAt>
-				<styleUrl>#VERDE</styleUrl>
+				<styleUrl>#ROJO</styleUrl>
 				<Point>
 					<gx:drawOrder>1</gx:drawOrder>
 					<coordinates>25,15,0</coordinates>
@@ -19006,7 +19006,7 @@
 				</Point>
 			</Placemark>
 			<Placemark>
-				<name>9999</name>
+				<name>62</name>
 				<LookAt>
 					<longitude>-20</longitude>
 					<latitude>10</latitude>
@@ -19016,7 +19016,7 @@
 					<range>3252232.201554738</range>
 					<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
 				</LookAt>
-				<styleUrl>#VERDE</styleUrl>
+				<styleUrl>#ROJO</styleUrl>
 				<Point>
 					<gx:drawOrder>1</gx:drawOrder>
 					<coordinates>-20,10,0</coordinates>
@@ -30039,7 +30039,7 @@
 				</Point>
 			</Placemark>
 			<Placemark>
-				<name>393</name>
+				<name>9999</name>
 				<LookAt>
 					<longitude>-15</longitude>
 					<latitude>-35</latitude>
@@ -30049,14 +30049,14 @@
 					<range>3252232.201554738</range>
 					<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
 				</LookAt>
-				<styleUrl>#ROJO</styleUrl>
+				<styleUrl>#VERDE</styleUrl>
 				<Point>
 					<gx:drawOrder>1</gx:drawOrder>
 					<coordinates>-15,-35,0</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
-				<name>6</name>
+				<name>9999</name>
 				<LookAt>
 					<longitude>-10</longitude>
 					<latitude>-35</latitude>
@@ -30066,14 +30066,14 @@
 					<range>3252232.201554738</range>
 					<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
 				</LookAt>
-				<styleUrl>#ROJO</styleUrl>
+				<styleUrl>#VERDE</styleUrl>
 				<Point>
 					<gx:drawOrder>1</gx:drawOrder>
 					<coordinates>-10,-35,0</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
-				<name>0</name>
+				<name>9999</name>
 				<LookAt>
 					<longitude>-5</longitude>
 					<latitude>-35</latitude>
@@ -30083,7 +30083,7 @@
 					<range>3252232.201554738</range>
 					<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
 				</LookAt>
-				<styleUrl>#ROJO</styleUrl>
+				<styleUrl>#VERDE</styleUrl>
 				<Point>
 					<gx:drawOrder>1</gx:drawOrder>
 					<coordinates>-5,-35,0</coordinates>
@@ -30175,7 +30175,7 @@
 				</Point>
 			</Placemark>
 			<Placemark>
-				<name>8</name>
+				<name>9999</name>
 				<LookAt>
 					<longitude>25</longitude>
 					<latitude>-35</latitude>
@@ -30185,14 +30185,14 @@
 					<range>3252232.201554738</range>
 					<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
 				</LookAt>
-				<styleUrl>#ROJO</styleUrl>
+				<styleUrl>#VERDE</styleUrl>
 				<Point>
 					<gx:drawOrder>1</gx:drawOrder>
 					<coordinates>25,-35,0</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
-				<name>393</name>
+				<name>9999</name>
 				<LookAt>
 					<longitude>30</longitude>
 					<latitude>-35</latitude>
@@ -30202,7 +30202,7 @@
 					<range>3252232.201554738</range>
 					<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
 				</LookAt>
-				<styleUrl>#ROJO</styleUrl>
+				<styleUrl>#VERDE</styleUrl>
 				<Point>
 					<gx:drawOrder>1</gx:drawOrder>
 					<coordinates>30,-35,0</coordinates>
@@ -31144,7 +31144,7 @@
 				</Point>
 			</Placemark>
 			<Placemark>
-				<name>8</name>
+				<name>9999</name>
 				<LookAt>
 					<longitude>-50</longitude>
 					<latitude>-40</latitude>
@@ -31154,7 +31154,7 @@
 					<range>3252232.201554738</range>
 					<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
 				</LookAt>
-				<styleUrl>#ROJO</styleUrl>
+				<styleUrl>#VERDE</styleUrl>
 				<Point>
 					<gx:drawOrder>1</gx:drawOrder>
 					<coordinates>-50,-40,0</coordinates>
@@ -31263,7 +31263,7 @@
 				</Point>
 			</Placemark>
 			<Placemark>
-				<name>5</name>
+				<name>9999</name>
 				<LookAt>
 					<longitude>-15</longitude>
 					<latitude>-40</latitude>
@@ -31273,14 +31273,14 @@
 					<range>3252232.201554738</range>
 					<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
 				</LookAt>
-				<styleUrl>#ROJO</styleUrl>
+				<styleUrl>#VERDE</styleUrl>
 				<Point>
 					<gx:drawOrder>1</gx:drawOrder>
 					<coordinates>-15,-40,0</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
-				<name>393</name>
+				<name>9999</name>
 				<LookAt>
 					<longitude>-10</longitude>
 					<latitude>-40</latitude>
@@ -31290,14 +31290,14 @@
 					<range>3252232.201554738</range>
 					<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
 				</LookAt>
-				<styleUrl>#ROJO</styleUrl>
+				<styleUrl>#VERDE</styleUrl>
 				<Point>
 					<gx:drawOrder>1</gx:drawOrder>
 					<coordinates>-10,-40,0</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
-				<name>0</name>
+				<name>9999</name>
 				<LookAt>
 					<longitude>-5</longitude>
 					<latitude>-40</latitude>
@@ -31307,7 +31307,7 @@
 					<range>3252232.201554738</range>
 					<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
 				</LookAt>
-				<styleUrl>#ROJO</styleUrl>
+				<styleUrl>#VERDE</styleUrl>
 				<Point>
 					<gx:drawOrder>1</gx:drawOrder>
 					<coordinates>-5,-40,0</coordinates>
@@ -31399,7 +31399,7 @@
 				</Point>
 			</Placemark>
 			<Placemark>
-				<name>10</name>
+				<name>9999</name>
 				<LookAt>
 					<longitude>25</longitude>
 					<latitude>-40</latitude>
@@ -31409,14 +31409,14 @@
 					<range>3252232.201554738</range>
 					<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
 				</LookAt>
-				<styleUrl>#ROJO</styleUrl>
+				<styleUrl>#VERDE</styleUrl>
 				<Point>
 					<gx:drawOrder>1</gx:drawOrder>
 					<coordinates>25,-40,0</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
-				<name>393</name>
+				<name>9999</name>
 				<LookAt>
 					<longitude>30</longitude>
 					<latitude>-40</latitude>
@@ -31426,7 +31426,7 @@
 					<range>3252232.201554738</range>
 					<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
 				</LookAt>
-				<styleUrl>#ROJO</styleUrl>
+				<styleUrl>#VERDE</styleUrl>
 				<Point>
 					<gx:drawOrder>1</gx:drawOrder>
 					<coordinates>30,-40,0</coordinates>
@@ -32487,7 +32487,7 @@
 				</Point>
 			</Placemark>
 			<Placemark>
-				<name>10</name>
+				<name>9999</name>
 				<LookAt>
 					<longitude>-15</longitude>
 					<latitude>-45</latitude>
@@ -32497,14 +32497,14 @@
 					<range>3252232.201554738</range>
 					<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
 				</LookAt>
-				<styleUrl>#ROJO</styleUrl>
+				<styleUrl>#VERDE</styleUrl>
 				<Point>
 					<gx:drawOrder>1</gx:drawOrder>
 					<coordinates>-15,-45,0</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
-				<name>393</name>
+				<name>9999</name>
 				<LookAt>
 					<longitude>-10</longitude>
 					<latitude>-45</latitude>
@@ -32514,14 +32514,14 @@
 					<range>3252232.201554738</range>
 					<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
 				</LookAt>
-				<styleUrl>#ROJO</styleUrl>
+				<styleUrl>#VERDE</styleUrl>
 				<Point>
 					<gx:drawOrder>1</gx:drawOrder>
 					<coordinates>-10,-45,0</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
-				<name>0</name>
+				<name>9999</name>
 				<LookAt>
 					<longitude>-5</longitude>
 					<latitude>-45</latitude>
@@ -32531,7 +32531,7 @@
 					<range>3252232.201554738</range>
 					<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
 				</LookAt>
-				<styleUrl>#ROJO</styleUrl>
+				<styleUrl>#VERDE</styleUrl>
 				<Point>
 					<gx:drawOrder>1</gx:drawOrder>
 					<coordinates>-5,-45,0</coordinates>
@@ -32623,7 +32623,7 @@
 				</Point>
 			</Placemark>
 			<Placemark>
-				<name>6</name>
+				<name>9999</name>
 				<LookAt>
 					<longitude>25</longitude>
 					<latitude>-45</latitude>
@@ -32633,14 +32633,14 @@
 					<range>3252232.201554738</range>
 					<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
 				</LookAt>
-				<styleUrl>#ROJO</styleUrl>
+				<styleUrl>#VERDE</styleUrl>
 				<Point>
 					<gx:drawOrder>1</gx:drawOrder>
 					<coordinates>25,-45,0</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
-				<name>393</name>
+				<name>9999</name>
 				<LookAt>
 					<longitude>30</longitude>
 					<latitude>-45</latitude>
@@ -32650,7 +32650,7 @@
 					<range>3252232.201554738</range>
 					<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
 				</LookAt>
-				<styleUrl>#ROJO</styleUrl>
+				<styleUrl>#VERDE</styleUrl>
 				<Point>
 					<gx:drawOrder>1</gx:drawOrder>
 					<coordinates>30,-45,0</coordinates>
@@ -33711,7 +33711,7 @@
 				</Point>
 			</Placemark>
 			<Placemark>
-				<name>10</name>
+				<name>9999</name>
 				<LookAt>
 					<longitude>-15</longitude>
 					<latitude>-50</latitude>
@@ -33721,14 +33721,14 @@
 					<range>3252232.201554738</range>
 					<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
 				</LookAt>
-				<styleUrl>#ROJO</styleUrl>
+				<styleUrl>#VERDE</styleUrl>
 				<Point>
 					<gx:drawOrder>1</gx:drawOrder>
 					<coordinates>-15,-50,0</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
-				<name>4</name>
+				<name>9999</name>
 				<LookAt>
 					<longitude>-10</longitude>
 					<latitude>-50</latitude>
@@ -33738,14 +33738,14 @@
 					<range>3252232.201554738</range>
 					<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
 				</LookAt>
-				<styleUrl>#ROJO</styleUrl>
+				<styleUrl>#VERDE</styleUrl>
 				<Point>
 					<gx:drawOrder>1</gx:drawOrder>
 					<coordinates>-10,-50,0</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
-				<name>0</name>
+				<name>9999</name>
 				<LookAt>
 					<longitude>-5</longitude>
 					<latitude>-50</latitude>
@@ -33755,7 +33755,7 @@
 					<range>3252232.201554738</range>
 					<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
 				</LookAt>
-				<styleUrl>#ROJO</styleUrl>
+				<styleUrl>#VERDE</styleUrl>
 				<Point>
 					<gx:drawOrder>1</gx:drawOrder>
 					<coordinates>-5,-50,0</coordinates>
@@ -33847,7 +33847,7 @@
 				</Point>
 			</Placemark>
 			<Placemark>
-				<name>7</name>
+				<name>9999</name>
 				<LookAt>
 					<longitude>25</longitude>
 					<latitude>-50</latitude>
@@ -33857,14 +33857,14 @@
 					<range>3252232.201554738</range>
 					<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
 				</LookAt>
-				<styleUrl>#ROJO</styleUrl>
+				<styleUrl>#VERDE</styleUrl>
 				<Point>
 					<gx:drawOrder>1</gx:drawOrder>
 					<coordinates>25,-50,0</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
-				<name>393</name>
+				<name>9999</name>
 				<LookAt>
 					<longitude>30</longitude>
 					<latitude>-50</latitude>
@@ -33874,7 +33874,7 @@
 					<range>3252232.201554738</range>
 					<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
 				</LookAt>
-				<styleUrl>#ROJO</styleUrl>
+				<styleUrl>#VERDE</styleUrl>
 				<Point>
 					<gx:drawOrder>1</gx:drawOrder>
 					<coordinates>30,-50,0</coordinates>
@@ -34935,7 +34935,7 @@
 				</Point>
 			</Placemark>
 			<Placemark>
-				<name>393</name>
+				<name>9999</name>
 				<LookAt>
 					<longitude>-15</longitude>
 					<latitude>-55</latitude>
@@ -34945,14 +34945,14 @@
 					<range>3252232.201554738</range>
 					<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
 				</LookAt>
-				<styleUrl>#ROJO</styleUrl>
+				<styleUrl>#VERDE</styleUrl>
 				<Point>
 					<gx:drawOrder>1</gx:drawOrder>
 					<coordinates>-15,-55,0</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
-				<name>4</name>
+				<name>9999</name>
 				<LookAt>
 					<longitude>-10</longitude>
 					<latitude>-55</latitude>
@@ -34962,14 +34962,14 @@
 					<range>3252232.201554738</range>
 					<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
 				</LookAt>
-				<styleUrl>#ROJO</styleUrl>
+				<styleUrl>#VERDE</styleUrl>
 				<Point>
 					<gx:drawOrder>1</gx:drawOrder>
 					<coordinates>-10,-55,0</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
-				<name>0</name>
+				<name>9999</name>
 				<LookAt>
 					<longitude>-5</longitude>
 					<latitude>-55</latitude>
@@ -34979,7 +34979,7 @@
 					<range>3252232.201554738</range>
 					<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
 				</LookAt>
-				<styleUrl>#ROJO</styleUrl>
+				<styleUrl>#VERDE</styleUrl>
 				<Point>
 					<gx:drawOrder>1</gx:drawOrder>
 					<coordinates>-5,-55,0</coordinates>
@@ -35071,7 +35071,7 @@
 				</Point>
 			</Placemark>
 			<Placemark>
-				<name>7</name>
+				<name>9999</name>
 				<LookAt>
 					<longitude>25</longitude>
 					<latitude>-55</latitude>
@@ -35081,14 +35081,14 @@
 					<range>3252232.201554738</range>
 					<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
 				</LookAt>
-				<styleUrl>#ROJO</styleUrl>
+				<styleUrl>#VERDE</styleUrl>
 				<Point>
 					<gx:drawOrder>1</gx:drawOrder>
 					<coordinates>25,-55,0</coordinates>
 				</Point>
 			</Placemark>
 			<Placemark>
-				<name>393</name>
+				<name>9999</name>
 				<LookAt>
 					<longitude>30</longitude>
 					<latitude>-55</latitude>
@@ -35098,7 +35098,7 @@
 					<range>3252232.201554738</range>
 					<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
 				</LookAt>
-				<styleUrl>#ROJO</styleUrl>
+				<styleUrl>#VERDE</styleUrl>
 				<Point>
 					<gx:drawOrder>1</gx:drawOrder>
 					<coordinates>30,-55,0</coordinates>
@@ -37400,7 +37400,7 @@
 				</Point>
 			</Placemark>
 			<Placemark>
-				<name>5</name>
+				<name>9999</name>
 				<LookAt>
 					<longitude>-10</longitude>
 					<latitude>-65</latitude>
@@ -37410,7 +37410,7 @@
 					<range>3252232.201554738</range>
 					<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
 				</LookAt>
-				<styleUrl>#ROJO</styleUrl>
+				<styleUrl>#VERDE</styleUrl>
 				<Point>
 					<gx:drawOrder>1</gx:drawOrder>
 					<coordinates>-10,-65,0</coordinates>
@@ -37536,7 +37536,7 @@
 				</Point>
 			</Placemark>
 			<Placemark>
-				<name>393</name>
+				<name>9999</name>
 				<LookAt>
 					<longitude>30</longitude>
 					<latitude>-65</latitude>
@@ -37546,7 +37546,7 @@
 					<range>3252232.201554738</range>
 					<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
 				</LookAt>
-				<styleUrl>#ROJO</styleUrl>
+				<styleUrl>#VERDE</styleUrl>
 				<Point>
 					<gx:drawOrder>1</gx:drawOrder>
 					<coordinates>30,-65,0</coordinates>
@@ -39848,7 +39848,7 @@
 				</Point>
 			</Placemark>
 			<Placemark>
-				<name>393</name>
+				<name>9999</name>
 				<LookAt>
 					<longitude>-10</longitude>
 					<latitude>-75</latitude>
@@ -39858,7 +39858,7 @@
 					<range>3252232.201554738</range>
 					<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
 				</LookAt>
-				<styleUrl>#ROJO</styleUrl>
+				<styleUrl>#VERDE</styleUrl>
 				<Point>
 					<gx:drawOrder>1</gx:drawOrder>
 					<coordinates>-10,-75,0</coordinates>
@@ -39984,7 +39984,7 @@
 				</Point>
 			</Placemark>
 			<Placemark>
-				<name>393</name>
+				<name>9999</name>
 				<LookAt>
 					<longitude>30</longitude>
 					<latitude>-75</latitude>
@@ -39994,7 +39994,7 @@
 					<range>3252232.201554738</range>
 					<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
 				</LookAt>
-				<styleUrl>#ROJO</styleUrl>
+				<styleUrl>#VERDE</styleUrl>
 				<Point>
 					<gx:drawOrder>1</gx:drawOrder>
 					<coordinates>30,-75,0</coordinates>

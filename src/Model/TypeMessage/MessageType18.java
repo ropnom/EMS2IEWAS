@@ -50,13 +50,14 @@ public class MessageType18 extends Payload {
 		byte info;
 		byte ref = 0x01;
 
-		for (int i = 0; i < 201; i++) {
+		//208 bit es en bytes  es el numero minimo para 201 bits
+		for (int i = 0; i < 208; i++) {
 			// obtener byte que lo contien
 			info = igpmask[i / 8];
 			info = (byte) (info << i % 8);
 			info = (byte) ((info & 0xFF) >>> 7);
 			if (info == ref) {
-				orden.add(i + 1);
+				orden.add(i - 6);
 			}
 
 		}
