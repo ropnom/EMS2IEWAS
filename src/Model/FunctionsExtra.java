@@ -68,7 +68,7 @@ public class FunctionsExtra {
 			}
 		}
 
-		kml.add("</Folder>");
+		kml.add("</Document>");
 		kml.add("</kml>");
 
 		return kml;
