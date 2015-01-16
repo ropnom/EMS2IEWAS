@@ -3,6 +3,7 @@ package Model.map;
 import java.util.ArrayList;
 import java.util.List;
 
+import Model.FunctionsExtra;
 import Model.WriteCurrentData;
 
 public class IonexInputFile {
@@ -60,10 +61,17 @@ public class IonexInputFile {
 			}
 
 		}
+		
+
 
 		WriteCurrentData writer = new WriteCurrentData();
 		writer.setFilename(filenames[1] + s.getInit() + ".txt");
 		writer.Write(savedate);
+		
+		//Make kml
+		writer = new WriteCurrentData();
+		writer.setFilename("Matrix.kml");
+		writer.Write(FunctionsExtra.ToKml("Matrix", savedate));
 		
 		savedate = new ArrayList<String>();
 		line = "";

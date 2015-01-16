@@ -380,6 +380,8 @@ public class emsdecoder {
 
 		// Generamos el archivo de output para generar ionex.
 
+		
+		
 		System.out.println("FIN **");
 
 	}
