@@ -64,7 +64,8 @@ public class MessageType26 extends Payload {
 			//VTEC[0.1 TECU] = IGP [m] * 61.5868
 
 			// STANDAR SAYS 63.875 , STeacher EGNOS use 63.75
-			if (IGP_VerticalDelay < 63.75) {
+			
+			if (IGP_VerticalDelay < 63.75f) {
 				this.vtec = (int) Math.round((double)(this.IGP_VerticalDelay * 61.5868));
 				if (IGP_VerticalDelay >= 0) {
 					// calculate RMS
@@ -76,6 +77,7 @@ public class MessageType26 extends Payload {
 				this.vtec = -1;
 				this.rms = -1;
 			}
+
 		}
 	}
 

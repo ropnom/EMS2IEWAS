@@ -92,7 +92,7 @@ public class MapGrid {
 
 	}
 
-	private int[] getXY(int band, int num) {
+	public int[] getXY(int band, int num) {
 
 		int[] xy = new int[2];
 		int constante = 31;

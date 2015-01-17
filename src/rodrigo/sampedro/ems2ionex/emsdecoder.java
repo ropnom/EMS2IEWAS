@@ -127,6 +127,15 @@ public class emsdecoder {
 		}
 	}
 
+	private static boolean ValidTimeToProcess(int i, Date referencia) {
+
+		if (i < ionosfericmessage.size()) {
+			return (referencia.compareTo(ionosfericmessage.get(i).getTime()) > 0);
+		} else {
+			return false;
+		}
+	}
+
 	// *********************************************************************
 	// ------------------------------ MAIN --------------------------------
 	// *********************************************************************
@@ -144,7 +153,7 @@ public class emsdecoder {
 			// *********** INPUT TEST PROGRAM AND MENUS ***********
 			// args = new String[] { "-PRN120", "-TODAY" };
 			// args = new String[] { "-PRN126", "-TODAY" };
-			args = new String[] { "-PRN120", "-D", "5" };
+			args = new String[] { "-PRN120", "-D", "16" };
 			// args = new String[] { "-PRN120", "-D" , "25", "-H", "14"};
 
 			// *************************************************
@@ -308,7 +317,7 @@ public class emsdecoder {
 		writer.Write(ionosphericdata);
 
 		// Cargamos la matrix de datos
-		int intervaloseg = 900;
+		int intervaloseg = 10 * 16 * 900;
 		mygrid = new MapGrid();
 
 		// generamos el date de referencia inicio
@@ -325,7 +334,7 @@ public class emsdecoder {
 
 		MessageType26 mt26;
 		int referenceblockid;
-		for (int i = 0; referencia.compareTo(ionosfericmessage.get(i).getTime()) > 0; i++) {
+		for (int i = 0;ValidTimeToProcess(i, referencia); i++) {
 
 			System.out.println();
 			System.out.println(ionosfericmessage.get(i).getTime());
@@ -372,7 +381,7 @@ public class emsdecoder {
 		}
 		mygrid.Save();
 		reorder.Save();
-		
+
 		IonexInputFile makefiles = new IonexInputFile();
 		makefiles.GridToInput(mygrid);
 
@@ -380,8 +389,6 @@ public class emsdecoder {
 
 		// Generamos el archivo de output para generar ionex.
 
-		
-		
 		System.out.println("FIN **");
 
 	}
