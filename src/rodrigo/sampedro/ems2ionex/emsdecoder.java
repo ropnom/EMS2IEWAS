@@ -5,6 +5,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
+import Model.ErrorLog;
 import Model.FunctionsExtra;
 import Model.Jget;
 import Model.LoadDataFile;
@@ -22,30 +23,36 @@ public class emsdecoder {
 	// ******** VARAIABLES AND PARAMETERS OF PROGRAM ********
 	// ------------------------------------------------------
 
-	private static float porcent = 0;
-	private static int count = 0;
-	private static int visual = 3600;// 3600 lines each file
-	private static boolean show = false;
-
 	// DECLARE VARIABLES IN PROGRAM
 
+	// console viewer screen
+	private static float porcent = 0;
+	private static int count = 0;
+	private static int visual = 3600;
+	private static boolean show = false;
+
+	// ESA Server parameters
 	private static String server = "ftp://ems.estec.esa.int/pub/";
 	private static String prn = "PRN120/";
 	private static short day = 12;
 	private static short hour = 0;
 
-	private static short mode = 0;// file mode
-
+	// Download parameters
 	private static short inityear = (short) Calendar.getInstance().get(Calendar.YEAR);
 	private static short initday = 3;
 	private static short endday = 3;
 	private static short inithour = 23;
 	private static short endhour = 23;
 	private static int MAXDAY = 365;
-	private static List<String> originalmessage = new ArrayList<String>();
+
+	// Program modes
+	private static short mode = 0;// file mode
+	private static boolean debug = false;
+	private static ErrorLog log;
 
 	// Decode Message variables
 	private static Message message = null;
+	private static List<String> originalmessage = new ArrayList<String>();
 	private static List<String> human = new ArrayList<String>();
 	private static List<String> ionosphericdata = new ArrayList<String>();
 	private static List<Message> ionosfericmessage = new ArrayList<Message>();
@@ -140,11 +147,16 @@ public class emsdecoder {
 	// ------------------------------ MAIN --------------------------------
 	// *********************************************************************
 
+	@SuppressWarnings("deprecation")
 	public static void main(String[] args) {
+
+		// Start Log
+		log = ErrorLog.getInstance();
 
 		// Load propierties file
 
-		boolean debug = true;
+		// code debug
+		debug = true;
 		mode = 1;
 
 		if (debug) {
@@ -153,11 +165,14 @@ public class emsdecoder {
 			// *********** INPUT TEST PROGRAM AND MENUS ***********
 			// args = new String[] { "-PRN120", "-TODAY" };
 			// args = new String[] { "-PRN126", "-TODAY" };
-			args = new String[] { "-PRN120", "-D", "16" };
+			args = new String[] { "-PRN120", "-D", "127", "-Y", "2014" };
 			// args = new String[] { "-PRN120", "-D" , "25", "-H", "14"};
 
 			// *************************************************
 		}
+
+		// Log input parameters
+		log.AddError(" INPUT PARAMETERS: '" + args.toString() + "' \n");
 
 		// ---------------------------------------- //
 		// ********* STAR ARGUMENT INPUT ********
@@ -165,9 +180,10 @@ public class emsdecoder {
 
 		// Check input arguments
 		if ((args.length == 0)) {
-
 			PrintHelp();
 			System.err.println("\n Input Argument Error use --HELP");
+			log.AddError("\n Input Argument Error use --HELP");
+			log.WriteLog();
 			System.exit(1);
 		}
 
@@ -205,8 +221,15 @@ public class emsdecoder {
 					inityear = Short.parseShort(args[i + 1]);
 				}
 			} catch (Exception e) {
+				log.AddError("\n Input format was Wrong.");
+				log.AddError("\n Use -help.");
+				log.AddError("Trying to parse string to short, variable inityear: '" + args[i + 1] + "'");
+				log.AddError(e.getStackTrace().toString());
+				log.WriteLog();
 				System.err.println("\n Input format was Wrong.");
 				System.err.println("\n Use -help.");
+				System.err.println("Trying to parse string to short, variable inityear: '" + args[i + 1] + "'");
+				System.err.println(e.getStackTrace());
 				System.exit(1);
 
 			}
@@ -220,8 +243,15 @@ public class emsdecoder {
 					endhour = 23;
 				}
 			} catch (Exception e) {
+				log.AddError("\n Input format was Wrong.");
+				log.AddError("\n Use -help.");
+				log.AddError("Trying to parse string to short, variable today: '" + args[i + 1] + "'");
+				log.AddError(e.getStackTrace().toString());
+
 				System.err.println("\n Input format was Wrong.");
 				System.err.println("\n Use -help.");
+				System.err.println("Trying to parse string to short, variable today: '" + args[i + 1] + "'");
+				System.err.println(e.getStackTrace());
 				System.exit(1);
 			}
 			// Hour
@@ -232,23 +262,32 @@ public class emsdecoder {
 					endhour = (short) h;
 				}
 			} catch (Exception e) {
+				log.AddError("\n Input format was Wrong.");
+				log.AddError("\n Use -help.");
+				log.AddError("Trying to parse string to short, variable hour: '" + args[i + 1] + "'");
+				log.AddError(e.getStackTrace().toString());
+
 				System.err.println("\n Input format was Wrong.");
 				System.err.println("\n Use -help.");
+				System.err.println("Trying to parse string to short, variable hour: '" + args[i + 1] + "'");
+				System.err.println(e.getStackTrace());
 				System.exit(1);
 			}
-		}
-
-		if (show) {
-			// Download algoritm item precalculate
-			if (endday > initday)
-				visual = visual * ((24 - inithour) + endhour + 24 * (endday - initday));
-			else
-				visual = visual * (endhour - inithour);
 		}
 
 		// ----------------------------------------------
 		// ********* END ARGUMENT INPUT ********
 		// ----------------------------------------------
+
+		// PROCESING PART
+
+		if (show) {
+			// Download algoritm item pre-calculate quantities
+			if (endday > initday)
+				visual = visual * ((24 - inithour) + endhour + 24 * (endday - initday));
+			else
+				visual = visual * (endhour - inithour);
+		}
 
 		// PREPARE DOWNLOAD LIST FILES AND GET IT
 		if (mode == 0) {
@@ -268,6 +307,16 @@ public class emsdecoder {
 					try {
 						originalmessage.addAll(wget.Dowload(url));
 					} catch (Exception e) {
+						log.AddError("\n Input format was Wrong.");
+						log.AddError("\n Use -help.");
+						log.AddError("\n Traying to dowload from url: " + url);
+						log.AddError(e.getStackTrace().toString());
+
+						System.err.println("\n Input format was Wrong.");
+						System.err.println("\n Use -help.");
+						System.err.println("\n Traying to dowload from url: " + url);
+						System.err.println(e.getStackTrace());
+						System.exit(1);
 					}
 
 					if (hour == endhour || hour == 23) {
@@ -308,6 +357,7 @@ public class emsdecoder {
 			}
 
 		}
+
 		// Write Current Data
 		WriteCurrentData writer = new WriteCurrentData();
 		writer.setFilename("ionohumanmessage.txt");
@@ -317,7 +367,7 @@ public class emsdecoder {
 		writer.Write(ionosphericdata);
 
 		// Cargamos la matrix de datos
-		int intervaloseg = 10 * 16 * 900;
+		int intervaloseg = 900;
 		mygrid = new MapGrid();
 
 		// generamos el date de referencia inicio
@@ -333,22 +383,12 @@ public class emsdecoder {
 		reorder = new Reciverorder();
 
 		MessageType26 mt26;
-		int referenceblockid;
-		for (int i = 0;ValidTimeToProcess(i, referencia); i++) {
-
-			System.out.println();
-			System.out.println(ionosfericmessage.get(i).getTime());
+		for (int i = 0; ValidTimeToProcess(i, referencia); i++) {
 
 			// Procesamos el mensaje
 			if (ionosfericmessage.get(i).getMessagetype() == 18) {
 				// procesamos el mensaje
 
-				// System.out.println(" 18  IODI: " + ((MessageType18)
-				// ionosfericmessage.get(i).getPayload()).getIodi() + " Band: "
-				// + ((MessageType18)
-				// ionosfericmessage.get(i).getPayload()).getBandnumber());
-				// System.out.println(((MessageType18)
-				// ionosfericmessage.get(i).getPayload()).PrintMessage());
 				reorder.ProcessMT18(((MessageType18) ionosfericmessage.get(i).getPayload()), ionosfericmessage.get(i).getTime());
 
 			} else {
@@ -358,24 +398,15 @@ public class emsdecoder {
 
 					// obtenemos la lista de valores a obtener
 					List<Integer> bandnumbers = reorder.getMatrix()[mt26.getIoid()][mt26.getBandnumber()].getBandX();
-					referenceblockid = 15 * (1 + mt26.getBlockid()) + 1;
-					for (int m = 0; m < bandnumbers.size(); m++) {
+					for (int m = 15 * mt26.getBlockid(); m < bandnumbers.size(); m++) {
 
-						if ((15 * mt26.getBlockid() < bandnumbers.get(m) && bandnumbers.get(m) < referenceblockid) && mt26.getGridpoints()[m % 14 + 1].getVtec() >= 0) {
+						if (mt26.getGridpoints()[m % 14 + 1].getVtec() >= 0) {
 							mygrid.PutPoint(mt26.getBandnumber(), bandnumbers.get(m), mt26.getGridpoints()[m % 14 + 1].getVtec(), mt26.getGridpoints()[m % 14 + 1].getRms(), ionosfericmessage.get(i).getTime());
-						} else if (bandnumbers.get(m) >= referenceblockid) {
-							break;
 						}
 					}
 
 				}
 
-				// System.out.println(" 26  IODI: " + ((MessageType26)
-				// ionosfericmessage.get(i).getPayload()).getIoid() + " Band: "
-				// + ((MessageType26)
-				// ionosfericmessage.get(i).getPayload()).getBandnumber() +
-				// " BlockID: " + ((MessageType26)
-				// ionosfericmessage.get(i).getPayload()).getBlockid());
 			}
 
 		}

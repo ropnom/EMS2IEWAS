@@ -806,19 +806,19 @@ public class MapGrid {
 
 			} else if (num < 109) {
 				xy[1] = 4;
-				xy[0] = (num - 74) * 2;
+				xy[0] = (num - 73) * 2;
 
 			} else if (num < 145) {
 				xy[1] = 3;
-				xy[0] = (num - 110) * 2;
+				xy[0] = (num - 109) * 2;
 
 			} else if (num < 181) {
 				xy[1] = 2;
-				xy[0] = (num - 147) * 2;
+				xy[0] = (num - 145) * 2;
 
 			} else {
 				xy[1] = 0;
-				xy[0] = (num - 147) * 4;
+				xy[0] = (num - 181) * 4;
 			}
 
 			break;

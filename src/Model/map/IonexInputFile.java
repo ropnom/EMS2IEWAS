@@ -69,9 +69,9 @@ public class IonexInputFile {
 		writer.Write(savedate);
 		
 		//Make kml
-		writer = new WriteCurrentData();
-		writer.setFilename("Matrix.kml");
-		writer.Write(FunctionsExtra.ToKml("Matrix", savedate));
+		WriteCurrentData writer2 = new WriteCurrentData();
+		writer2.setFilename("Matrix.kml");		
+		writer2.Write(FunctionsExtra.ToKml("Matrix", savedate));
 		
 		savedate = new ArrayList<String>();
 		line = "";
