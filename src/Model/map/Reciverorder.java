@@ -75,6 +75,7 @@ public class Reciverorder {
 	protected int[] numberofbands = new int[3];
 	protected int[] counters = { 0, 0, 0 };
 	protected boolean[] allmt18resiver = { false, false, false };
+	protected Date currenttime;
 
 	public Reciverorder() {
 
@@ -124,6 +125,14 @@ public class Reciverorder {
 
 	public void setCounters(int[] counters) {
 		this.counters = counters;
+	}
+	
+	public Date getCurrenttime() {
+		return currenttime;
+	}
+
+	public void setCurrenttime(Date currenttime) {
+		this.currenttime = currenttime;
 	}
 
 	public boolean[] getAllmt18resiver() {

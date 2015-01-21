@@ -19,8 +19,7 @@ public class MapGrid {
 	protected final static int max_colum = 72;
 	protected final static int interval = 5;
 	protected static String file = "gridmap.txt";
-	
-	protected int timeinterval;
+
 	protected Date init;
 	protected Date finish;
 	protected int matrixversion = 0;
@@ -66,10 +65,10 @@ public class MapGrid {
 					// split varaiable of point
 					variables = points[j].split(",");
 					if (variables[3] == "null")
-						grid[i][j] = new Gridpoint(Integer.parseInt(variables[1]), Integer.parseInt(variables[0]), Integer.parseInt(variables[2]), Integer.parseInt(variables[3]), null);
+						grid[i][j] = new Gridpoint(Integer.parseInt(variables[1]), Integer.parseInt(variables[0]), Integer.parseInt(variables[2]), Integer.parseInt(variables[3]), null, (variables[3].equals("1") ? true : false));
 					else {
 						DateFormat df = new SimpleDateFormat("E, MMM dd yyyy HH:mm:ss");
-						grid[i][j] = new Gridpoint(Integer.parseInt(variables[1]), Integer.parseInt(variables[0]), Integer.parseInt(variables[2]), Integer.parseInt(variables[3]), df.parse(variables[3]));
+						grid[i][j] = new Gridpoint(Integer.parseInt(variables[1]), Integer.parseInt(variables[0]), Integer.parseInt(variables[2]), Integer.parseInt(variables[3]), df.parse(variables[3]), (variables[3].equals("1") ? true : false));
 					}
 
 				}
@@ -84,11 +83,14 @@ public class MapGrid {
 
 	// FUNCIONES DE TRADUCCION DE COORDENADAS
 	public void PutPoint(int band, int num, int vtec, int rms, Date time) {
-		
-		int[] xy = getXY( band,  num);		
-		grid[xy[1]][xy[0]].setVtec(vtec);
-		grid[xy[1]][xy[0]].setRms(rms);
-		grid[xy[1]][xy[0]].setTimestamp(time);		
+
+		int[] xy = getXY(band, num);
+		if (vtec >= 0) {
+			grid[xy[1]][xy[0]].setVtec(vtec);
+			grid[xy[1]][xy[0]].setRms(rms);
+		}
+		grid[xy[1]][xy[0]].setTimestamp(time);
+		grid[xy[1]][xy[0]].setIsmonitored(true);
 
 	}
 
@@ -456,14 +458,14 @@ public class MapGrid {
 
 			case 1:
 			case 51:
-			case 102:
+			case 101:
 			case 152:
 				// S75 => -75 es la antepenultima fila
 				xy[1] = (max_row - 1) - 2;
 				break;
 			case 2:
 			case 52:
-			case 103:
+			case 102:
 			case 153:
 				// dos filas antes
 				xy[1] = (max_row - 1) - 4;
@@ -640,7 +642,7 @@ public class MapGrid {
 				break;
 			case 178:
 				// N85
-				xy[1] = 34;
+				xy[1] = 0;
 				break;
 			}
 
@@ -869,16 +871,16 @@ public class MapGrid {
 		writer.Write(savedate);
 
 	}
-	
-	public boolean IsValidGridPoint(int i, int j){
-		
-		//check valid time for grid point
-		
+
+	public boolean IsValidGridPoint(int i, int j) {
+
+		// check valid time for grid point
+
 		return (true);
 	}
-	
-	public void ToIONEXinput(){
-		
+
+	public void ToIONEXinput() {
+
 	}
 
 	public static String getFile() {
@@ -889,13 +891,6 @@ public class MapGrid {
 		MapGrid.file = file;
 	}
 
-	public int getTimeinterval() {
-		return timeinterval;
-	}
-
-	public void setTimeinterval(int timeinterval) {
-		this.timeinterval = timeinterval;
-	}
 
 	public Date getInit() {
 		return init;
@@ -940,7 +935,5 @@ public class MapGrid {
 	public static int getInterval() {
 		return interval;
 	}
-	
-	
 
 }

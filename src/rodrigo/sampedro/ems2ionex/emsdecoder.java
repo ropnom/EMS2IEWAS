@@ -49,6 +49,9 @@ public class emsdecoder {
 	private static short mode = 0;// file mode
 	private static boolean debug = false;
 	private static ErrorLog log;
+	
+	//Program output
+	private static int intervaloseg = 180;
 
 	// Decode Message variables
 	private static Message message = null;
@@ -367,22 +370,26 @@ public class emsdecoder {
 		writer.Write(ionosphericdata);
 
 		// Cargamos la matrix de datos
-		int intervaloseg = 900;
+		
 		mygrid = new MapGrid();
+		reorder = new Reciverorder();
+		Date referencia;
+		MessageType26 mt26;
+		
+		
+		//Bucle de tiempo para intervalos
 
 		// generamos el date de referencia inicio
-		Date referencia = (Date) ionosfericmessage.get(0).getTime().clone();
+		referencia = (Date) ionosfericmessage.get(0).getTime().clone();
 		referencia.setMinutes(0);
 		referencia.setSeconds(0);
 
 		System.out.println("Referencia inicia a: " + referencia);
 		referencia = FunctionsExtra.addSecondsToDate(intervaloseg, referencia);
 		System.out.println("intervalo hasta : " + referencia);
-		System.out.println();
+		System.out.println();		
 
-		reorder = new Reciverorder();
-
-		MessageType26 mt26;
+		
 		for (int i = 0; ValidTimeToProcess(i, referencia); i++) {
 
 			// Procesamos el mensaje
@@ -399,10 +406,8 @@ public class emsdecoder {
 					// obtenemos la lista de valores a obtener
 					List<Integer> bandnumbers = reorder.getMatrix()[mt26.getIoid()][mt26.getBandnumber()].getBandX();
 					for (int m = 15 * mt26.getBlockid(); m < bandnumbers.size(); m++) {
-
-						if (mt26.getGridpoints()[m % 14 + 1].getVtec() >= 0) {
-							mygrid.PutPoint(mt26.getBandnumber(), bandnumbers.get(m), mt26.getGridpoints()[m % 14 + 1].getVtec(), mt26.getGridpoints()[m % 14 + 1].getRms(), ionosfericmessage.get(i).getTime());
-						}
+						//procesamos en la matriz el punto
+						mygrid.PutPoint(mt26.getBandnumber(), bandnumbers.get(m), mt26.getGridpoints()[m % 14 + 1].getVtec(), mt26.getGridpoints()[m % 14 + 1].getRms(), ionosfericmessage.get(i).getTime());
 					}
 
 				}
@@ -410,15 +415,16 @@ public class emsdecoder {
 			}
 
 		}
+		
+		//guardar la matriz historico reorder historico y los datos
+		
+		IonexInputFile makefiles = new IonexInputFile();
+		makefiles.GridToInput(mygrid);
+		
+		
 		mygrid.Save();
 		reorder.Save();
 
-		IonexInputFile makefiles = new IonexInputFile();
-		makefiles.GridToInput(mygrid);
-
-		// rellenamos los huecos correspondientes
-
-		// Generamos el archivo de output para generar ionex.
 
 		System.out.println("FIN **");
 

@@ -6,17 +6,17 @@ import Model.message.Payload;
 public class MessageType26 extends Payload {
 
 	// subclass inside
-	public class GridPoint {
+	public class GridPointMT26 {
 		protected float IGP_VerticalDelay = 0;
 		protected short GIVEI = 0;
 		protected int vtec = 0;
 		protected int rms = 0;
 
-		public GridPoint() {
+		public GridPointMT26() {
 
 		}
 
-		public GridPoint(int IGPVerticalDelay, int GIVEI) {
+		public GridPointMT26(int IGPVerticalDelay, int GIVEI) {
 
 			this.IGP_VerticalDelay = (float) (IGPVerticalDelay * 0.125);
 			this.GIVEI = (short) GIVEI;
@@ -69,7 +69,7 @@ public class MessageType26 extends Payload {
 				this.vtec = (int) Math.round((double)(this.IGP_VerticalDelay * 61.5868));
 				if (IGP_VerticalDelay >= 0) {
 					// calculate RMS
-					this.rms = (int) Math.round(Math.sqrt((double) FunctionsExtra.getGIVEITABLE((int)this.GIVEI)) *  61.5868f);
+					this.rms = (int) Math.round((double) FunctionsExtra.getGIVEITABLE((int)this.GIVEI) *  61.5868f);
 				} else {
 					this.rms = -1;
 				}
@@ -87,11 +87,11 @@ public class MessageType26 extends Payload {
 
 	protected int bandnumber;
 	protected int blockid;
-	protected GridPoint[] gridpoints;
+	protected GridPointMT26[] gridpoints;
 	protected int ioid;
 
 	public MessageType26() {
-		this.gridpoints = new GridPoint[15];
+		this.gridpoints = new GridPointMT26[15];
 	}
 
 	public MessageType26(String message) {
@@ -111,9 +111,9 @@ public class MessageType26 extends Payload {
 		this.blockid = byteToInt(Getbits(4));
 
 		// 15 block of IGP vertical (9bits) delay & GIVEI (4bits)
-		this.gridpoints = new GridPoint[BLOCK_GRID_POINTS];
+		this.gridpoints = new GridPointMT26[BLOCK_GRID_POINTS];
 		for (int i = 0; i < BLOCK_GRID_POINTS; i++) {
-			gridpoints[i] = new GridPoint(byteToInt(Getbits(9)), byteToInt(Getbits(4)));
+			gridpoints[i] = new GridPointMT26(byteToInt(Getbits(9)), byteToInt(Getbits(4)));
 		}
 
 		// IODI (2bits)
@@ -155,11 +155,11 @@ public class MessageType26 extends Payload {
 		this.blockid = blockid;
 	}
 
-	public GridPoint[] getGridpoints() {
+	public GridPointMT26[] getGridpoints() {
 		return gridpoints;
 	}
 
-	public void setGridpoints(GridPoint[] gridpoints) {
+	public void setGridpoints(GridPointMT26[] gridpoints) {
 		this.gridpoints = gridpoints;
 	}
 

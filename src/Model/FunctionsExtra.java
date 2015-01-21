@@ -6,8 +6,10 @@ import java.util.List;
 
 public class FunctionsExtra {
 
-	private final static float[] matrixgivei = { 0.0084f, 0.0333f, 0.0749f, 0.1331f, 0.2079f, 0.2994f, 0.4075f, 0.5322f, 0.6735f, 0.8315f, 1.1974f, 1.8709f, 3.3260f, 20.7870f, 187.0826f, 9999 };
+	private final static float[] matrixgiveisigma = { 0.0084f, 0.0333f, 0.0749f, 0.1331f, 0.2079f, 0.2994f, 0.4075f, 0.5322f, 0.6735f, 0.8315f, 1.1974f, 1.8709f, 3.3260f, 20.7870f, 187.0826f, 9999f };
+	private final static float[] matrixgivei = { 0.3f, 0.6f, 0.9f, 1.2f, 1.5f, 1.8f, 2.1f, 2.4f, 2.7f, 3.0f, 3.6f, 4.5f, 6.0f, 15.0f, 45.0f, 9999f };
 
+	
 	public static Date addMinutesToDate(int minutes, Date beforeTime) {
 
 		long ONE_MINUTE_IN_MILLIS = 60000;// millisecs
