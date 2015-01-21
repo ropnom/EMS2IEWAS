@@ -49,8 +49,8 @@ public class emsdecoder {
 	private static short mode = 0;// file mode
 	private static boolean debug = false;
 	private static ErrorLog log;
-	
-	//Program output
+
+	// Program output
 	private static int intervaloseg = 180;
 
 	// Decode Message variables
@@ -370,61 +370,76 @@ public class emsdecoder {
 		writer.Write(ionosphericdata);
 
 		// Cargamos la matrix de datos
-		
+
 		mygrid = new MapGrid();
 		reorder = new Reciverorder();
+		Date finalizacion;
 		Date referencia;
 		MessageType26 mt26;
-		
-		
-		//Bucle de tiempo para intervalos
+
+		// generamos el date de referencia inicio
+		finalizacion = (Date) ionosfericmessage.get(0).getTime().clone();
+		finalizacion.setHours(0);
+		finalizacion.setMinutes(0);
+		finalizacion.setSeconds(0);
+
+		System.out.println("Inicio a: " + finalizacion);
+		finalizacion = FunctionsExtra.addDayToDate(1, finalizacion);
+		System.out.println("Fin de generacion de archivos : " + finalizacion);
+		System.out.println();
+		System.out.println();
 
 		// generamos el date de referencia inicio
 		referencia = (Date) ionosfericmessage.get(0).getTime().clone();
 		referencia.setMinutes(0);
 		referencia.setSeconds(0);
 
-		System.out.println("Referencia inicia a: " + referencia);
+		System.out.println("Archivo inicia a: " + referencia);
 		referencia = FunctionsExtra.addSecondsToDate(intervaloseg, referencia);
 		System.out.println("intervalo hasta : " + referencia);
-		System.out.println();		
+		System.out.println();
 
-		
-		for (int i = 0; ValidTimeToProcess(i, referencia); i++) {
+		for(int i = 0; ValidTimeToProcess(i, finalizacion); i++) {
 
-			// Procesamos el mensaje
-			if (ionosfericmessage.get(i).getMessagetype() == 18) {
-				// procesamos el mensaje
+			if (ValidTimeToProcess(i, referencia)) {
 
-				reorder.ProcessMT18(((MessageType18) ionosfericmessage.get(i).getPayload()), ionosfericmessage.get(i).getTime());
+				// Procesamos el mensaje
+				if (ionosfericmessage.get(i).getMessagetype() == 18) {
+					// procesamos el mensaje
 
-			} else {
-				// miramos el iodi y fecha para saber si es valido
-				mt26 = (MessageType26) ionosfericmessage.get(i).getPayload();
-				if (reorder.IsValidMessage(ionosfericmessage.get(i).getTime(), mt26.getIoid(), mt26.getBandnumber())) {
+					reorder.ProcessMT18(((MessageType18) ionosfericmessage.get(i).getPayload()), ionosfericmessage.get(i).getTime());
 
-					// obtenemos la lista de valores a obtener
-					List<Integer> bandnumbers = reorder.getMatrix()[mt26.getIoid()][mt26.getBandnumber()].getBandX();
-					for (int m = 15 * mt26.getBlockid(); m < bandnumbers.size(); m++) {
-						//procesamos en la matriz el punto
-						mygrid.PutPoint(mt26.getBandnumber(), bandnumbers.get(m), mt26.getGridpoints()[m % 14 + 1].getVtec(), mt26.getGridpoints()[m % 14 + 1].getRms(), ionosfericmessage.get(i).getTime());
+				} else {
+					// miramos el iodi y fecha para saber si es valido
+					mt26 = (MessageType26) ionosfericmessage.get(i).getPayload();
+					if (reorder.IsValidMessage(ionosfericmessage.get(i).getTime(), mt26.getIoid(), mt26.getBandnumber())) {
+
+						// obtenemos la lista de valores a obtener
+						List<Integer> bandnumbers = reorder.getMatrix()[mt26.getIoid()][mt26.getBandnumber()].getBandX();
+						for (int m = 15 * mt26.getBlockid(); m < bandnumbers.size(); m++) {
+							// procesamos en la matriz el punto
+							mygrid.PutPoint(mt26.getBandnumber(), bandnumbers.get(m), mt26.getGridpoints()[m % 14 + 1].getVtec(), mt26.getGridpoints()[m % 14 + 1].getRms(), ionosfericmessage.get(i).getTime());
+						}
+
 					}
 
 				}
-
+			} else{
+				referencia = FunctionsExtra.addSecondsToDate(intervaloseg, referencia);
+				System.out.println("nuevo intervalo hasta : " + referencia);
+				break;
 			}
+				
 
 		}
-		
-		//guardar la matriz historico reorder historico y los datos
-		
+
+		// guardar la matriz historico reorder historico y los datos
+
 		IonexInputFile makefiles = new IonexInputFile();
 		makefiles.GridToInput(mygrid);
-		
-		
+
 		mygrid.Save();
 		reorder.Save();
-
 
 		System.out.println("FIN **");
 

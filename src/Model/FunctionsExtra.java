@@ -18,6 +18,15 @@ public class FunctionsExtra {
 		Date afterAddingMins = new Date(curTimeInMs + (minutes * ONE_MINUTE_IN_MILLIS));
 		return afterAddingMins;
 	}
+	
+	public static Date addDayToDate(int days, Date beforeTime) {
+
+		long ONE_MINUTE_IN_MILLIS = 86400000;// millisecs
+
+		long curTimeInMs = beforeTime.getTime();
+		Date afterAddingMins = new Date(curTimeInMs + (days * ONE_MINUTE_IN_MILLIS));
+		return afterAddingMins;
+	}
 
 	public static Date addSecondsToDate(int seconds, Date beforeTime) {
 
