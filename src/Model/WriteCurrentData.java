@@ -16,7 +16,7 @@ public class WriteCurrentData extends Thread {
 	public WriteCurrentData() {
 		this.setFilename("currentmessage.txt");
 		this.setFormatfile("UTF-8");
-		this.setSubFolder((Paths.get("").toAbsolutePath().toString() + "//Data"));
+		this.subFolder = Paths.get("").toAbsolutePath().toString() + "//Data";
 		CheckSubFolder();
 
 	}
@@ -24,26 +24,29 @@ public class WriteCurrentData extends Thread {
 	public WriteCurrentData(String filename, String formatfile) {
 		this.setFilename(filename);
 		this.setFormatfile(formatfile);
-		this.setSubFolder((Paths.get("").toAbsolutePath().toString() + "//Data"));
+		this.subFolder = Paths.get("").toAbsolutePath().toString() + "//Data";
 		CheckSubFolder();
 	}
 
 	public void CheckSubFolder() {
 
 		File theDir = new File(subFolder);
+		ErrorLog log = ErrorLog.getInstance();
+		
 		// if the directory does not exist, create it
 		if (!theDir.exists()) {
-			System.out.println("creating directory: " + theDir.getName());
+			
 			boolean result = false;
 
 			try {
 				theDir.mkdir();
 				result = true;
 			} catch (SecurityException se) {
-				se.printStackTrace();
+				log.AddError(se.getStackTrace().toString());
 			}
 			if (result) {
-				System.out.println("DIR created");
+				log.AddError(("Creating directory: " + theDir.getName()));
+				
 			}
 		}
 
@@ -51,6 +54,7 @@ public class WriteCurrentData extends Thread {
 
 	public void Write(List<String> messages) {
 
+		CheckSubFolder();
 		try {
 			writer = new PrintWriter(subFolder + "//" + filename, formatfile);
 			for (int i = 0; i < messages.size(); i++) {
@@ -98,7 +102,7 @@ public class WriteCurrentData extends Thread {
 	}
 
 	public void setSubFolder(String subFolder) {
-		this.subFolder = subFolder;
+		this.subFolder = Paths.get("").toAbsolutePath().toString() + "//Data//"+subFolder;
 	}
 
 }

@@ -51,7 +51,7 @@ public class emsdecoder {
 	private static ErrorLog log;
 
 	// Program output
-	private static int intervaloseg = 180;
+	private static int intervaloseg = 900;
 
 	// Decode Message variables
 	private static Message message = null;
@@ -201,22 +201,34 @@ public class emsdecoder {
 			// PRN satellites
 			if (args[i] == "-PRN120")
 				prn = "PRN120/";
+			if (args[i] == "-PRN122")
+				prn = "PRN122/";
+			if (args[i] == "-PRN124")
+				prn = "PRN124/";
 			if (args[i] == "-PRN126")
 				prn = "PRN126/";
+			if (args[i] == "-PRN131")
+				prn = "PRN131/";
 			// Today
 			if (args[i] == "-TODAY") {
-				int today = Calendar.getInstance().get(Calendar.DAY_OF_YEAR) - 1;
-				if (today == 0) {
-					inityear = (short) (inityear - 1);
-					initday = 365;
-					if (inityear % 4 == 0 && inityear % 100 != 0 || inityear % 400 == 0) {
-						initday = 366;
-					}
-					endday = 1;
-				} else {
-					initday = (short) (today - 1);
-					endday = (short) today;
-				}
+				//Not implemented yet
+//				int today = Calendar.getInstance().get(Calendar.DAY_OF_YEAR) - 1;
+//				if (today == 0) {
+//					inityear = (short) (inityear - 1);
+//					initday = 365;
+//					if (inityear % 4 == 0 && inityear % 100 != 0 || inityear % 400 == 0) {
+//						initday = 366;
+//					}
+//					endday = 1;
+//				} else {
+//					initday = (short) (today - 1);
+//					endday = (short) today;
+//				}
+				int today = Short.parseShort(args[i + 1]);
+				initday = (short) today;
+				endday = (short) today;
+				inithour = 0;
+				endhour = 23;
 			}
 			// Year
 			try {
@@ -373,9 +385,12 @@ public class emsdecoder {
 
 		mygrid = new MapGrid();
 		reorder = new Reciverorder();
+		
+		
 		Date finalizacion;
 		Date referencia;
 		MessageType26 mt26;
+		IonexInputFile makefiles;
 
 		// generamos el date de referencia inicio
 		finalizacion = (Date) ionosfericmessage.get(0).getTime().clone();
@@ -399,6 +414,7 @@ public class emsdecoder {
 		System.out.println("intervalo hasta : " + referencia);
 		System.out.println();
 
+		int j = 0;
 		for(int i = 0; ValidTimeToProcess(i, finalizacion); i++) {
 
 			if (ValidTimeToProcess(i, referencia)) {
@@ -425,19 +441,19 @@ public class emsdecoder {
 
 				}
 			} else{
-				referencia = FunctionsExtra.addSecondsToDate(intervaloseg, referencia);
-				System.out.println("nuevo intervalo hasta : " + referencia);
-				break;
+				referencia = FunctionsExtra.addSecondsToDate(intervaloseg, referencia);				
+				makefiles = new IonexInputFile();
+				makefiles.setVersion(j);
+				j++;
+				makefiles.GridToInput(mygrid, initday, inityear);
+				System.out.println("nuevo intervalo hasta : " + referencia);				
 			}
 				
 
 		}
 
 		// guardar la matriz historico reorder historico y los datos
-
-		IonexInputFile makefiles = new IonexInputFile();
-		makefiles.GridToInput(mygrid);
-
+	
 		mygrid.Save();
 		reorder.Save();
 

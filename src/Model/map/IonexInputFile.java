@@ -39,7 +39,7 @@ public class IonexInputFile {
 
 	}
 
-	public void GridToInput(MapGrid s) {
+	public void GridToInput(MapGrid s, int day, int year) {
 
 		List<String> savedate = new ArrayList<String>();
 		String line = "";
@@ -67,12 +67,14 @@ public class IonexInputFile {
 		}
 
 		WriteCurrentData writer = new WriteCurrentData();
-		writer.setFilename(filenames[1] + s.getInit() + ".txt");
+		writer.setFilename(filenames[1] + this.version + ".txt");
+		writer.setSubFolder(year+"_"+day);
 		writer.Write(savedate);
 
 		// Make kml
 		WriteCurrentData writer2 = new WriteCurrentData();
-		writer2.setFilename("Matrix.kml");
+		writer2.setFilename("MatrixVtec.kml");
+		writer.setSubFolder(year+"_"+day);
 		writer2.Write(FunctionsExtra.ToKml("Matrix", savedate));
 
 		savedate = new ArrayList<String>();
@@ -100,7 +102,8 @@ public class IonexInputFile {
 		}
 
 		writer = new WriteCurrentData();
-		writer.setFilename(filenames[2] + s.getInit() + ".txt");
+		writer.setFilename(filenames[2] + this.version + ".txt");
+		writer.setSubFolder(year+"_"+day);
 		writer.Write(savedate);
 
 	}
@@ -214,5 +217,6 @@ public class IonexInputFile {
 	public void setFinish(Date finish) {
 		this.finish = finish;
 	}
+	
 
 }
