@@ -2,6 +2,7 @@ package Model;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,7 +16,7 @@ public class LoadDataFile {
 	public LoadDataFile() {
 
 		this.messages = new ArrayList<String>();
-		this.file = "currentmessage.txt";
+		this.file = Paths.get("").toAbsolutePath().toString()+"//Data//currentmessage.txt";
 	}
 
 	public LoadDataFile(String file) {

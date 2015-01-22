@@ -45,65 +45,59 @@ public class IonexInputFile {
 		String line = "";
 
 		int i = 0;
+		int indexlat = 1;
+		int indexlong = 1;
 		for (i = 0; i < MapGrid.getMaxRow(); i++) {
+
+			indexlong = 1;
 			for (int j = 0; j < MapGrid.getMaxColum(); j++) {
 				// check temporal
 				if (s.IsValidGridPoint(i, j)) {
-					line = (i + 1) + " " + (j + 1) + " " + s.getGrid()[i][j].getVtec() + " " + s.getGrid()[i][j].getLon() + " " + s.getGrid()[i][j].getLat() + " " + s.getGrid()[i][j].getIsmonitored() + " " + s.getGrid()[i][j].getDate();
+					line = (indexlong) + " " + (indexlat) + " " + s.getGrid()[i][j].getVtec() + " " + s.getGrid()[i][j].getLon() + " " + s.getGrid()[i][j].getLat() + " " + s.getGrid()[i][j].getIsmonitored() + " " + s.getGrid()[i][j].getDate();
+					indexlong++;
 					savedate.add(line);
 				}
 			}
-		}
-
-		// repeat firts colum for 180 = -180
-		i = 0;
-		for (int j = 0; j < MapGrid.getMaxColum(); j++) {
-			// check temporal
-			if (s.IsValidGridPoint(i, j)) {
-				line = (i + 1) + " " + (j + 1) + " " + s.getGrid()[i][j].getVtec() + " " + s.getGrid()[i][j].getLon() + " " + s.getGrid()[i][j].getLat() + " " + s.getGrid()[i][j].getIsmonitored() + " " + s.getGrid()[i][j].getDate();
-				savedate.add(line);
-			}
-
+			line = (indexlong) + " " + (indexlat) + " " + s.getGrid()[i][0].getVtec() + " " + -s.getGrid()[i][0].getLon() + " " + s.getGrid()[i][0].getLat() + " " + s.getGrid()[i][0].getIsmonitored() + " " + s.getGrid()[i][0].getDate();
+			savedate.add(line);
+			indexlat++;
 		}
 
 		WriteCurrentData writer = new WriteCurrentData();
-		writer.setFilename(filenames[1] + this.version + ".txt");
-		writer.setSubFolder(year+"_"+day);
+		writer.setFilename(filenames[1] + String.format("%02d", this.version) + ".txt");
+		writer.setSubFolder(year + "_" + day);
 		writer.Write(savedate);
 
 		// Make kml
-		WriteCurrentData writer2 = new WriteCurrentData();
-		writer2.setFilename("MatrixVtec.kml");
-		writer.setSubFolder(year+"_"+day);
-		writer2.Write(FunctionsExtra.ToKml("Matrix", savedate));
+		writer = new WriteCurrentData();
+		writer.setFilename("MatrixVtec" + this.version + ".kml");
+		writer.setSubFolder(year + "_" + day);
+		writer.Write(FunctionsExtra.ToKml("MatrixVtec" + String.format("%02d", this.version), savedate));
 
 		savedate = new ArrayList<String>();
 		line = "";
 
+		indexlat = 1;
+		indexlong = 1;
 		for (i = 0; i < MapGrid.getMaxRow(); i++) {
+
+			indexlong = 1;
 			for (int j = 0; j < MapGrid.getMaxColum(); j++) {
 				// check temporal
 				if (s.IsValidGridPoint(i, j)) {
-					line = (i + 1) + " " + (j + 1) + " " + s.getGrid()[i][j].getRms() + " " + s.getGrid()[i][j].getLon() + " " + s.getGrid()[i][j].getLat() + " " + s.getGrid()[i][j].getIsmonitored() + " " + s.getGrid()[i][j].getDate();
+					line = (indexlong) + " " + (indexlat) + " " + s.getGrid()[i][j].getRms() + " " + s.getGrid()[i][j].getLon() + " " + s.getGrid()[i][j].getLat() + " " + s.getGrid()[i][j].getIsmonitored() + " " + s.getGrid()[i][j].getDate();
+					indexlong++;
 					savedate.add(line);
 				}
 			}
-		}
-
-		// repeat firts colum for 180 = -180
-		i = 0;
-		for (int j = 0; j < MapGrid.getMaxColum(); j++) {
-			// check temporal
-			if (s.IsValidGridPoint(i, j)) {
-				line += (i + 1) + " " + (j + 1) + " " + s.getGrid()[i][j].getRms() + " " + s.getGrid()[i][j].getLon() + " " + s.getGrid()[i][j].getLat() + " " + s.getGrid()[i][j].getIsmonitored() + " " + s.getGrid()[i][j].getDate();
-				savedate.add(line);
-			}
-
+			line = (indexlong) + " " + (indexlat) + " " + s.getGrid()[i][0].getRms() + " " + -s.getGrid()[i][0].getLon() + " " + s.getGrid()[i][0].getLat() + " " + s.getGrid()[i][0].getIsmonitored() + " " + s.getGrid()[i][0].getDate();
+			savedate.add(line);
+			indexlat++;
 		}
 
 		writer = new WriteCurrentData();
-		writer.setFilename(filenames[2] + this.version + ".txt");
-		writer.setSubFolder(year+"_"+day);
+		writer.setFilename(filenames[2] + String.format("%02d", this.version) + ".txt");
+		writer.setSubFolder(year + "_" + day);
 		writer.Write(savedate);
 
 	}
@@ -115,7 +109,7 @@ public class IonexInputFile {
 		savedate.add(formatdate);
 		formatdate = new SimpleDateFormat("yyyy MM dd HH mm ss").format(finish);
 		savedate.add(formatdate);
-		savedate.add("97");
+		savedate.add(""+version);
 		savedate.add("6371.0");
 		savedate.add("2");
 		savedate.add("450.0 450.0 0.0");
@@ -217,6 +211,5 @@ public class IonexInputFile {
 	public void setFinish(Date finish) {
 		this.finish = finish;
 	}
-	
 
 }

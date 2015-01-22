@@ -153,6 +153,7 @@ public class emsdecoder {
 	@SuppressWarnings("deprecation")
 	public static void main(String[] args) {
 
+		System.out.println(new Date());
 		// Start Log
 		log = ErrorLog.getInstance();
 
@@ -166,16 +167,16 @@ public class emsdecoder {
 			// DEMO debug
 
 			// *********** INPUT TEST PROGRAM AND MENUS ***********
-			// args = new String[] { "-PRN120", "-TODAY" };
+			 args = new String[] { "-PRN120", "-TODAY" };
 			// args = new String[] { "-PRN126", "-TODAY" };
-			args = new String[] { "-PRN120", "-D", "127", "-Y", "2014" };
+			//args = new String[] { "-PRN120", "-D", "127", "-Y", "2014" };
 			// args = new String[] { "-PRN120", "-D" , "25", "-H", "14"};
 
 			// *************************************************
 		}
 
 		// Log input parameters
-		log.AddError(" INPUT PARAMETERS: '" + args.toString() + "' \n");
+		log.AddError(" INPUT PARAMETERS: '" + args + "' \n");
 
 		// ---------------------------------------- //
 		// ********* STAR ARGUMENT INPUT ********
@@ -224,7 +225,7 @@ public class emsdecoder {
 //					initday = (short) (today - 1);
 //					endday = (short) today;
 //				}
-				int today = Short.parseShort(args[i + 1]);
+				int today = Calendar.getInstance().get(Calendar.DAY_OF_YEAR) - 1;
 				initday = (short) today;
 				endday = (short) today;
 				inithour = 0;
@@ -320,7 +321,15 @@ public class emsdecoder {
 					String url = server + prn + "y" + inityear + "/d" + String.format("%03d", day) + "/h" + String.format("%02d", hour) + ".ems";
 					// MAKE DOWLOAD
 					try {
+						try{
 						originalmessage.addAll(wget.Dowload(url));
+						
+						}catch(Exception e){
+							//reintent
+							System.out.println("reintent");
+							Thread.sleep(3000);
+							originalmessage.addAll(wget.Dowload(url));
+						}
 					} catch (Exception e) {
 						log.AddError("\n Input format was Wrong.");
 						log.AddError("\n Use -help.");
@@ -399,8 +408,11 @@ public class emsdecoder {
 		finalizacion.setSeconds(0);
 
 		System.out.println("Inicio a: " + finalizacion);
+		makefiles = new IonexInputFile();
+		makefiles.setInit(finalizacion);
 		finalizacion = FunctionsExtra.addDayToDate(1, finalizacion);
 		System.out.println("Fin de generacion de archivos : " + finalizacion);
+		
 		System.out.println();
 		System.out.println();
 
@@ -408,11 +420,12 @@ public class emsdecoder {
 		referencia = (Date) ionosfericmessage.get(0).getTime().clone();
 		referencia.setMinutes(0);
 		referencia.setSeconds(0);
-
-		System.out.println("Archivo inicia a: " + referencia);
+		
+		//System.out.println("Archivo inicia a: " + referencia);
 		referencia = FunctionsExtra.addSecondsToDate(intervaloseg, referencia);
-		System.out.println("intervalo hasta : " + referencia);
+		//System.out.println("intervalo hasta : " + referencia);
 		System.out.println();
+		
 
 		int j = 0;
 		for(int i = 0; ValidTimeToProcess(i, finalizacion); i++) {
@@ -441,23 +454,27 @@ public class emsdecoder {
 
 				}
 			} else{
-				referencia = FunctionsExtra.addSecondsToDate(intervaloseg, referencia);				
-				makefiles = new IonexInputFile();
+				referencia = FunctionsExtra.addSecondsToDate(intervaloseg, referencia);	
 				makefiles.setVersion(j);
 				j++;
 				makefiles.GridToInput(mygrid, initday, inityear);
-				System.out.println("nuevo intervalo hasta : " + referencia);				
+				//System.out.println("nuevo intervalo hasta : " + referencia);				
 			}
 				
 
 		}
 
 		// guardar la matriz historico reorder historico y los datos
-	
+		makefiles.setVersion(j-1);
+		makefiles.setFinish(ionosfericmessage.get(ionosfericmessage.size()-1).getTime());
+		//makefiles.setFinish(ionosfericmessage.get(i-1).getTime());
+		makefiles.GenParametersInfoFile();
 		mygrid.Save();
 		reorder.Save();
+		log.WriteLog();
 
 		System.out.println("FIN **");
+		System.out.println(new Date());
 
 	}
 }

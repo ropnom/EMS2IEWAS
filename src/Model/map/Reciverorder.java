@@ -1,11 +1,13 @@
 package Model.map;
 
+import java.security.acl.LastOwnerException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import Model.FunctionsExtra;
 import Model.LoadDataFile;
 import Model.WriteCurrentData;
 import Model.TypeMessage.MessageType18;
@@ -151,7 +153,10 @@ public class Reciverorder {
 	public boolean IsDataValid(Date messagetime, int oidi, int band) {
 
 		// compare dates and say if is valid
-		return true;
+		Date referecia = (Date) matrix[oidi][band].getLastupdate().clone();
+		referecia = FunctionsExtra.addMinutesToDate(10, referecia);
+		return (referecia.compareTo(messagetime) > 0);
+		
 	}
 
 	public void Save() {

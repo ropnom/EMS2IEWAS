@@ -4,6 +4,8 @@ import java.io.BufferedInputStream;
 import java.io.DataInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.PrintWriter;
+import java.io.StringWriter;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -32,6 +34,7 @@ public class Jget {
 
 		this.url = url;
 		List<String> lines = new ArrayList<String>();
+		ErrorLog log = ErrorLog.getInstance();
 
 		try {
 			u = new URL(url);
@@ -41,13 +44,26 @@ public class Jget {
 				lines.add(s);
 			}
 		} catch (MalformedURLException mue) {
-			System.err.println("Ouch - a MalformedURLException happened.");
-			mue.printStackTrace();
-			//System.exit(2);
+			System.err.println("Ouch - a MalformedURLException happened.");			
+			log.AddError("\n FTP Problem");
+			log.AddError("\n Traying to dowload from url: " + url);
+			StringWriter sw = new StringWriter();
+			mue.printStackTrace(new PrintWriter(sw));
+			log.AddError(sw.toString());
+			System.err.println("\n FTP Problem");
+			System.err.println("\n Traying to dowload from url: " + url);
+			System.err.println(sw.toString());
+
 		} catch (IOException ioe) {
-			System.err.println("Oops- an IOException happened.");
-			ioe.printStackTrace();
-			//System.exit(3);
+			System.err.println("Ouch - a MalformedURLException happened.");
+			log.AddError("\n FTP Problem");
+			log.AddError("\n Traying to dowload from url: " + url);
+			StringWriter sw = new StringWriter();
+			ioe.printStackTrace(new PrintWriter(sw));
+			log.AddError(sw.toString());
+			System.err.println("\n FTP Problem");
+			System.err.println("\n Traying to dowload from url: " + url);
+			System.err.println(sw.toString());
 		} finally {
 			try {
 				is.close();
