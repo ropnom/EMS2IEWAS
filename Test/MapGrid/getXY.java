@@ -1,19 +1,46 @@
 package MapGrid;
 
+import static org.junit.Assert.assertEquals;
+
 import java.util.List;
 
 import org.junit.Test;
 
+import Model.map.MapGrid;
+
 public class getXY {
 
+	MapGrid grid;
 	List<String> Matrixfinal;
 	List<String> Matrixorigin;
 
 	@Test
 	public void testBand0() {
 		// This test check the algorit that return index of matrix
-		for (int i = 0; i < Matrixfinal.size(); i++) {
-			System.out.println(Matrixfinal.get(i));
+		LoadOriginMAtrix();
+		LoadFinalMatrix();
+		grid = new MapGrid();
+		int num;
+		int[] a;
+		String compare;
+		for (int i = 6; i < Matrixfinal.size()-6; i++) {
+			String valores[] = Matrixorigin.get(i).split(" ");
+			String resultados[] = Matrixfinal.get(i).split(" ");
+			for(int j = 0; j<valores.length;j++){
+				try{
+				num = Integer.parseInt(valores[i]);
+				if(num>0){
+					 a = grid.getXY(j%8, num);
+					 compare = a[0]+";"+a[1];
+					assertEquals("ERROR: band:"+num%8+" number:"+num, compare, resultados[j]);
+					System.out.println(compare+" | "+resultados[j]);
+				}
+				}catch(Exception e){
+					e.printStackTrace();
+				}
+				
+			}
+			
 		}
 	}
 

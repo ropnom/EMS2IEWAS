@@ -37,14 +37,32 @@ public class Jget {
 		ErrorLog log = ErrorLog.getInstance();
 
 		try {
-			u = new URL(url);
-			is = u.openStream();
-			dis = new DataInputStream(new BufferedInputStream(is));
-			while ((s = dis.readLine()) != null) {
-				lines.add(s);
+
+			try {
+				u = new URL(url);
+				is = u.openStream();
+				dis = new DataInputStream(new BufferedInputStream(is));
+				Thread.sleep(500);
+				while ((s = dis.readLine()) != null) {
+					lines.add(s);
+				}
+
+			} catch (Exception e) {
+				// reintent
+				System.out.println("reintent:" +url);
+				Thread.sleep(3000);
+				u = new URL(url);
+				is = u.openStream();
+				dis = new DataInputStream(new BufferedInputStream(is));
+				Thread.sleep(500);
+				while ((s = dis.readLine()) != null) {
+					lines.add(s);
+				}
+				System.out.println("reintent -- OK");
 			}
+
 		} catch (MalformedURLException mue) {
-			System.err.println("Ouch - a MalformedURLException happened.");			
+			System.err.println("Ouch - a MalformedURLException happened.");
 			log.AddError("\n FTP Problem");
 			log.AddError("\n Traying to dowload from url: " + url);
 			StringWriter sw = new StringWriter();
@@ -54,7 +72,7 @@ public class Jget {
 			System.err.println("\n Traying to dowload from url: " + url);
 			System.err.println(sw.toString());
 
-		} catch (IOException ioe) {
+		} catch (Exception ioe) {
 			System.err.println("Ouch - a MalformedURLException happened.");
 			log.AddError("\n FTP Problem");
 			log.AddError("\n Traying to dowload from url: " + url);

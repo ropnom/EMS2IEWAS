@@ -7,6 +7,7 @@ import org.junit.runner.notification.Failure;
 import Decoding.MT18;
 import Decoding.MT26;
 import MapGrid.Grid;
+import MapGrid.getXY;
 
 public class RunConsoleTest {
 
@@ -23,6 +24,11 @@ public class RunConsoleTest {
 	    for (Failure failure : result.getFailures()) {
 	      System.out.println(failure.toString());
 	    }
+	    result = JUnitCore.runClasses(getXY.class);
+	    for (Failure failure : result.getFailures()) {
+	      System.out.println(failure.toString());
+	    }
 	}
+	
 
 }

@@ -19,6 +19,15 @@ public class FunctionsExtra {
 		return afterAddingMins;
 	}
 	
+	public static Date decreaseMinutesToDate(int minutes, Date beforeTime) {
+
+		long ONE_MINUTE_IN_MILLIS = 60000;// millisecs
+
+		long curTimeInMs = beforeTime.getTime();
+		Date afterAddingMins = new Date(curTimeInMs - (minutes * ONE_MINUTE_IN_MILLIS));
+		return afterAddingMins;
+	}
+	
 	public static Date addDayToDate(int days, Date beforeTime) {
 
 		long ONE_MINUTE_IN_MILLIS = 86400000;// millisecs

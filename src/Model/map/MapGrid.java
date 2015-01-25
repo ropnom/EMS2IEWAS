@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import Model.FunctionsExtra;
 import Model.LoadDataFile;
 import Model.WriteCurrentData;
 import Model.TypeMessage.MessageType18;
@@ -393,23 +394,20 @@ public class MapGrid {
 				xy[1] = (max_row - 1) - 4;
 				break;
 			case 26:
-			case 76:
+			case 77:
 			case 127:
 			case 177:
 				xy[1] = 4;
 				break;
 
 			case 27:
-			case 77:
+			case 78:
 			case 128:
 			case 178:
 				// N75
 				xy[1] = 2;
 				break;
-			case 78:
-				// S85
-				xy[1] = 0;
-				break;
+			
 			}
 
 			break;
@@ -670,11 +668,11 @@ public class MapGrid {
 			} else if (num < 128) {
 				// 160W
 				xy[0] = 4 + band * 8;
-				constante = 132;
+				constante = 131;
 			} else if (num < 151) {
 				// 155W
 				xy[0] = 5 + band * 8;
-				constante = 157;
+				constante = 156;
 			} else if (num < 179) {
 				// 150W
 				xy[0] = 6 + band * 8;
@@ -875,8 +873,25 @@ public class MapGrid {
 	public boolean IsValidGridPoint(int i, int j) {
 
 		// check valid time for grid point
+		Date referecia = (Date) init.clone();
+		referecia = FunctionsExtra.decreaseMinutesToDate(5, referecia);
+		if (grid[i][j].getTimestamp() == null) {
+			return (false);
+		} else {
+			//System.out.println("Referencia:"+referecia);
+			//System.out.println("punto:"+grid[i][j].getTimestamp());
+			if (referecia.compareTo(grid[i][j].getTimestamp()) <= 0) {
+				return (true);
+			} else {
+				grid[i][j].setRms(9999);
+				grid[i][j].setVtec(9999);
+				grid[i][j].setIsmonitored(false);
+				grid[i][j].setTimestamp(null);
+				return false;
+			}
+		}
 
-		return (true);
+		
 	}
 
 	public void ToIONEXinput() {
@@ -890,7 +905,6 @@ public class MapGrid {
 	public static void setFile(String file) {
 		MapGrid.file = file;
 	}
-
 
 	public Date getInit() {
 		return init;

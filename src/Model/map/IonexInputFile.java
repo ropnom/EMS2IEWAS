@@ -10,7 +10,7 @@ import Model.WriteCurrentData;
 
 public class IonexInputFile {
 
-	protected String[] filenames = { "t_lat_lon.info", "vtec", "rms" };
+	protected String[] filenames = { "t_lat_lon.info", "tec", "rms" };
 	protected int version = 0;
 	protected float initlat = 85.0f;
 	protected float endlat = -85.0f;
@@ -54,9 +54,14 @@ public class IonexInputFile {
 				// check temporal
 				if (s.IsValidGridPoint(i, j)) {
 					line = (indexlong) + " " + (indexlat) + " " + s.getGrid()[i][j].getVtec() + " " + s.getGrid()[i][j].getLon() + " " + s.getGrid()[i][j].getLat() + " " + s.getGrid()[i][j].getIsmonitored() + " " + s.getGrid()[i][j].getDate();
-					indexlong++;
-					savedate.add(line);
+					
+				}else
+				{
+					line = (indexlong) + " " + (indexlat) + " 9999 " + s.getGrid()[i][j].getLon() + " " + s.getGrid()[i][j].getLat() + " F -";
+					
 				}
+				indexlong++;
+				savedate.add(line);
 			}
 			line = (indexlong) + " " + (indexlat) + " " + s.getGrid()[i][0].getVtec() + " " + -s.getGrid()[i][0].getLon() + " " + s.getGrid()[i][0].getLat() + " " + s.getGrid()[i][0].getIsmonitored() + " " + s.getGrid()[i][0].getDate();
 			savedate.add(line);
@@ -64,16 +69,17 @@ public class IonexInputFile {
 		}
 
 		WriteCurrentData writer = new WriteCurrentData();
-		writer.setFilename(filenames[1] + String.format("%02d", this.version) + ".txt");
+		writer.setFilename(filenames[1]+ "." + String.format("%03d", this.version));
 		writer.setSubFolder(year + "_" + day);
 		writer.Write(savedate);
 
+		if(true){
 		// Make kml
 		writer = new WriteCurrentData();
 		writer.setFilename("MatrixVtec" + this.version + ".kml");
 		writer.setSubFolder(year + "_" + day);
-		writer.Write(FunctionsExtra.ToKml("MatrixVtec" + String.format("%02d", this.version), savedate));
-
+		writer.Write(FunctionsExtra.ToKml("MatrixVtec" + String.format("%03d", this.version), savedate));
+		}
 		savedate = new ArrayList<String>();
 		line = "";
 
@@ -86,9 +92,13 @@ public class IonexInputFile {
 				// check temporal
 				if (s.IsValidGridPoint(i, j)) {
 					line = (indexlong) + " " + (indexlat) + " " + s.getGrid()[i][j].getRms() + " " + s.getGrid()[i][j].getLon() + " " + s.getGrid()[i][j].getLat() + " " + s.getGrid()[i][j].getIsmonitored() + " " + s.getGrid()[i][j].getDate();
-					indexlong++;
-					savedate.add(line);
+					
+				}else
+				{
+					line = (indexlong) + " " + (indexlat) + " 9999 " + s.getGrid()[i][j].getLon() + " " + s.getGrid()[i][j].getLat() + " F -";					
 				}
+				indexlong++;
+				savedate.add(line);
 			}
 			line = (indexlong) + " " + (indexlat) + " " + s.getGrid()[i][0].getRms() + " " + -s.getGrid()[i][0].getLon() + " " + s.getGrid()[i][0].getLat() + " " + s.getGrid()[i][0].getIsmonitored() + " " + s.getGrid()[i][0].getDate();
 			savedate.add(line);
@@ -96,13 +106,13 @@ public class IonexInputFile {
 		}
 
 		writer = new WriteCurrentData();
-		writer.setFilename(filenames[2] + String.format("%02d", this.version) + ".txt");
+		writer.setFilename(filenames[2]+ "."+ String.format("%03d", this.version));
 		writer.setSubFolder(year + "_" + day);
 		writer.Write(savedate);
 
 	}
 
-	public void GenParametersInfoFile() {
+	public void GenParametersInfoFile(int year, int day) {
 
 		List<String> savedate = new ArrayList<String>();
 		String formatdate = new SimpleDateFormat("yyyy MM dd HH mm ss").format(Init);
@@ -121,6 +131,7 @@ public class IonexInputFile {
 
 		WriteCurrentData writer = new WriteCurrentData();
 		writer.setFilename(filenames[0]);
+		writer.setSubFolder(year + "_" + day);
 		writer.Write(savedate);
 	}
 

@@ -51,7 +51,7 @@ public class emsdecoder {
 	private static ErrorLog log;
 
 	// Program output
-	private static int intervaloseg = 900;
+	private static int intervaloseg = 800;
 
 	// Decode Message variables
 	private static Message message = null;
@@ -140,6 +140,8 @@ public class emsdecoder {
 	private static boolean ValidTimeToProcess(int i, Date referencia) {
 
 		if (i < ionosfericmessage.size()) {
+			//System.out.println(referencia);
+			//System.out.println(ionosfericmessage.get(i).getTime());
 			return (referencia.compareTo(ionosfericmessage.get(i).getTime()) > 0);
 		} else {
 			return false;
@@ -167,10 +169,12 @@ public class emsdecoder {
 			// DEMO debug
 
 			// *********** INPUT TEST PROGRAM AND MENUS ***********
-			 args = new String[] { "-PRN120", "-TODAY" };
+			// args = new String[] { "-PRN120", "-TODAY" };
 			// args = new String[] { "-PRN126", "-TODAY" };
-			//args = new String[] { "-PRN120", "-D", "127", "-Y", "2014" };
-			// args = new String[] { "-PRN120", "-D" , "25", "-H", "14"};
+			//args = new String[] { "-PRN120", "-D", "120", "-Y", "2015" };
+			 //args = new String[] { "-PRN120", "-D" , "25", "-H", "14"};
+			args = new String[] { "-PRN120", "-D" , "20"};
+
 
 			// *************************************************
 		}
@@ -321,15 +325,8 @@ public class emsdecoder {
 					String url = server + prn + "y" + inityear + "/d" + String.format("%03d", day) + "/h" + String.format("%02d", hour) + ".ems";
 					// MAKE DOWLOAD
 					try {
-						try{
 						originalmessage.addAll(wget.Dowload(url));
 						
-						}catch(Exception e){
-							//reintent
-							System.out.println("reintent");
-							Thread.sleep(3000);
-							originalmessage.addAll(wget.Dowload(url));
-						}
 					} catch (Exception e) {
 						log.AddError("\n Input format was Wrong.");
 						log.AddError("\n Use -help.");
@@ -403,8 +400,8 @@ public class emsdecoder {
 
 		// generamos el date de referencia inicio
 		finalizacion = (Date) ionosfericmessage.get(0).getTime().clone();
-		finalizacion.setHours(0);
-		finalizacion.setMinutes(0);
+		//finalizacion.setHours(0);
+		//finalizacion.setMinutes(0);
 		finalizacion.setSeconds(0);
 
 		System.out.println("Inicio a: " + finalizacion);
@@ -418,13 +415,16 @@ public class emsdecoder {
 
 		// generamos el date de referencia inicio
 		referencia = (Date) ionosfericmessage.get(0).getTime().clone();
-		referencia.setMinutes(0);
+		//referencia.setMinutes(0);
 		referencia.setSeconds(0);
+		mygrid.setInit(referencia);
 		
 		//System.out.println("Archivo inicia a: " + referencia);
 		referencia = FunctionsExtra.addSecondsToDate(intervaloseg, referencia);
 		//System.out.println("intervalo hasta : " + referencia);
 		System.out.println();
+		mygrid.setFinish(referencia);
+		
 		
 
 		int j = 0;
@@ -435,7 +435,6 @@ public class emsdecoder {
 				// Procesamos el mensaje
 				if (ionosfericmessage.get(i).getMessagetype() == 18) {
 					// procesamos el mensaje
-
 					reorder.ProcessMT18(((MessageType18) ionosfericmessage.get(i).getPayload()), ionosfericmessage.get(i).getTime());
 
 				} else {
@@ -447,28 +446,43 @@ public class emsdecoder {
 						List<Integer> bandnumbers = reorder.getMatrix()[mt26.getIoid()][mt26.getBandnumber()].getBandX();
 						for (int m = 15 * mt26.getBlockid(); m < bandnumbers.size(); m++) {
 							// procesamos en la matriz el punto
-							mygrid.PutPoint(mt26.getBandnumber(), bandnumbers.get(m), mt26.getGridpoints()[m % 14 + 1].getVtec(), mt26.getGridpoints()[m % 14 + 1].getRms(), ionosfericmessage.get(i).getTime());
+//							if(mt26.getGridpoints()[m % 14 + 1].getVtec() >350){
+//								System.out.println();
+//								System.out.println("m vale: "+m);
+//								System.out.println("block id vale: "+mt26.getBlockid());
+//								System.out.println("Cogemos los datos de VTEC: "+( m % 15));
+//								System.out.println("En orden significa que es el: " +bandnumbers.get(m));
+//								System.out.println("Anterior : " +bandnumbers.get(m-1));
+//								System.out.println("Posterior : " +bandnumbers.get(m+1));
+//							}
+							mygrid.PutPoint(mt26.getBandnumber(), bandnumbers.get(m), mt26.getGridpoints()[m % 15].getVtec(), mt26.getGridpoints()[m % 15].getRms(), ionosfericmessage.get(i).getTime());
 						}
 
 					}
 
 				}
 			} else{
+				mygrid.setInit(referencia);
 				referencia = FunctionsExtra.addSecondsToDate(intervaloseg, referencia);	
-				makefiles.setVersion(j);
+				mygrid.setFinish(referencia);
+				makefiles.setVersion(j+1);
 				j++;
 				makefiles.GridToInput(mygrid, initday, inityear);
-				//System.out.println("nuevo intervalo hasta : " + referencia);				
+				reorder = new Reciverorder();//provar que no hay machaque de valores
+				//System.out.println("nuevo intervalo hasta : " + referencia);	
+				i--;
 			}
 				
 
 		}
 
 		// guardar la matriz historico reorder historico y los datos
-		makefiles.setVersion(j-1);
+		
+		makefiles.setVersion(j);
 		makefiles.setFinish(ionosfericmessage.get(ionosfericmessage.size()-1).getTime());
 		//makefiles.setFinish(ionosfericmessage.get(i-1).getTime());
-		makefiles.GenParametersInfoFile();
+		
+		makefiles.GenParametersInfoFile(inityear, initday);
 		mygrid.Save();
 		reorder.Save();
 		log.WriteLog();

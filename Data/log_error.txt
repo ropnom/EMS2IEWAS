@@ -1,2 +1,3 @@
  INPUT PARAMETERS: '[Ljava.lang.String;@1b6d3586' 
 
+Creating directory: 2015_20
