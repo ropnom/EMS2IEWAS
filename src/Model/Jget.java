@@ -9,6 +9,8 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
+import rodrigo.sampedro.ems2ionex.emsdecoder;
+
 public class Jget {
 
 	private String url;
@@ -17,6 +19,8 @@ public class Jget {
 	private DataInputStream dis;
 	private String s;
 	private int intentos = 3;
+	private boolean show = false;;
+
 
 	public Jget() {
 
@@ -27,6 +31,14 @@ public class Jget {
 		this.url = url;
 		DowloadonScreen();
 	}
+	
+	public void setIntentos(int intento){
+		this.intentos = intento;
+	}
+	public void setShow(boolean show){
+		this.show = show;
+	}
+
 
 	@SuppressWarnings("deprecation")
 	public List<String> Dowload(String url) throws Exception {
@@ -46,12 +58,16 @@ public class Jget {
 				Thread.sleep(500);
 				while ((s = dis.readLine()) != null) {
 					lines.add(s);
+					if(show){
+					emsdecoder.Countline();
+					}
 				}
 				descargado = true;
 
 			} catch (Exception e) {
 				// reintent
-				System.out.println("reintent " + (i + 1) + "º : " + url);
+				if(show)
+					System.out.println("reintent " + (i + 1) + "º : " + url);
 				// wait 100 ms, 300 ms, 500 ms, 700 ms...
 				Thread.sleep(100 + (i * 200));
 				i++;

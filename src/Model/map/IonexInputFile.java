@@ -39,7 +39,7 @@ public class IonexInputFile {
 
 	}
 
-	public void GridToInput(MapGrid s, int day, int year) {
+	public void GridToInput(MapGrid s, int day, int year, boolean kml, boolean show) {
 
 		List<String> savedate = new ArrayList<String>();
 		String line = "";
@@ -72,14 +72,19 @@ public class IonexInputFile {
 		writer.setFilename(filenames[1]+ "." + String.format("%03d", this.version));
 		writer.setSubFolder(year + "_" + String.format("%03d", day));
 		writer.Write(savedate);
+		
+		if(show)
+			System.out.println("-- Create: " +writer.getSubFolder()+writer.getFilename());
 
-//		if(false){
-//		// Make kml
-//		writer = new WriteCurrentData();
-//		writer.setFilename("MatrixVtec" + this.version + ".kml");
-//		writer.setSubFolder(year + "_" + day);
-//		writer.Write(FunctionsExtra.ToKml("MatrixVtec" + String.format("%03d", this.version), savedate));
-//		}
+		if(kml){
+		// Make kml
+		writer = new WriteCurrentData();
+		writer.setFilename("MatrixVtec" + this.version + ".kml");
+		writer.setSubFolder(year + "_" + day);
+		writer.Write(FunctionsExtra.ToKml("MatrixVtec" + String.format("%03d", this.version), savedate));
+		if(show)
+			System.out.println("-- Create: " +writer.getSubFolder()+writer.getFilename());
+		}
 		savedate = new ArrayList<String>();
 		line = "";
 
@@ -109,6 +114,8 @@ public class IonexInputFile {
 		writer.setFilename(filenames[2]+ "."+ String.format("%03d", this.version));
 		writer.setSubFolder(year + "_" + String.format("%03d", day));
 		writer.Write(savedate);
+		if(show)
+			System.out.println("-- Create: " +writer.getSubFolder()+writer.getFilename());
 
 	}
 

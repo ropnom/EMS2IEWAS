@@ -91,7 +91,8 @@ public class emsdecoder {
 
 	public static synchronized void Countline() {
 		count++;
-		if (show) {
+
+		if (count % 1800 == 0) {
 			int i = ((100 * count) / visual);
 			float newporcent = (100 * (float) count) / visual;
 
@@ -114,26 +115,27 @@ public class emsdecoder {
 				exitCode = r.exec("clear");
 			}
 			System.out.println(exitCode);
+			System.out.println("\n");
+			System.out.println("  ******************************************");
+			System.out.println("  | DONWLOADING FILES FROM ESA SERVER ...  |");
+			System.out.println("  ******************************************");
+			System.out.println("\n");
 
 		} catch (Exception e) {
 
-			for (int j = 0; j < 200; j++) {
-				System.out.println();
-			}
-			// e.printStackTrace();
+			// for (int j = 0; j < 200; j++) {
+			// System.out.println();
+			// }
+			// // e.printStackTrace();
 		}
 
-		System.out.println("\n");
-		System.out.println("  ******************************************");
-		System.out.println("  | DONWLOADING FILES FROM ESA SERVER ...  |");
-		System.out.println("  ******************************************");
-		System.out.println("\n");
 		System.out.print("  +");
 		for (int l = 0; l < i; l++) {
 			System.out.print("-");
 		}
 
-		System.out.print("  " + String.format("%.3f", porcent) + "% Downloading...");
+		System.out.print("  " + String.format("%.2f", porcent) + "%    Downloaded");
+		System.out.println();
 
 		if (i >= 100) {
 			System.out.print("+  " + String.format("%.2f", porcent) + "% COMPLETE");
@@ -144,8 +146,6 @@ public class emsdecoder {
 	private static boolean ValidTimeToProcess(int i, Date referencia) {
 
 		if (i < ionosfericmessage.size()) {
-			// System.out.println(referencia);
-			// System.out.println(ionosfericmessage.get(i).getTime());
 			return (referencia.compareTo(ionosfericmessage.get(i).getTime()) > 0);
 		} else {
 			return false;
@@ -156,7 +156,7 @@ public class emsdecoder {
 		String value = "";
 
 		for (int i = 0; i < array.length; i++) {
-			value += array[i]+ " ";
+			value += array[i] + " ";
 		}
 
 		return value;
@@ -173,7 +173,7 @@ public class emsdecoder {
 		System.out.println("| Starting EMS decoding program by Ropnom 0.9 lastupdate: 28/01/15 |");
 		System.out.println("*******************************************************************");
 		System.out.println();
-		System.out.println("Starting.... : " +new Date());
+		System.out.println("Starting.... : " + new Date());
 		System.out.println();
 
 		// Start Log
@@ -184,7 +184,7 @@ public class emsdecoder {
 		// code debug
 		debug = false;
 		mode = 0;
-		args = new String[] { "-PRN120", "-TODAY" , "-Show"};
+		args = new String[] { "-PRN120", "-TODAY", "-Show" };
 
 		if (debug) {
 			// DEMO debug
@@ -314,6 +314,9 @@ public class emsdecoder {
 			}
 
 			// check human file
+			if (args[i] == "-kml") {
+				kmlwrite = true;
+			}
 
 		}
 
@@ -325,10 +328,12 @@ public class emsdecoder {
 
 		if (show) {
 			// Download algoritm item pre-calculate quantities
-			if (endday > initday)
+			if (endday > initday) {
 				visual = visual * ((24 - inithour) + endhour + 24 * (endday - initday));
-			else
+			} else {
 				visual = visual * (endhour - inithour);
+			}
+			System.out.println("Total EGNOS message to download: " + visual + " EMS");
 		}
 
 		// PREPARE DOWNLOAD LIST FILES AND GET IT
@@ -347,6 +352,9 @@ public class emsdecoder {
 					String url = server + prn + "y" + inityear + "/d" + String.format("%03d", day) + "/h" + String.format("%02d", hour) + ".ems";
 					// MAKE DOWLOAD
 					try {
+
+						if (show)
+							System.out.println("Dowloading: " + url);
 
 						originalmessage.addAll(wget.Dowload(url));
 
@@ -382,11 +390,16 @@ public class emsdecoder {
 			// LOAD DATA FROM FILE
 			LoadDataFile load = new LoadDataFile();
 			originalmessage = load.LoadData();
+			if (show)
+				System.out.println("** Load data finished...");
 		}
 
 		// -----------------------------------
 		// ********* DECODING DATA ***********
 		// -----------------------------------
+
+		if (show)
+			System.out.println("** Filter data procesing...");
 
 		for (int i = 0; i < originalmessage.size(); i++) {
 			// filtramos los mensajes tipo 18 y 26
@@ -401,10 +414,14 @@ public class emsdecoder {
 
 		}
 
+		if (show)
+			System.out.println("** Writing current data...");
 		// Write Current Data
 		WriteCurrentData writer = new WriteCurrentData();
 		writer.Write(ionosphericdata);
 		if (humanwrite) {
+			if (show)
+				System.out.println("** Writing human decode dates ...");
 			writer = new WriteCurrentData();
 			writer.setFilename("ionohumanmessage.txt");
 			writer.Write(human);
@@ -412,6 +429,8 @@ public class emsdecoder {
 
 		// Cargamos la matrix de datos
 		// version 0.9 nose carga se utilizan lso mensajes tal cual se piden.
+		if (show)
+			System.out.println("** Loading previous matrix and reorder...");
 		mygrid = new MapGrid();
 		reorder = new Reciverorder();
 
@@ -422,49 +441,54 @@ public class emsdecoder {
 		MessageType26 mt26;
 		IonexInputFile makefiles;
 
-		// generamos el date de referencia inicio
-		finalizacion = (Date) ionosfericmessage.get(0).getTime().clone();
-		// finalizacion.setHours(0);
-		// finalizacion.setMinutes(0);
+		if (ionosfericmessage.size() <= 2) {
+			log.AddError("\n Fatal error ionosferic message array is empy.");
+			System.err.println("\n Fatal error ionosferic message array is empy.");
+			System.err.println();
+			System.exit(1);
+		}
+
+		// Generate date of reference to init and finish
+		finalizacion = (Date) ionosfericmessage.get(1).getTime().clone();
+		finalizacion.setMinutes(0);
 		finalizacion.setSeconds(0);
 
-		System.out.println("Inicio a: " + finalizacion);
+		if (show) {
+			System.out.println("** Decoding and generate files...");
+			System.out.println();
+			System.out.println("** Inicio a: " + finalizacion);
+		}
 		makefiles = new IonexInputFile();
 		makefiles.setInit(finalizacion);
 		finalizacion = FunctionsExtra.addDayToDate(1, finalizacion);
-		// System.out.println("Fin de generacion de archivos : " +
-		// finalizacion);
+		if (show)
+			System.out.println("** Fin de generacion de archivos : " + finalizacion);
 
-		// generamos el date de referencia inicio
-		referencia = (Date) ionosfericmessage.get(0).getTime().clone();
-		// referencia.setMinutes(0);
+		// generate date for processing in block of time
+		referencia = (Date) ionosfericmessage.get(1).getTime().clone();
+		referencia.setMinutes(0);
 		referencia.setSeconds(0);
 		mygrid.setInit(referencia);
-
-		// System.out.println("Archivo inicia a: " + referencia);
 		referencia = FunctionsExtra.addSecondsToDate(intervaloseg, referencia);
-		// System.out.println("intervalo hasta : " + referencia);
 		mygrid.setFinish(referencia);
 
 		int j = 0;
-		// hasta que lso mensajes se acaven o dejen de ser validos por intervalo
-		// de tiempo
 		for (int i = 0; ValidTimeToProcess(i, finalizacion); i++) {
 
-			// es valido temporalmente el mensajes??
+			// Is valid time of message??
 			if (ValidTimeToProcess(i, referencia)) {
 
-				// Procesamos el mensaje
+				// Procesing message
 				if (ionosfericmessage.get(i).getMessagetype() == 18) {
-					// procesamos el mensaje
+					// type 18
 					reorder.ProcessMT18(((MessageType18) ionosfericmessage.get(i).getPayload()), ionosfericmessage.get(i).getTime());
 
 				} else {
-					// miramos el iodi y fecha para saber si es valido
+					// see iodi and is valid date?
 					mt26 = (MessageType26) ionosfericmessage.get(i).getPayload();
 					if (reorder.IsValidMessage(ionosfericmessage.get(i).getTime(), mt26.getIoid(), mt26.getBandnumber())) {
 
-						// obtenemos la lista de valores a obtener
+						// get list of value to insert into matrix
 						List<Integer> bandnumbers = reorder.getMatrix()[mt26.getIoid()][mt26.getBandnumber()].getBandX();
 						for (int m = 15 * mt26.getBlockid(); (m < (15 * (1 + mt26.getBlockid())) && m < bandnumbers.size()); m++) {
 
@@ -476,29 +500,34 @@ public class emsdecoder {
 
 				}
 			} else {
+				//new reference block time 
 				mygrid.setInit(referencia);
 				referencia = FunctionsExtra.addSecondsToDate(intervaloseg, referencia);
 				mygrid.setFinish(referencia);
 				makefiles.setVersion(j + 1);
 				j++;
-				makefiles.GridToInput(mygrid, initday, inityear);
+				//make file
+				makefiles.GridToInput(mygrid, initday, inityear, kmlwrite, show);
 				i--;
 			}
 
 		}
 
 		// guardar la matriz historico reorder historico y los datos
+		// write last file, log, save matrix and reorder for future simulations
 
 		mygrid.setInit(referencia);
 		referencia = FunctionsExtra.addSecondsToDate(intervaloseg, referencia);
 		mygrid.setFinish(referencia);
 		makefiles.setVersion(j + 1);
-		makefiles.GridToInput(mygrid, initday, inityear);
+		makefiles.GridToInput(mygrid, initday, inityear, kmlwrite, show);
 
 		makefiles.setVersion(j);
 		makefiles.setFinish(ionosfericmessage.get(ionosfericmessage.size() - 1).getTime());
 		// makefiles.setFinish(ionosfericmessage.get(i-1).getTime());
 
+		if(show)
+			System.out.println("** Create Info File of files");
 		makefiles.GenParametersInfoFile(inityear, initday, intervaloseg);
 		mygrid.Save();
 		reorder.Save();
