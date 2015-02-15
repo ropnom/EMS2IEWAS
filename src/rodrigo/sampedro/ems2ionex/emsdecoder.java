@@ -40,9 +40,9 @@ public class emsdecoder {
 	private static short day = 1;
 	private static short hour = 0;
 	private static short inityear = (short) Calendar.getInstance().get(Calendar.YEAR);
-	private static short initday = 0;
-	private static short endday = 0;
-	private static short inithour = 23;
+	private static short initday = 1;
+	private static short endday = 1;
+	private static short inithour = 0;
 	private static short endhour = 23;
 	private static int MAXDAY = 365;
 	private static int numreintents = 3;
@@ -196,22 +196,22 @@ public class emsdecoder {
 		// Load propierties file
 
 		// code debug
-//		debug = false;
-//		mode = 0;
-//		args = new String[] { "-PRN120", "-TODAY", "-Show" };
-//
-//		if (debug) {
-//			// DEMO debug
-//
-//			// *********** INPUT TEST PROGRAM AND MENUS ***********
-//			args = new String[] { "-PRN120", "-TODAY" };
-//			// args = new String[] { "-PRN126", "-TODAY" };
-//			// args = new String[] { "-PRN120", "-D", "120", "-Y", "2015" };
-//			// args = new String[] { "-PRN120", "-D" , "25", "-H", "14"};
-//			// args = new String[] { "-PRN120", "-D", "20" };
-//
-//			// *************************************************
-//		}
+		debug = false;
+		mode = 0;
+		// args = new String[] { "-TODAY", "-Show" };
+
+		// if (debug) {
+		// // DEMO debug
+		//
+		// // *********** INPUT TEST PROGRAM AND MENUS ***********
+		// args = new String[] { "-PRN120", "-TODAY" };
+		// // args = new String[] { "-PRN126", "-TODAY" };
+		// // args = new String[] { "-PRN120", "-D", "120", "-Y", "2015" };
+		// // args = new String[] { "-PRN120", "-D" , "25", "-H", "14"};
+		// // args = new String[] { "-PRN120", "-D", "20" };
+		//
+		// // *************************************************
+		// }
 
 		// Log input parameters
 		System.out.println("Input parameters are : " + ArraytoString(args));
@@ -234,34 +234,34 @@ public class emsdecoder {
 		// Check argmument input
 		for (int i = 0; i < args.length; i++) {
 			// MODE
-			if (args[i] == "-ModeFileC") {
+			if (args[i].equals("-ModeFileC")) {
 				mode = 1;
 
 			}
-			if (args[i] == "-ModeFileC") {
+			if (args[i].equals("-ModeFileC")) {
 				mode = 1;
 				datafile = args[i + 1];
 
 			}
 
 			// Show on screen
-			if (args[i] == "-Show")
+			if (args[i].equals("-Show"))
 				show = true;
 
 			// PRN satellites
-			if (args[i] == "-PRN120")
+			if (args[i].equals("-PRN120"))
 				prn = "PRN120/";
-			if (args[i] == "-PRN122")
+			if (args[i].equals("-PRN122"))
 				prn = "PRN122/";
-			if (args[i] == "-PRN124")
+			if (args[i].equals("-PRN124"))
 				prn = "PRN124/";
-			if (args[i] == "-PRN126")
+			if (args[i].equals("-PRN126"))
 				prn = "PRN126/";
-			if (args[i] == "-PRN131")
+			if (args[i].equals("-PRN131"))
 				prn = "PRN131/";
 
 			// Today
-			if (args[i] == "-TODAY") {
+			if (args[i].equals("-TODAY")) {
 				// Only download yesterday dates from the server
 				int today = Calendar.getInstance().get(Calendar.DAY_OF_YEAR) - 1;
 				initday = (short) today;
@@ -272,7 +272,7 @@ public class emsdecoder {
 
 			// Year
 			try {
-				if (args[i] == "-Y") {
+				if (args[i].equals("-Y")) {
 					inityear = Short.parseShort(args[i + 1]);
 				}
 			} catch (Exception e) {
@@ -291,7 +291,7 @@ public class emsdecoder {
 
 			// Day
 			try {
-				if (args[i] == "-D") {
+				if (args[i].equals("-D")) {
 					int today = Short.parseShort(args[i + 1]);
 					initday = (short) today;
 					endday = (short) today;
@@ -313,7 +313,7 @@ public class emsdecoder {
 
 			// Hour
 			try {
-				if (args[i] == "-H") {
+				if (args[i].equals("-H")) {
 					int h = Short.parseShort(args[i + 1]);
 					inithour = (short) h;
 					endhour = (short) h;
@@ -332,18 +332,18 @@ public class emsdecoder {
 			}
 
 			// check human file
-			if (args[i] == "-kml") {
+			if (args[i].equals("-kml")) {
 				kmlwrite = true;
 			}
 
 			// check human file
-			if (args[i] == "-whuman") {
+			if (args[i].equals("-whuman")) {
 				humanwrite = true;
 			}
 
 			// Hour
 			try {
-				if (args[i] == "-numintent") {
+				if (args[i].equals("-numintent")) {
 					numreintents = Integer.parseInt(args[i + 1]);
 				}
 			} catch (Exception e) {
