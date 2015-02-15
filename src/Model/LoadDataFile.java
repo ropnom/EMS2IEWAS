@@ -74,6 +74,6 @@ public class LoadDataFile {
 	}
 
 	public void setFile(String file) {
-		this.file = file;
+		this.file = Paths.get("").toAbsolutePath().toString()+"//Data//"+file;
 	}
 }

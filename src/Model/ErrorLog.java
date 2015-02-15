@@ -16,15 +16,17 @@ public class ErrorLog {
 		}
 	}
 
-	//PArameters
+	// PArameters
 	String file = "log_error.txt";
 	WriteCurrentData writer;
 	List<String> errors;
+	List<String> fileerror;
 
-	//Constructor
+	// Constructor
 	public ErrorLog() {
 		this.file = "log_error.txt";
 		this.errors = new ArrayList<String>();
+		this.fileerror = new ArrayList<String>();
 	}
 
 	public ErrorLog(String file) {
@@ -32,23 +34,32 @@ public class ErrorLog {
 		this.errors = new ArrayList<String>();
 	}
 
-	//Functions
-	public void AddError(String error){
-		
+	// Functions
+	public void AddError(String error) {
+
+		this.fileerror.add(error);
+	}
+
+	public void AddFileError(String error) {
+
 		this.errors.add(error);
 	}
-	
-	public void WriteLog(){
+
+	public void WriteLog() {
 		writer = new WriteCurrentData();
 		writer.setFilename(file);
 		writer.Write(errors);
 	}
-	
+	public void WriteFileError(String day) {
+		writer = new WriteCurrentData();
+		writer.setFilename("missingdata_"+day+".txt");
+		writer.Write(fileerror);
+	}
+
 	// Gets and Sets
 	public String getFile() {
 		return file;
 	}
-	
 
 	public void setFile(String file) {
 		this.file = file;
@@ -69,7 +80,5 @@ public class ErrorLog {
 	public void setErrors(List<String> errors) {
 		this.errors = errors;
 	}
-
-	
 
 }

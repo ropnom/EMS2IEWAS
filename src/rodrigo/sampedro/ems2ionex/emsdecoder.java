@@ -53,6 +53,7 @@ public class emsdecoder {
 	private static ErrorLog log;
 	private static boolean humanwrite = false;
 	private static boolean kmlwrite = false;
+	private static String datafile = null;
 
 	// Program output
 	private static int intervaloseg = 900;
@@ -72,27 +73,40 @@ public class emsdecoder {
 
 	public static void PrintHelp() {
 		System.out.println("-------------------------------------------------------------------------------------");
-		System.out.println(" ***                      EMS DECODER 0.01 ALFA  --HELP                           ***");
+		System.out.println(" ***                      EMS DECODER 0.9 BETA   --HELP                           ***");
 		System.out.println(" -------------------------------------------------------------------------------------");
 		System.out.println("");
-		System.out.println(" --ModeFile  : Use currentmessage.txt as server of Egnos information.");
-		System.out.println(" -Show		: Show in the screen the % of download and events.");
-		System.out.println(" -PRN120		: Use Egnos Message from PRN120 (by default).");
-		System.out.println(" -PRN126		: Use Egnos Message from PRN126.");
-		System.out.println(" -TODAY		: Download the EMS message from 23h 2 days ago until 0:00 of today.");
-		System.out.println(" -Y XXXX		: Specific Year where XXXX is per example 2012.");
-		System.out.println(" -D XXX		: Specific Day, number of the day 0-365 (366) days of the year.");
-		System.out.println(" -H			: Specific Hour, number of hours 0-23 h.");
+		System.out.println(" -ModeFileC  				: Use currentmessage.txt as server of Egnos information.");
+		System.out.println(" -ModeFile  [filename]			: Use [filename] as server of Egnos information.");
+		System.out.println(" -Show					: Show in the screen the % of download and events.");
+		System.out.println(" -PRN120				: Use Egnos Message from PRN120 (by default).");
+		System.out.println(" -PRN126				: Use Egnos Message from PRN126.");
+		System.out.println(" -TODAY					: Download the EMS message from 23h 2 days ago until 0:00 of today.");
+		System.out.println(" -Y [XXXX]				: Specific Year where XXXX is per example 2012.");
+		System.out.println(" -D [XXX]				: Specific Day, number of the day 0-365 (366) days of the year.");
+		System.out.println(" -H [XX]				: Specific Hour, number of hours 0-23 h.");
+		System.out.println(" -whuman				: Specific to write human format file of data message decoded.");
+		System.out.println(" -numintent [X]			: Specific number of reintent of ftp dowload.");
+		System.out.println(" -kml					: Specific to create a kml file to view date in google earth.");
 		System.out.println("");
-		System.out.println(" Example:");
+		System.out.println("---------------------------------------------------------------------------------------");
+		System.out.println("");
+		System.out.println(" *** Examples:");
 		System.out.println(" emsdecoder -Show -PRN126 -TODAY");
 		System.out.println(" emsdecoder -Show -PRN126 -Y 2014 -D 324 -H 15");
+		System.out.println(" emsdecoder -Show -PRN126 -Y 2014 -D 324 -H 15");
+		System.out.println(" emsdecoder -PRN120 -D 120 -Y 2015 ");
+		System.out.println(" emsdecoder -PRN120 -D 25 -H 14");
+		System.out.println(" emsdecoder -TODAY -whuman -numintent 4");
+		System.out.println(" emsdecoder -TODAY -Show");
+		System.out.println(" emsdecoder -ModeFileC");
+		System.out.println(" emsdecoder -ModeFile data.txt");
 	}
 
 	public static synchronized void Countline() {
 		count++;
 
-		if (count % 1800 == 0) {
+		if (count % 600 == 0) {
 			int i = ((100 * count) / visual);
 			float newporcent = (100 * (float) count) / visual;
 
@@ -129,12 +143,12 @@ public class emsdecoder {
 			// // e.printStackTrace();
 		}
 
-		System.out.print("  +");
+		System.out.print("Dowloading:  +");
 		for (int l = 0; l < i; l++) {
 			System.out.print("-");
 		}
 
-		System.out.print("  " + String.format("%.2f", porcent) + "%    Downloaded");
+		System.out.print("  " + String.format("%.2f", porcent) + "% ");
 		System.out.println();
 
 		if (i >= 100) {
@@ -182,22 +196,22 @@ public class emsdecoder {
 		// Load propierties file
 
 		// code debug
-		debug = false;
-		mode = 0;
-		args = new String[] { "-PRN120", "-TODAY", "-Show" };
-
-		if (debug) {
-			// DEMO debug
-
-			// *********** INPUT TEST PROGRAM AND MENUS ***********
-			args = new String[] { "-PRN120", "-TODAY" };
-			// args = new String[] { "-PRN126", "-TODAY" };
-			// args = new String[] { "-PRN120", "-D", "120", "-Y", "2015" };
-			// args = new String[] { "-PRN120", "-D" , "25", "-H", "14"};
-			// args = new String[] { "-PRN120", "-D", "20" };
-
-			// *************************************************
-		}
+//		debug = false;
+//		mode = 0;
+//		args = new String[] { "-PRN120", "-TODAY", "-Show" };
+//
+//		if (debug) {
+//			// DEMO debug
+//
+//			// *********** INPUT TEST PROGRAM AND MENUS ***********
+//			args = new String[] { "-PRN120", "-TODAY" };
+//			// args = new String[] { "-PRN126", "-TODAY" };
+//			// args = new String[] { "-PRN120", "-D", "120", "-Y", "2015" };
+//			// args = new String[] { "-PRN120", "-D" , "25", "-H", "14"};
+//			// args = new String[] { "-PRN120", "-D", "20" };
+//
+//			// *************************************************
+//		}
 
 		// Log input parameters
 		System.out.println("Input parameters are : " + ArraytoString(args));
@@ -220,10 +234,14 @@ public class emsdecoder {
 		// Check argmument input
 		for (int i = 0; i < args.length; i++) {
 			// MODE
-			if (args[i] == "-ModeFile") {
+			if (args[i] == "-ModeFileC") {
 				mode = 1;
 
-				// check file name??¿¿
+			}
+			if (args[i] == "-ModeFileC") {
+				mode = 1;
+				datafile = args[i + 1];
+
 			}
 
 			// Show on screen
@@ -318,6 +336,29 @@ public class emsdecoder {
 				kmlwrite = true;
 			}
 
+			// check human file
+			if (args[i] == "-whuman") {
+				humanwrite = true;
+			}
+
+			// Hour
+			try {
+				if (args[i] == "-numintent") {
+					numreintents = Integer.parseInt(args[i + 1]);
+				}
+			} catch (Exception e) {
+				log.AddError("\n Input format was Wrong.");
+				log.AddError("\n Use -help.");
+				log.AddError("Trying to parse string to short, variable hour: '" + args[i + 1] + "'");
+				log.AddError(Throwables.getStackTraceAsString(e));
+
+				System.err.println("\n Input format was Wrong.");
+				System.err.println("\n Use -help.");
+				System.err.println("Trying to parse string to short, variable hour: '" + args[i + 1] + "'");
+				System.err.println(e.getStackTrace());
+				System.exit(1);
+			}
+
 		}
 
 		// ----------------------------------------------
@@ -340,6 +381,8 @@ public class emsdecoder {
 		if (mode == 0) {
 			// Configure Jget
 			Jget wget = new Jget();
+			wget.setIntentos(numreintents);
+			wget.setShow(show);
 			// calcule if the day have 365 or 366 days
 			if (inityear % 4 == 0 && inityear % 100 != 0 || inityear % 400 == 0) {
 				MAXDAY = 366;
@@ -365,6 +408,7 @@ public class emsdecoder {
 						log.AddError("\n Traying to dowload from url: " + url);
 						log.AddError("\n ***************************** ");
 						log.AddError(Throwables.getStackTraceAsString(e));
+						log.AddFileError(url);
 
 						System.err.println("\n FTP download was Wrong.");
 						System.err.println("\n Traying to dowload from url: " + url);
@@ -389,6 +433,8 @@ public class emsdecoder {
 		} else if (mode == 1) {
 			// LOAD DATA FROM FILE
 			LoadDataFile load = new LoadDataFile();
+			if (datafile != null)
+				load.setFile(datafile);
 			originalmessage = load.LoadData();
 			if (show)
 				System.out.println("** Load data finished...");
@@ -500,13 +546,13 @@ public class emsdecoder {
 
 				}
 			} else {
-				//new reference block time 
+				// new reference block time
 				mygrid.setInit(referencia);
 				referencia = FunctionsExtra.addSecondsToDate(intervaloseg, referencia);
 				mygrid.setFinish(referencia);
 				makefiles.setVersion(j + 1);
 				j++;
-				//make file
+				// make file
 				makefiles.GridToInput(mygrid, initday, inityear, kmlwrite, show);
 				i--;
 			}
@@ -526,14 +572,18 @@ public class emsdecoder {
 		makefiles.setFinish(ionosfericmessage.get(ionosfericmessage.size() - 1).getTime());
 		// makefiles.setFinish(ionosfericmessage.get(i-1).getTime());
 
-		if(show)
+		if (show)
 			System.out.println("** Create Info File of files");
 		makefiles.GenParametersInfoFile(inityear, initday, intervaloseg);
 		mygrid.Save();
 		reorder.Save();
 		log.WriteLog();
+		log.WriteFileError((inityear + "_" + day));
 
-		System.out.println("FIN **");
+		System.out.println();
+		System.out.println("END PROGRAMM... **");
+		System.out.println();
+		System.out.println("** PLEASE SEE 'log_error.txt' OF PROGRAM AND 'missingdata_YEAR_DAY'.txt' **");
 
 	}
 }
