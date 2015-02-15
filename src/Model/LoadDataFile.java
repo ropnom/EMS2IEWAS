@@ -26,7 +26,9 @@ public class LoadDataFile {
 	}
 
 	public List<String> LoadData() {
+		ErrorLog log = ErrorLog.getInstance();
 		try {
+			
 			br = new BufferedReader(new FileReader(file));
 			String line = br.readLine();
 
@@ -38,7 +40,12 @@ public class LoadDataFile {
 
 		} catch (Exception e) {
 			System.err.println("\n Load file data FAIL");
-			System.err.println(e.getMessage());
+			System.err.println("\n Path to Load: "+file);
+			System.err.println(Throwables.getStackTraceAsString(e));
+			log.AddError("\n Load file data FAIL");
+			log.AddError("\n Path to Load: "+file);
+			log.AddError(Throwables.getStackTraceAsString(e));
+			log.WriteLog();
 			System.exit(1);
 
 		}

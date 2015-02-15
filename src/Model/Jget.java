@@ -4,8 +4,6 @@ import java.io.BufferedInputStream;
 import java.io.DataInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.PrintWriter;
-import java.io.StringWriter;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -18,6 +16,7 @@ public class Jget {
 	private InputStream is = null;
 	private DataInputStream dis;
 	private String s;
+	private int intentos = 3;
 
 	public Jget() {
 
@@ -30,13 +29,15 @@ public class Jget {
 	}
 
 	@SuppressWarnings("deprecation")
-	public List<String> Dowload(String url) {
+	public List<String> Dowload(String url) throws Exception {
 
 		this.url = url;
 		List<String> lines = new ArrayList<String>();
 		ErrorLog log = ErrorLog.getInstance();
+		boolean descargado = false;
 
-		try {
+		int i = 0;
+		while (!descargado) {
 
 			try {
 				u = new URL(url);
@@ -46,47 +47,19 @@ public class Jget {
 				while ((s = dis.readLine()) != null) {
 					lines.add(s);
 				}
+				descargado = true;
 
 			} catch (Exception e) {
 				// reintent
-				System.out.println("reintent:" +url);
-				Thread.sleep(3000);
-				u = new URL(url);
-				is = u.openStream();
-				dis = new DataInputStream(new BufferedInputStream(is));
-				Thread.sleep(500);
-				while ((s = dis.readLine()) != null) {
-					lines.add(s);
+				System.out.println("reintent " + (i + 1) + "º : " + url);
+				// wait 100 ms, 300 ms, 500 ms, 700 ms...
+				Thread.sleep(100 + (i * 200));
+				i++;
+				if (i >= intentos) {
+					throw e;
 				}
-				System.out.println("reintent -- OK");
 			}
 
-		} catch (MalformedURLException mue) {
-			System.err.println("Ouch - a MalformedURLException happened.");
-			log.AddError("\n FTP Problem");
-			log.AddError("\n Traying to dowload from url: " + url);
-			StringWriter sw = new StringWriter();
-			mue.printStackTrace(new PrintWriter(sw));
-			log.AddError(sw.toString());
-			System.err.println("\n FTP Problem");
-			System.err.println("\n Traying to dowload from url: " + url);
-			System.err.println(sw.toString());
-
-		} catch (Exception ioe) {
-			System.err.println("Ouch - a MalformedURLException happened.");
-			log.AddError("\n FTP Problem");
-			log.AddError("\n Traying to dowload from url: " + url);
-			StringWriter sw = new StringWriter();
-			ioe.printStackTrace(new PrintWriter(sw));
-			log.AddError(sw.toString());
-			System.err.println("\n FTP Problem");
-			System.err.println("\n Traying to dowload from url: " + url);
-			System.err.println(sw.toString());
-		} finally {
-			try {
-				is.close();
-			} catch (IOException ioe) {
-			}
 		}
 
 		return (lines);

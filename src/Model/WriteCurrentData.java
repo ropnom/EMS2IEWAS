@@ -3,7 +3,6 @@ package Model;
 import java.io.File;
 import java.io.PrintWriter;
 import java.nio.file.Paths;
-import java.util.ArrayList;
 import java.util.List;
 
 public class WriteCurrentData extends Thread {
@@ -12,6 +11,7 @@ public class WriteCurrentData extends Thread {
 	private String filename;
 	private String formatfile;
 	private String subFolder;
+	private ErrorLog log;
 
 	public WriteCurrentData() {
 		this.setFilename("currentmessage.txt");
@@ -31,22 +31,28 @@ public class WriteCurrentData extends Thread {
 	public void CheckSubFolder() {
 
 		File theDir = new File(subFolder);
-		ErrorLog log = ErrorLog.getInstance();
-		
+		log = ErrorLog.getInstance();
+
 		// if the directory does not exist, create it
 		if (!theDir.exists()) {
-			
+
 			boolean result = false;
 
 			try {
 				theDir.mkdir();
 				result = true;
-			} catch (SecurityException se) {
-				log.AddError(se.getStackTrace().toString());
+			} catch (Exception e) {
+				log.AddError("Segurity error, can't make folder");
+				log.AddError(theDir.toPath().toString());
+				log.AddError(Throwables.getStackTraceAsString(e));
+				System.err.println("Segurity error, can't make folder");
+				System.err.println(theDir.toPath().toAbsolutePath().toString());
+				System.err.println(Throwables.getStackTraceAsString(e));
 			}
 			if (result) {
 				log.AddError(("Creating directory: " + theDir.getName()));
-				
+				System.out.println("Creating directory: " + theDir.getName());
+
 			}
 		}
 
@@ -54,6 +60,7 @@ public class WriteCurrentData extends Thread {
 
 	public void Write(List<String> messages) {
 
+		log = ErrorLog.getInstance();		
 		CheckSubFolder();
 		try {
 			writer = new PrintWriter(subFolder + "//" + filename, formatfile);
@@ -63,7 +70,12 @@ public class WriteCurrentData extends Thread {
 			writer.close();
 		} catch (Exception e) {
 			System.err.println("\n Write Current data FAIL");
-			System.err.println(e.getMessage());
+			System.err.println("\n Path to write: "+ subFolder + "//" + filename +" "+ formatfile);
+			System.err.println(Throwables.getStackTraceAsString(e));
+			log.AddError("\n Write Current data FAIL");
+			log.AddError(("\n Path to write: "+ subFolder + "//"  + filename +" "+ formatfile));
+			log.AddError(Throwables.getStackTraceAsString(e));
+			log.WriteLog();
 			System.exit(1);
 
 		}
@@ -102,7 +114,7 @@ public class WriteCurrentData extends Thread {
 	}
 
 	public void setSubFolder(String subFolder) {
-		this.subFolder = Paths.get("").toAbsolutePath().toString() + "//Data//"+subFolder;
+		this.subFolder = Paths.get("").toAbsolutePath().toString() + "//Data//" + subFolder;
 	}
 
 }

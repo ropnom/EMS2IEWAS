@@ -21,11 +21,12 @@ public class testbands {
 		LoadOriginMAtrix();
 		LoadFinalMatrix();
 		grid = new MapGrid();
-		
+
 		// Test parte maziza de la matriz
 		int num;
 		int[] a;
 		String compare;
+		System.out.println("Test de las bandas medias a 5X5 grados");
 		for (int i = 6; i < Matrixfinal.size() - 6; i++) {
 			String valores[] = Matrixorigin.get(i).split(" ");
 			String resultados[] = Matrixfinal.get(i).split(" ");
@@ -35,7 +36,7 @@ public class testbands {
 					if (num > 0) {
 						a = grid.getXY(j / 8, num);
 						compare = a[0] + ";" + a[1];
-						
+
 						if (!compare.equals(resultados[j])) {
 							System.out.println("Band:" + j / 8 + " number:" + num);
 							System.out.println(compare + " | " + resultados[j]);
@@ -45,12 +46,67 @@ public class testbands {
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
-				
-				System.out.println("Fin");
 
 			}
 
 		}
+
+		System.out.println("Test de las bandas polares");
+		String bandidos[] = "28 27 26 78 77 128 127 178 177;28 27 78 77 128 127 178 177;27 26 78 77 76 128 127 178 177;27 26 78 77 128 127 178 177;27 26 77 76 128 127 126 178 177;27 26 77 76 128 127 178 177;27 26 77 76 127 126 178 177 176;27 26 77 76 127 126 178 177;27 26 77 76 128 127 178 177".split(";");
+
+		int n = 0;
+		for (int l = 0; l < 8; l++) {
+
+			String valores2[] = bandidos[l].split(" ");
+			String resultados2[] = "0;0 0;2 0;4 2;2 2;4 4;2 4;4 6;2 6;4 8;2 8;4 10;2 10;4 12;2 12;4 14;2 14;4 16;2 16;4 18;0 18;2 18;4 20;2 20;4 22;2 22;4 24;2 24;4 26;2 26;4 28;2 28;4 30;2 30;4 32;2 32;4 34;2 34;4 36;0 36;2 36;4 38;2 38;4 40;2 40;4 42;2 42;4 44;2 44;4 46;2 46;4 48;2 48;4 50;2 50;4 52;2 52;4 54;0 54;2 54;4 56;2 56;4 58;2 58;4 60;2 60;4 62;2 62;4 64;2 64;4 66;2 66;4 68;2 68;4 70;2 70;4 ".split(" ");
+
+			// Falta testear Polo SUR
+			for (int j = 0; j < valores2.length; j++) {
+				try {
+					num = Integer.parseInt(valores2[j]);
+					if (num > 0) {
+						a = grid.getXY(l, num);
+						compare = a[0] + ";" + a[1];
+
+						if (!compare.equals(resultados2[n])) {
+							System.out.println("Band:" + l + " number:" + valores2[j]);
+							System.out.println(compare + " | " + resultados2[n]);
+							a = grid.getXY(l, num);
+						}
+						n++;
+					}
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+
+			}
+		}
+		
+		//Test banda 9
+		for (int j = 0; j < 201; j++) {
+			try {
+				//num = Integer.parseInt(valores2[j]);
+				if (j > 0) {
+					a = grid.getXY(9, j);
+					compare = a[0] + ";" + a[1];
+					System.out.println("Band: 9 number:" + j);
+					System.out.println(compare);
+
+//					if (!compare.equals(resultados2[n])) {
+//						System.out.println("Band:" + l + " number:" + valores2[j]);
+//						System.out.println(compare + " | " + resultados2[n]);
+//						a = grid.getXY(l, num);
+//					}
+//					n++;
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+
+		}
+		
+		System.out.println("Fin");
+
 	}
 
 	public static void LoadOriginMAtrix() {

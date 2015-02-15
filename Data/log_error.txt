@@ -1,3 +1,19 @@
- INPUT PARAMETERS: '[Ljava.lang.String;@1b6d3586' 
+ INPUT PARAMETERS: '-PRN120-TODAY-Show' 
 
-Creating directory: 2015_20
+
+ FTP download was Wrong.
+
+ 
+
+ ***************************** 
+
+ Traying to dowload from url: ftp://ems.estec.esa.int/pub/PRN120/y2015/d045/h23.ems
+
+ ***************************** 
+java.io.FileNotFoundException: pub/PRN120/y2015/d045/h23.ems
+	at sun.net.www.protocol.ftp.FtpURLConnection.getInputStream(Unknown Source)
+	at java.net.URL.openStream(Unknown Source)
+	at Model.Jget.Dowload(Jget.java:44)
+	at rodrigo.sampedro.ems2ionex.emsdecoder.main(emsdecoder.java:347)
+
+Creating directory: 2015_045

@@ -70,16 +70,16 @@ public class IonexInputFile {
 
 		WriteCurrentData writer = new WriteCurrentData();
 		writer.setFilename(filenames[1]+ "." + String.format("%03d", this.version));
-		writer.setSubFolder(year + "_" + day);
+		writer.setSubFolder(year + "_" + String.format("%03d", day));
 		writer.Write(savedate);
 
-		if(true){
-		// Make kml
-		writer = new WriteCurrentData();
-		writer.setFilename("MatrixVtec" + this.version + ".kml");
-		writer.setSubFolder(year + "_" + day);
-		writer.Write(FunctionsExtra.ToKml("MatrixVtec" + String.format("%03d", this.version), savedate));
-		}
+//		if(false){
+//		// Make kml
+//		writer = new WriteCurrentData();
+//		writer.setFilename("MatrixVtec" + this.version + ".kml");
+//		writer.setSubFolder(year + "_" + day);
+//		writer.Write(FunctionsExtra.ToKml("MatrixVtec" + String.format("%03d", this.version), savedate));
+//		}
 		savedate = new ArrayList<String>();
 		line = "";
 
@@ -107,31 +107,30 @@ public class IonexInputFile {
 
 		writer = new WriteCurrentData();
 		writer.setFilename(filenames[2]+ "."+ String.format("%03d", this.version));
-		writer.setSubFolder(year + "_" + day);
+		writer.setSubFolder(year + "_" + String.format("%03d", day));
 		writer.Write(savedate);
 
 	}
 
-	public void GenParametersInfoFile(int year, int day) {
+	public void GenParametersInfoFile(int year, int day, int intervalo) {
 
 		List<String> savedate = new ArrayList<String>();
 		String formatdate = new SimpleDateFormat("yyyy MM dd HH mm ss").format(Init);
 		savedate.add(formatdate);
 		formatdate = new SimpleDateFormat("yyyy MM dd HH mm ss").format(finish);
 		savedate.add(formatdate);
+		savedate.add(""+intervalo);
 		savedate.add(""+version);
 		savedate.add("6371.0");
 		savedate.add("2");
 		savedate.add("450.0 450.0 0.0");
 		savedate.add("85 -85 -5");
-		savedate.add("deg");
 		savedate.add("-180 180 5");
-		savedate.add("/ deg");
 		savedate.add("-1");
 
 		WriteCurrentData writer = new WriteCurrentData();
 		writer.setFilename(filenames[0]);
-		writer.setSubFolder(year + "_" + day);
+		writer.setSubFolder(year + "_" + String.format("%03d", day));
 		writer.Write(savedate);
 	}
 

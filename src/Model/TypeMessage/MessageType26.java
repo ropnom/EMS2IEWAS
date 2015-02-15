@@ -130,7 +130,7 @@ public class MessageType26 extends Payload {
 		this.message = "BANDNUMBER: " + this.bandnumber + " BLOCKID: " + this.blockid;
 		this.message += " \n ";
 		for (int i = 0; i < BLOCK_GRID_POINTS; i++) {
-			this.message += " IGP" + (this.blockid*i + 1) + ": " + this.gridpoints[i].getIGP_VerticalDelay() + " GIVEI" + (this.blockid*i + 1) + ": " + this.gridpoints[i].getGIVEI() + "  VTEC" + (this.blockid*i + 1) + ": " + this.gridpoints[i].getVtec() + " RMS" + (this.blockid*i + 1) + ": " + this.gridpoints[i].getRms() + " |";
+			this.message += " IGP" + (i + 1) + ": " + this.gridpoints[i].getIGP_VerticalDelay() + " GIVEI" + (i + 1) + ": " + this.gridpoints[i].getGIVEI() + "  VTEC" + (i + 1) + ": " + this.gridpoints[i].getVtec() + " RMS" + (i + 1) + ": " + this.gridpoints[i].getRms() + " |";
 			if (i % 5 == 0 && i != 0) {
 				this.message += " \n ";
 			}

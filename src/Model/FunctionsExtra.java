@@ -117,7 +117,7 @@ public class FunctionsExtra {
 	}
 
 	private static List<String> getFilehead(String name) {
-		List<String> file = new ArrayList<>();
+		List<String> file = new ArrayList<String>();
 		file.add("<?xml version='1.0' encoding='UTF-8'?>");
 		file.add("<kml xmlns='http://www.opengis.net/kml/2.2' xmlns:gx='http://www.google.com/kml/ext/2.2'");
 		file.add("	xmlns:kml='http://www.opengis.net/kml/2.2' xmlns:atom='http://www.w3.org/2005/Atom'>");
