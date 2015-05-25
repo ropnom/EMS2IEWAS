@@ -1,20 +1,16 @@
- INPUT PARAMETERS: '-PRN120 -TODAY -Show ' 
-
-
- FTP download was Wrong.
-
- 
-
- ***************************** 
-
- Traying to dowload from url: ftp://ems.estec.esa.int/pub/PRN120/y2015/d045/h23.ems
-
- ***************************** 
-java.io.FileNotFoundException: pub/PRN120/y2015/d045/h23.ems
-	at sun.net.www.protocol.ftp.FtpURLConnection.getInputStream(Unknown Source)
-	at java.net.URL.openStream(Unknown Source)
-	at Model.Jget.Dowload(Jget.java:56)
-	at rodrigo.sampedro.ems2ionex.emsdecoder.main(emsdecoder.java:361)
-
-Creating directory: Data
-Creating directory: 2015_045
+2015 4 ftp://ems.estec.esa.int/pub/PRN120/y2015/d004/h23.ems
+2015 5 ftp://ems.estec.esa.int/pub/PRN120/y2015/d005/h00.ems
+2015 5 ftp://ems.estec.esa.int/pub/PRN120/y2015/d005/h01.ems
+2015 5 ftp://ems.estec.esa.int/pub/PRN120/y2015/d005/h02.ems
+2015 5 ftp://ems.estec.esa.int/pub/PRN120/y2015/d005/h03.ems
+2015 5 ftp://ems.estec.esa.int/pub/PRN120/y2015/d005/h00.ems
+2015 5 ftp://ems.estec.esa.int/pub/PRN120/y2015/d005/h01.ems
+2015 5 ftp://ems.estec.esa.int/pub/PRN120/y2015/d005/h02.ems
+2015 5 ftp://ems.estec.esa.int/pub/PRN120/y2015/d005/h03.ems
+2015 6 ftp://ems.estec.esa.int/pub/PRN120/y2015/d006/h17.ems
+2015 6 ftp://ems.estec.esa.int/pub/PRN120/y2015/d006/h18.ems
+2015 6 ftp://ems.estec.esa.int/pub/PRN120/y2015/d006/h19.ems
+2015 6 ftp://ems.estec.esa.int/pub/PRN120/y2015/d006/h20.ems
+2015 6 ftp://ems.estec.esa.int/pub/PRN120/y2015/d006/h21.ems
+2015 6 ftp://ems.estec.esa.int/pub/PRN120/y2015/d006/h22.ems
+2015 6 ftp://ems.estec.esa.int/pub/PRN120/y2015/d006/h23.ems

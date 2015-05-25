@@ -6,10 +6,11 @@ import java.util.List;
 
 public class FunctionsExtra {
 
+	// Anex A matrix
 	private final static float[] matrixgiveisigma = { 0.0084f, 0.0333f, 0.0749f, 0.1331f, 0.2079f, 0.2994f, 0.4075f, 0.5322f, 0.6735f, 0.8315f, 1.1974f, 1.8709f, 3.3260f, 20.7870f, 187.0826f, 9999f };
 	private final static float[] matrixgivei = { 0.3f, 0.6f, 0.9f, 1.2f, 1.5f, 1.8f, 2.1f, 2.4f, 2.7f, 3.0f, 3.6f, 4.5f, 6.0f, 15.0f, 45.0f, 9999f };
+	private final static int[] timeoutmatrix = { 600, 12, 240, 240, 240, 240, 1200, 600, 86400, 240, 86400 };
 
-	
 	public static Date addMinutesToDate(int minutes, Date beforeTime) {
 
 		long ONE_MINUTE_IN_MILLIS = 60000;// millisecs
@@ -18,7 +19,7 @@ public class FunctionsExtra {
 		Date afterAddingMins = new Date(curTimeInMs + (minutes * ONE_MINUTE_IN_MILLIS));
 		return afterAddingMins;
 	}
-	
+
 	public static Date decreaseMinutesToDate(int minutes, Date beforeTime) {
 
 		long ONE_MINUTE_IN_MILLIS = 60000;// millisecs
@@ -28,6 +29,15 @@ public class FunctionsExtra {
 		return afterAddingMins;
 	}
 	
+	public static Date decreaseSecondsToDate(int seconds, Date beforeTime) {
+
+		long ONE_SECOND_IN_MILLIS = 1000;// millisecs
+
+		long curTimeInMs = beforeTime.getTime();
+		Date afterAddingMins = new Date(curTimeInMs - (seconds * ONE_SECOND_IN_MILLIS));
+		return afterAddingMins;
+	}
+
 	public static Date addDayToDate(int days, Date beforeTime) {
 
 		long ONE_MINUTE_IN_MILLIS = 86400000;// millisecs
@@ -39,16 +49,25 @@ public class FunctionsExtra {
 
 	public static Date addSecondsToDate(int seconds, Date beforeTime) {
 
-		long ONE_MINUTE_IN_MILLIS = 1000;// millisecs
+		long ONE_SECOND_IN_MILLIS = 1000;// millisecs
 
 		long curTimeInMs = beforeTime.getTime();
-		Date afterAddingMins = new Date(curTimeInMs + (seconds * ONE_MINUTE_IN_MILLIS));
+		Date afterAddingMins = new Date(curTimeInMs + (seconds * ONE_SECOND_IN_MILLIS));
 		return afterAddingMins;
 	}
 
 	public static float getGIVEITABLE(int a) {
 
 		return (matrixgivei[a]);
+	}
+	
+	public static int getTimeOutMT18() {
+
+		return (timeoutmatrix[6]);
+	}
+	public static int getTimeOutMT26() {
+
+		return (timeoutmatrix[7]);
 	}
 
 	public static List<String> ToKml(String name, List<String> lines) {

@@ -8,15 +8,18 @@ import java.util.List;
 
 public class LoadDataFile {
 
-	private BufferedReader br;
+	// Parameters
 	private String line;
 	private List<String> messages;
 	private String file;
+	// request objet
+	private BufferedReader br;
 
+	// Constructors
 	public LoadDataFile() {
 
 		this.messages = new ArrayList<String>();
-		this.file = Paths.get("").toAbsolutePath().toString()+"//Data//currentmessage.txt";
+		this.file = Paths.get("").toAbsolutePath().toString() + "//Data//currentmessage.txt";
 	}
 
 	public LoadDataFile(String file) {
@@ -25,10 +28,12 @@ public class LoadDataFile {
 		this.file = file;
 	}
 
+	// Load data from file
 	public List<String> LoadData() {
+		// create Error log.
 		ErrorLog log = ErrorLog.getInstance();
 		try {
-			
+
 			br = new BufferedReader(new FileReader(file));
 			String line = br.readLine();
 
@@ -40,10 +45,10 @@ public class LoadDataFile {
 
 		} catch (Exception e) {
 			System.err.println("\n Load file data FAIL");
-			System.err.println("\n Path to Load: "+file);
+			System.err.println("\n Path to Load: " + file);
 			System.err.println(Throwables.getStackTraceAsString(e));
 			log.AddError("\n Load file data FAIL");
-			log.AddError("\n Path to Load: "+file);
+			log.AddError("\n Path to Load: " + file);
 			log.AddError(Throwables.getStackTraceAsString(e));
 			log.WriteLog();
 			System.exit(1);
@@ -53,6 +58,7 @@ public class LoadDataFile {
 		return messages;
 	}
 
+	// Gets and Sets
 	public String getLine() {
 		return line;
 	}
@@ -74,6 +80,6 @@ public class LoadDataFile {
 	}
 
 	public void setFile(String file) {
-		this.file = Paths.get("").toAbsolutePath().toString()+"//Data//"+file;
+		this.file = Paths.get("").toAbsolutePath().toString() + "//Data//" + file;
 	}
 }

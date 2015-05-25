@@ -70,7 +70,7 @@ public class MessageType10 extends Payload {
 		this.RSS_IONO = (short) (byteToInt(Getbits(10)) );
 		
 
-		// parity
+		// spare
 
 	}
 

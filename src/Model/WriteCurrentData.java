@@ -7,12 +7,15 @@ import java.util.List;
 
 public class WriteCurrentData extends Thread {
 
-	private PrintWriter writer;
+	// Parameter
 	private String filename;
 	private String formatfile;
 	private String subFolder;
+	// Objet request
 	private ErrorLog log;
+	private PrintWriter writer;
 
+	// Constructors
 	public WriteCurrentData() {
 		this.setFilename("currentmessage.txt");
 		this.setFormatfile("UTF-8");
@@ -28,6 +31,9 @@ public class WriteCurrentData extends Thread {
 		CheckSubFolder();
 	}
 
+	// FUNCTIONS
+
+	// This function check if exit the directory and create if don't exist
 	public void CheckSubFolder() {
 
 		File theDir = new File(subFolder);
@@ -58,9 +64,11 @@ public class WriteCurrentData extends Thread {
 
 	}
 
+	// This function create the file if don't exist, write lines and save.
 	public void Write(List<String> messages) {
 
-		log = ErrorLog.getInstance();		
+		log = ErrorLog.getInstance();
+		// check if directory exits
 		CheckSubFolder();
 		try {
 			writer = new PrintWriter(subFolder + "//" + filename, formatfile);
@@ -70,10 +78,10 @@ public class WriteCurrentData extends Thread {
 			writer.close();
 		} catch (Exception e) {
 			System.err.println("\n Write Current data FAIL");
-			System.err.println("\n Path to write: "+ subFolder + "//" + filename +" "+ formatfile);
+			System.err.println("\n Path to write: " + subFolder + "//" + filename + " " + formatfile);
 			System.err.println(Throwables.getStackTraceAsString(e));
 			log.AddError("\n Write Current data FAIL");
-			log.AddError(("\n Path to write: "+ subFolder + "//"  + filename +" "+ formatfile));
+			log.AddError(("\n Path to write: " + subFolder + "//" + filename + " " + formatfile));
 			log.AddError(Throwables.getStackTraceAsString(e));
 			log.WriteLog();
 			System.exit(1);
@@ -81,38 +89,33 @@ public class WriteCurrentData extends Thread {
 		}
 	}
 
+	// MAke file
 	public void run(List<String> messages) {
 		Write(messages);
 	}
 
+	// Gets and Sets
 	public String getFilename() {
 		return filename;
 	}
-
 	public void setFilename(String filename) {
 		this.filename = filename;
 	}
-
 	public String getFormatfile() {
 		return formatfile;
 	}
-
 	public void setFormatfile(String formatfile) {
 		this.formatfile = formatfile;
 	}
-
 	public PrintWriter getWriter() {
 		return writer;
 	}
-
 	public void setWriter(PrintWriter writer) {
 		this.writer = writer;
 	}
-
 	public String getSubFolder() {
 		return subFolder;
 	}
-
 	public void setSubFolder(String subFolder) {
 		this.subFolder = Paths.get("").toAbsolutePath().toString() + "//Data//" + subFolder;
 	}

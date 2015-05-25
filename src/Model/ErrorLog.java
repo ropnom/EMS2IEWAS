@@ -8,6 +8,7 @@ public class ErrorLog {
 	// Singlenton Log
 	private static ErrorLog instance = null;
 
+	// Singleton get Instance or get objet
 	public static ErrorLog getInstance() {
 		synchronized (ErrorLog.class) {
 			if (instance == null)
@@ -50,10 +51,12 @@ public class ErrorLog {
 		writer.setFilename(file);
 		writer.Write(errors);
 	}
+
 	public void WriteFileError(String day) {
 		writer = new WriteCurrentData();
-		writer.setFilename("missingdata_"+day+".txt");
-		writer.Write(fileerror);
+		writer.setFilename("//error//missingdata_" + day + ".txt");
+		if (fileerror.size() > 2)
+			writer.Write(fileerror);
 	}
 
 	// Gets and Sets

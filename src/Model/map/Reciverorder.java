@@ -154,7 +154,8 @@ public class Reciverorder {
 
 		// compare dates and say if is valid
 		Date referecia = (Date) matrix[oidi][band].getLastupdate().clone();
-		referecia = FunctionsExtra.addMinutesToDate(10, referecia);
+		referecia = FunctionsExtra.addSecondsToDate(FunctionsExtra.getTimeOutMT18(), referecia);
+		
 		return (referecia.compareTo(messagetime) > 0);
 		
 	}

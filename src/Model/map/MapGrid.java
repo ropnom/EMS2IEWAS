@@ -55,29 +55,31 @@ public class MapGrid {
 		LoadDataFile load = new LoadDataFile(file);
 		lines = load.LoadData();
 
-		try {
-			String[] points;
-			String[] variables;
+		if (lines.size() >= 0) {
+			try {
+				String[] points;
+				String[] variables;
 
-			for (int i = 0; i < max_row; i++) {
-				// get a line and split points
-				points = lines.get(i).split(";");
-				for (int j = 0; j < max_colum; j++) {
-					// split varaiable of point
-					variables = points[j].split(",");
-					if (variables[3] == "null")
-						grid[i][j] = new Gridpoint(Integer.parseInt(variables[1]), Integer.parseInt(variables[0]), Integer.parseInt(variables[2]), Integer.parseInt(variables[3]), null, (variables[3].equals("1") ? true : false));
-					else {
-						DateFormat df = new SimpleDateFormat("E, MMM dd yyyy HH:mm:ss");
-						grid[i][j] = new Gridpoint(Integer.parseInt(variables[1]), Integer.parseInt(variables[0]), Integer.parseInt(variables[2]), Integer.parseInt(variables[3]), df.parse(variables[3]), (variables[3].equals("1") ? true : false));
+				for (int i = 0; i < max_row; i++) {
+					// get a line and split points
+					points = lines.get(i).split(";");
+					for (int j = 0; j < max_colum; j++) {
+						// split varaiable of point
+						variables = points[j].split(",");
+						if (variables[3] == "null")
+							grid[i][j] = new Gridpoint(Integer.parseInt(variables[1]), Integer.parseInt(variables[0]), Integer.parseInt(variables[2]), Integer.parseInt(variables[3]), null, (variables[3].equals("1") ? true : false));
+						else {
+							DateFormat df = new SimpleDateFormat("E, MMM dd yyyy HH:mm:ss");
+							grid[i][j] = new Gridpoint(Integer.parseInt(variables[1]), Integer.parseInt(variables[0]), Integer.parseInt(variables[2]), Integer.parseInt(variables[3]), df.parse(variables[3]), (variables[3].equals("1") ? true : false));
+						}
+
 					}
-
 				}
+			} catch (Exception e) {
+
+				// Error de formato!
+
 			}
-		} catch (Exception e) {
-
-			// Error de formato!
-
 		}
 
 	}
@@ -86,7 +88,7 @@ public class MapGrid {
 	public void PutPoint(int band, int num, int vtec, int rms, Date time) {
 
 		int[] xy = getXY(band, num);
-		
+
 		if (vtec >= 0) {
 			grid[xy[1]][xy[0]].setVtec(vtec);
 			grid[xy[1]][xy[0]].setRms(rms);
@@ -408,7 +410,7 @@ public class MapGrid {
 				// N75
 				xy[1] = 2;
 				break;
-			
+
 			}
 
 			break;
@@ -870,17 +872,38 @@ public class MapGrid {
 		writer.Write(savedate);
 
 	}
+	
+	public void SaveEGNOS(String date) {
+
+		List<String> saveegnos = new ArrayList<String>();
+		String line = "";
+		for (int i = 0; i < max_row; i++) {
+			line = "";
+			for (int j = 24; j < 48; j++) {
+				line += grid[i][j].ToFile();
+			}
+			saveegnos.add(line);
+		}
+
+		WriteCurrentData writer = new WriteCurrentData();
+		writer.setFilename("//grid//"+date+".txt");
+		writer.Write(saveegnos);
+
+	}
 
 	public boolean IsValidGridPoint(int i, int j) {
 
 		// check valid time for grid point
 		Date referecia = (Date) init.clone();
+
 		referecia = FunctionsExtra.decreaseMinutesToDate(5, referecia);
+		referecia = FunctionsExtra.decreaseMinutesToDate(FunctionsExtra.getTimeOutMT26(), referecia);
+
 		if (grid[i][j].getTimestamp() == null) {
 			return (false);
 		} else {
-			//System.out.println("Referencia:"+referecia);
-			//System.out.println("punto:"+grid[i][j].getTimestamp());
+			// System.out.println("Referencia:"+referecia);
+			// System.out.println("punto:"+grid[i][j].getTimestamp());
 			if (referecia.compareTo(grid[i][j].getTimestamp()) <= 0) {
 				return (true);
 			} else {
@@ -892,7 +915,6 @@ public class MapGrid {
 			}
 		}
 
-		
 	}
 
 	public void ToIONEXinput() {
