@@ -873,24 +873,6 @@ public class MapGrid {
 
 	}
 	
-	public void SaveEGNOS(String date) {
-
-		List<String> saveegnos = new ArrayList<String>();
-		String line = "";
-		for (int i = 0; i < max_row; i++) {
-			line = "";
-			for (int j = 24; j < 48; j++) {
-				line += grid[i][j].ToFile();
-			}
-			saveegnos.add(line);
-		}
-
-		WriteCurrentData writer = new WriteCurrentData();
-		writer.setFilename("//grid//"+date+".txt");
-		writer.Write(saveegnos);
-
-	}
-
 	public boolean IsValidGridPoint(int i, int j) {
 
 		// check valid time for grid point

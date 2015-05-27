@@ -110,17 +110,6 @@ public class Gridpoint {
 
 	}
 	
-	public String ToEgnosFile() {
-
-		// 0 False
-		// 1 True
-		if (ismonitored) {
-			return ("" + this.lon + "," + this.lat + "," + this.vtec + "," + this.rms + "," + this.timestamp.getTime() + ",1;");
-		} else {
-			return ("" + this.lon + "," + this.lat + "," + this.vtec + "," + this.rms + "," + this.timestamp + ",0;");
-		}
-
-	}
 
 	public String ToIONEX() {
 

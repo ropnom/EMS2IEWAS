@@ -17,6 +17,10 @@ public class ErrorLog {
 		}
 	}
 
+	public static void ReInstanceDay() {
+		instance.FileErroClear();
+	}
+
 	// PArameters
 	String file = "log_error.txt";
 	WriteCurrentData writer;
@@ -57,6 +61,10 @@ public class ErrorLog {
 		writer.setFilename("//error//missingdata_" + day + ".txt");
 		if (fileerror.size() > 2)
 			writer.Write(fileerror);
+	}
+	
+	public void FileErroClear(){
+		this.fileerror = new ArrayList<String>();
 	}
 
 	// Gets and Sets

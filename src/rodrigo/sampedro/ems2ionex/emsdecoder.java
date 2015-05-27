@@ -102,6 +102,9 @@ public class emsdecoder {
 		System.out.println(" -whuman				: Specific to write human format file of data message decoded.");
 		System.out.println(" -numintent [X]			: Specific number of reintent of ftp dowload.");
 		System.out.println(" -kml					: Specific to create a kml file to view date in google earth.");
+		System.out.println(" -RYear [YYYY]			: Specific to create a kml file to view date in google earth.");
+		System.out.println(" -RYD1D2 [YYYY]	[D1] [D2] : Specific to create a kml file to view date in google earth.");
+		System.out.println(" -RY1D1Y2D2 [YYYY1]	[D1] [YYYY2] [D2] : Specific to create a kml file to view date in google earth.");
 		System.out.println("");
 		System.out.println("---------------------------------------------------------------------------------------");
 		System.out.println("");
@@ -212,14 +215,14 @@ public class emsdecoder {
 		mode = 0;
 
 		// args = new String[] { "-TODAY", "-Show" };
-		args = new String[] {"-RYearD1D2", "2015", "5", "6", "-Show"};
+		// args = new String[] { "-RYearD1D2", "2015", "13", "18", "-Show" };
 
 		// // *********** INPUT TEST PROGRAM AND MENUS ***********
 		// args = new String[] { "-PRN120", "-TODAY" };
 		// args = new String[] { "-PRN126", "-TODAY" };
 		// args = new String[] { "-PRN120", "-D", "120", "-Y", "2015" };
 		// args = new String[] { "-PRN120", "-D" , "25", "-H", "14"};
-		// args = new String[] { "-PRN120", "-D", "20" };
+		//args = new String[] { "-PRN120", "-D", "4", "-Show" };
 		//
 		// // *************************************************
 
@@ -259,41 +262,61 @@ public class emsdecoder {
 		if (mode == 0) {
 
 			if (rangedata) {
-				if (rangeendday == 1) {
+
+				// check init first day of yerar
+				if (rangeinitday == 1) {
 					inityear = (short) (inityear - 1);
 					if (inityear % 4 == 0 && inityear % 100 != 0 || inityear % 400 == 0) {
 						initday = 366;
-					} else
+						MAXDAY = 366;
+					} else {
 						initday = 365;
+						MAXDAY = 365;
+					}
 
-					endday = 1;
+					endday = rangeinitday;
 				} else {
 
 					initday = (short) (rangeinitday - 1);
-					endday = (short) (rangeinitday);
+					endday = rangeinitday;
 				}
 				inithour = 23;
 				endhour = 23;
-				referenceday = initday;
+				// inicio generacionde archivos
+				referenceday = rangeinitday;
 				referencehour = 0;
 
 				for (year = inityear; year <= endyear; year++) {
-					while (initday <= rangeendday) {
+
+					if (inityear % 4 == 0 && inityear % 100 != 0 || inityear % 400 == 0) {
+						MAXDAY = 366;
+					} else {
+						MAXDAY = 365;
+					}
+
+					while (initday <= rangeendday & initday != (MAXDAY + 1)) {
+						// clear data array
+						ErrorLog.ReInstanceDay();
+						log.AddError(" INPUT PARAMETERS: '" + ArraytoString(args) + "' \n");
 						originalmessage = new ArrayList<String>();
 						human = new ArrayList<String>();
 						ionosphericdata = new ArrayList<String>();
 						ionosfericmessage = new ArrayList<Message>();
+
 						DowloadData();
 						pasarGarbageCollector();
+
 						Filter();
 						WriteData();
 						Decoding();
 
-						initday++;
+						// initday++; initday is incremented in download
+						// function.
 						referenceday = initday;
 						endday = initday;
 
 					}
+					initday = 1;
 				}
 			} else {
 				DowloadData();
@@ -310,6 +333,10 @@ public class emsdecoder {
 			originalmessage = load.LoadData();
 			if (show)
 				System.out.println("** Load data finished...");
+
+			Filter();
+			WriteData();
+			Decoding();
 		}
 
 		pasarGarbageCollector();
@@ -390,7 +417,7 @@ public class emsdecoder {
 			try {
 				if (args[i].equals("-D")) {
 					referenceday = Short.parseShort(args[i + 1]);
-					initday = (short) referenceday;
+					initday = (short) (referenceday - 1);
 					endday = (short) referenceday;
 					if (referenceday == 1) {
 						inityear = (short) (inityear - 1);
@@ -446,7 +473,7 @@ public class emsdecoder {
 			try {
 				if (args[i].equals("-RYear")) {
 					inityear = Short.parseShort(args[i + 1]);
-					rangeendday = 1;
+					rangeinitday = 1;
 					if (inityear % 4 == 0 && inityear % 100 != 0 || inityear % 400 == 0)
 						rangeendday = 366;
 					else
@@ -497,9 +524,9 @@ public class emsdecoder {
 			try {
 				if (args[i].equals("-RY1D1Y2D2")) {
 					inityear = Short.parseShort(args[i + 1]);
-					initday = Short.parseShort(args[i + 2]);
+					rangeinitday = Short.parseShort(args[i + 2]);
 					endyear = Short.parseShort(args[i + 3]);
-					endday = Short.parseShort(args[i + 4]);
+					rangeendday = Short.parseShort(args[i + 4]);
 					rangedata = true;
 				}
 			} catch (Exception e) {
@@ -577,11 +604,10 @@ public class emsdecoder {
 		}
 		boolean lastday = false;
 		boolean lasthour = false;
-		
 
 		for (day = initday; !lastday; day++) {
 			lasthour = false;
-			
+
 			for (hour = inithour; !lasthour; hour++) {
 				String url = server + prn + "y" + year + "/d" + String.format("%03d", day) + "/h" + String.format("%02d", hour) + ".ems";
 				// MAKE DOWLOAD
@@ -591,7 +617,6 @@ public class emsdecoder {
 						System.out.println("Dowloading: " + url);
 
 					originalmessage.addAll(wget.Dowload(url));
-					
 
 				} catch (Exception e) {
 					log.AddError("\n FTP download was Wrong.");
@@ -600,7 +625,7 @@ public class emsdecoder {
 					log.AddError("\n Traying to dowload from url: " + url);
 					log.AddError("\n ***************************** ");
 					log.AddError(Throwables.getStackTraceAsString(e));
-					log.AddFileError(year+" "+ day +" "+ url);
+					log.AddFileError(year + " " + day + " " + url);
 
 					System.err.println("\n FTP download was Wrong.");
 					System.err.println("\n Traying to dowload from url: " + url);
@@ -611,7 +636,7 @@ public class emsdecoder {
 				if (hour == endhour || hour == 23) {
 					lasthour = true;
 				}
-				
+
 			}
 			inithour = 0;
 			if (day == endday) {
@@ -621,6 +646,7 @@ public class emsdecoder {
 				day = 1;
 			}
 		}
+		initday++;
 
 	}
 
@@ -672,97 +698,99 @@ public class emsdecoder {
 		MessageType26 mt26;
 		IonexInputFile makefiles;
 
-		if (ionosfericmessage.size() <1) {
+		if (ionosfericmessage.size() < 1) {
 			log.AddError("\n Fatal error ionosferic message array is empy.");
 			System.err.println("\n Fatal error ionosferic message array is empy.");
 			System.err.println();
-			//System.exit(1);
-		}
+			// System.exit(1);
+		} else {
 
-		// Generate date of reference to init and finish
+			// Generate date of reference to init and finish
 
-		Calendar calendar = Calendar.getInstance();
-		calendar.clear();
-		calendar.set(Calendar.YEAR, inityear);
-		calendar.set(Calendar.DAY_OF_YEAR, referenceday);
-		calendar.set(Calendar.HOUR_OF_DAY, referencehour);
-		referencia = calendar.getTime();
-		System.out.println(referencia);
+			Calendar calendar = Calendar.getInstance();
+			calendar.clear();
+			calendar.set(Calendar.YEAR, inityear);
+			calendar.set(Calendar.DAY_OF_YEAR, referenceday);
+			calendar.set(Calendar.HOUR_OF_DAY, referencehour);
+			referencia = calendar.getTime();
+			System.out.println(referencia);
 
-		if (show) {
-			System.out.println("** Decoding and generate files...");
-			System.out.println();
-			System.out.println("** Inicio a: " + referencia);
-		}
-		makefiles = new IonexInputFile();
-		makefiles.setInit(referencia);
-		// generate date for processing in block of time
-		finalizacion = FunctionsExtra.addDayToDate(1, referencia);
+			if (show) {
+				System.out.println("** Decoding and generate files...");
+				System.out.println();
+				System.out.println("** Inicio a: " + referencia);
+			}
+			makefiles = new IonexInputFile();
+			makefiles.setInit(referencia);
+			// generate date for processing in block of time
+			finalizacion = FunctionsExtra.addDayToDate(1, referencia);
 
-		if (show)
-			System.out.println("** Fin de generacion de archivos : " + finalizacion);
+			if (show)
+				System.out.println("** Fin de generacion de archivos : " + finalizacion);
 
-		mygrid.setInit(ionosfericmessage.get(1).getTime());
-		mygrid.setFinish(referencia);
+			mygrid.setInit(ionosfericmessage.get(1).getTime());
+			mygrid.setFinish(referencia);
 
-		int j = 0;
-		for (int i = 0; ValidTimeToProcess(i, finalizacion); i++) {
+			int j = 0;
+			for (int i = 0; ValidTimeToProcess(i, finalizacion); i++) {
 
-			// Is valid time of message??
-			if (ValidTimeToProcess(i, referencia)) {
+				// Is valid time of message??
+				if (ValidTimeToProcess(i, referencia)) {
 
-				// Procesing message
-				if (ionosfericmessage.get(i).getMessagetype() == 18) {
-					// type 18
-					reorder.ProcessMT18(((MessageType18) ionosfericmessage.get(i).getPayload()), ionosfericmessage.get(i).getTime());
+					// Procesing message
+					if (ionosfericmessage.get(i).getMessagetype() == 18) {
+						// type 18
+						reorder.ProcessMT18(((MessageType18) ionosfericmessage.get(i).getPayload()), ionosfericmessage.get(i).getTime());
 
-				} else {
-					// see iodi and is valid date?
-					mt26 = (MessageType26) ionosfericmessage.get(i).getPayload();
-					if (reorder.IsValidMessage(ionosfericmessage.get(i).getTime(), mt26.getIoid(), mt26.getBandnumber())) {
+					} else {
+						// see iodi and is valid date?
+						mt26 = (MessageType26) ionosfericmessage.get(i).getPayload();
+						if (reorder.IsValidMessage(ionosfericmessage.get(i).getTime(), mt26.getIoid(), mt26.getBandnumber())) {
 
-						// get list of value to insert into matrix
-						List<Integer> bandnumbers = reorder.getMatrix()[mt26.getIoid()][mt26.getBandnumber()].getBandX();
-						for (int m = 15 * mt26.getBlockid(); (m < (15 * (1 + mt26.getBlockid())) && m < bandnumbers.size()); m++) {
+							// get list of value to insert into matrix
+							List<Integer> bandnumbers = reorder.getMatrix()[mt26.getIoid()][mt26.getBandnumber()].getBandX();
+							for (int m = 15 * mt26.getBlockid(); (m < (15 * (1 + mt26.getBlockid())) && m < bandnumbers.size()); m++) {
 
-							mygrid.PutPoint(mt26.getBandnumber(), bandnumbers.get(m), mt26.getGridpoints()[m % 15].getVtec(), mt26.getGridpoints()[m % 15].getRms(), ionosfericmessage.get(i).getTime());
+								mygrid.PutPoint(mt26.getBandnumber(), bandnumbers.get(m), mt26.getGridpoints()[m % 15].getVtec(), mt26.getGridpoints()[m % 15].getRms(), ionosfericmessage.get(i).getTime());
+
+							}
 
 						}
 
 					}
+				} else {
+					// make file
+					makefiles.setVersion(j + 1);
+					makefiles.GridToInput(mygrid, referenceday, inityear, kmlwrite, show);
+					// mygrid.SaveEGNOS(inityear+"_"+referenceday+"_"+(j+1));
 
+					// new reference block time
+					mygrid.setInit(referencia);
+					referencia = FunctionsExtra.addSecondsToDate(intervaloseg, referencia);
+					mygrid.setFinish(referencia);
+					j++;
+					i--;
 				}
-			} else {
-				// make file
-				makefiles.setVersion(j + 1);
-				makefiles.GridToInput(mygrid, referenceday, inityear, kmlwrite, show);
-				mygrid.SaveEGNOS(inityear+"_"+referenceday+"_"+(j+1));
-				
-				// new reference block time
-				mygrid.setInit(referencia);
-				referencia = FunctionsExtra.addSecondsToDate(intervaloseg, referencia);
-				mygrid.setFinish(referencia);
-				j++;
-				i--;
+
 			}
 
+			// guardar la matriz historico reorder historico y los datos
+			// write last file, log, save matrix and reorder for future
+			// simulations
+
+			makefiles.setVersion(j + 1);
+			makefiles.GridToInput(mygrid, referenceday, inityear, kmlwrite, show);
+			makefiles.setFinish(ionosfericmessage.get(ionosfericmessage.size() - 1).getTime());
+
+			if (show)
+				System.out.println("** Create Info File of files");
+			makefiles.GenParametersInfoFile(inityear, referenceday, intervaloseg);
+			mygrid.Save();
+			reorder.Save();
+			log.WriteLog();
+			log.WriteFileError((inityear + "_" + day));
+
 		}
-
-		// guardar la matriz historico reorder historico y los datos
-		// write last file, log, save matrix and reorder for future simulations
-
-		makefiles.setVersion(j + 1);
-		makefiles.GridToInput(mygrid, referenceday, inityear, kmlwrite, show);
-		makefiles.setFinish(ionosfericmessage.get(ionosfericmessage.size() - 1).getTime());
-
-		if (show)
-			System.out.println("** Create Info File of files");
-		makefiles.GenParametersInfoFile(inityear, referenceday, intervaloseg);
-		mygrid.Save();
-		reorder.Save();
-		log.WriteLog();
-		log.WriteFileError((inityear + "_" + day));
-
 	}
 
 }
