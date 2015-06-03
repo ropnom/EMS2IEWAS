@@ -1,0 +1,1067 @@
+ INPUT PARAMETERS: '-RYearD1D2 2014 259 262 -Show -whuman ' 
+
+reintent 1º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h02.ems
+reintent 2º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h02.ems
+reintent 3º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h02.ems
+
+ FTP download was Wrong.
+
+ 
+
+ ***************************** 
+
+ Traying to dowload from url: ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h02.ems
+
+ ***************************** 
+java.io.FileNotFoundException: pub/PRN120/y2014/d259/h02.ems
+	at sun.net.www.protocol.ftp.FtpURLConnection.getInputStream(Unknown Source)
+	at java.net.URL.openStream(Unknown Source)
+	at Model.Jget.Dowload(Jget.java:62)
+	at rodrigo.sampedro.ems2ionex.emsdecoder.DowloadData(emsdecoder.java:633)
+	at rodrigo.sampedro.ems2ionex.emsdecoder.main(emsdecoder.java:309)
+
+reintent 1º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h03.ems
+reintent 2º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h03.ems
+reintent 3º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h03.ems
+
+ FTP download was Wrong.
+
+ 
+
+ ***************************** 
+
+ Traying to dowload from url: ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h03.ems
+
+ ***************************** 
+java.io.FileNotFoundException: pub/PRN120/y2014/d259/h03.ems
+	at sun.net.www.protocol.ftp.FtpURLConnection.getInputStream(Unknown Source)
+	at java.net.URL.openStream(Unknown Source)
+	at Model.Jget.Dowload(Jget.java:62)
+	at rodrigo.sampedro.ems2ionex.emsdecoder.DowloadData(emsdecoder.java:633)
+	at rodrigo.sampedro.ems2ionex.emsdecoder.main(emsdecoder.java:309)
+
+reintent 1º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h04.ems
+reintent 2º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h04.ems
+reintent 3º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h04.ems
+
+ FTP download was Wrong.
+
+ 
+
+ ***************************** 
+
+ Traying to dowload from url: ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h04.ems
+
+ ***************************** 
+java.io.FileNotFoundException: pub/PRN120/y2014/d259/h04.ems
+	at sun.net.www.protocol.ftp.FtpURLConnection.getInputStream(Unknown Source)
+	at java.net.URL.openStream(Unknown Source)
+	at Model.Jget.Dowload(Jget.java:62)
+	at rodrigo.sampedro.ems2ionex.emsdecoder.DowloadData(emsdecoder.java:633)
+	at rodrigo.sampedro.ems2ionex.emsdecoder.main(emsdecoder.java:309)
+
+reintent 1º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h05.ems
+reintent 2º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h05.ems
+reintent 3º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h05.ems
+
+ FTP download was Wrong.
+
+ 
+
+ ***************************** 
+
+ Traying to dowload from url: ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h05.ems
+
+ ***************************** 
+java.io.FileNotFoundException: pub/PRN120/y2014/d259/h05.ems
+	at sun.net.www.protocol.ftp.FtpURLConnection.getInputStream(Unknown Source)
+	at java.net.URL.openStream(Unknown Source)
+	at Model.Jget.Dowload(Jget.java:62)
+	at rodrigo.sampedro.ems2ionex.emsdecoder.DowloadData(emsdecoder.java:633)
+	at rodrigo.sampedro.ems2ionex.emsdecoder.main(emsdecoder.java:309)
+
+reintent 1º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h06.ems
+reintent 2º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h06.ems
+reintent 3º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h06.ems
+
+ FTP download was Wrong.
+
+ 
+
+ ***************************** 
+
+ Traying to dowload from url: ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h06.ems
+
+ ***************************** 
+java.io.FileNotFoundException: pub/PRN120/y2014/d259/h06.ems
+	at sun.net.www.protocol.ftp.FtpURLConnection.getInputStream(Unknown Source)
+	at java.net.URL.openStream(Unknown Source)
+	at Model.Jget.Dowload(Jget.java:62)
+	at rodrigo.sampedro.ems2ionex.emsdecoder.DowloadData(emsdecoder.java:633)
+	at rodrigo.sampedro.ems2ionex.emsdecoder.main(emsdecoder.java:309)
+
+reintent 1º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h07.ems
+reintent 2º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h07.ems
+reintent 3º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h07.ems
+
+ FTP download was Wrong.
+
+ 
+
+ ***************************** 
+
+ Traying to dowload from url: ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h07.ems
+
+ ***************************** 
+java.io.FileNotFoundException: pub/PRN120/y2014/d259/h07.ems
+	at sun.net.www.protocol.ftp.FtpURLConnection.getInputStream(Unknown Source)
+	at java.net.URL.openStream(Unknown Source)
+	at Model.Jget.Dowload(Jget.java:62)
+	at rodrigo.sampedro.ems2ionex.emsdecoder.DowloadData(emsdecoder.java:633)
+	at rodrigo.sampedro.ems2ionex.emsdecoder.main(emsdecoder.java:309)
+
+reintent 1º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h08.ems
+reintent 2º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h08.ems
+reintent 3º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h08.ems
+
+ FTP download was Wrong.
+
+ 
+
+ ***************************** 
+
+ Traying to dowload from url: ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h08.ems
+
+ ***************************** 
+java.io.FileNotFoundException: pub/PRN120/y2014/d259/h08.ems
+	at sun.net.www.protocol.ftp.FtpURLConnection.getInputStream(Unknown Source)
+	at java.net.URL.openStream(Unknown Source)
+	at Model.Jget.Dowload(Jget.java:62)
+	at rodrigo.sampedro.ems2ionex.emsdecoder.DowloadData(emsdecoder.java:633)
+	at rodrigo.sampedro.ems2ionex.emsdecoder.main(emsdecoder.java:309)
+
+reintent 1º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h09.ems
+reintent 2º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h09.ems
+reintent 3º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h09.ems
+
+ FTP download was Wrong.
+
+ 
+
+ ***************************** 
+
+ Traying to dowload from url: ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h09.ems
+
+ ***************************** 
+java.io.FileNotFoundException: pub/PRN120/y2014/d259/h09.ems
+	at sun.net.www.protocol.ftp.FtpURLConnection.getInputStream(Unknown Source)
+	at java.net.URL.openStream(Unknown Source)
+	at Model.Jget.Dowload(Jget.java:62)
+	at rodrigo.sampedro.ems2ionex.emsdecoder.DowloadData(emsdecoder.java:633)
+	at rodrigo.sampedro.ems2ionex.emsdecoder.main(emsdecoder.java:309)
+
+reintent 1º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h10.ems
+reintent 2º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h10.ems
+reintent 3º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h10.ems
+
+ FTP download was Wrong.
+
+ 
+
+ ***************************** 
+
+ Traying to dowload from url: ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h10.ems
+
+ ***************************** 
+java.io.FileNotFoundException: pub/PRN120/y2014/d259/h10.ems
+	at sun.net.www.protocol.ftp.FtpURLConnection.getInputStream(Unknown Source)
+	at java.net.URL.openStream(Unknown Source)
+	at Model.Jget.Dowload(Jget.java:62)
+	at rodrigo.sampedro.ems2ionex.emsdecoder.DowloadData(emsdecoder.java:633)
+	at rodrigo.sampedro.ems2ionex.emsdecoder.main(emsdecoder.java:309)
+
+reintent 1º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h11.ems
+reintent 2º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h11.ems
+reintent 3º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h11.ems
+
+ FTP download was Wrong.
+
+ 
+
+ ***************************** 
+
+ Traying to dowload from url: ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h11.ems
+
+ ***************************** 
+java.io.FileNotFoundException: pub/PRN120/y2014/d259/h11.ems
+	at sun.net.www.protocol.ftp.FtpURLConnection.getInputStream(Unknown Source)
+	at java.net.URL.openStream(Unknown Source)
+	at Model.Jget.Dowload(Jget.java:62)
+	at rodrigo.sampedro.ems2ionex.emsdecoder.DowloadData(emsdecoder.java:633)
+	at rodrigo.sampedro.ems2ionex.emsdecoder.main(emsdecoder.java:309)
+
+reintent 1º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h12.ems
+reintent 2º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h12.ems
+reintent 3º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h12.ems
+
+ FTP download was Wrong.
+
+ 
+
+ ***************************** 
+
+ Traying to dowload from url: ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h12.ems
+
+ ***************************** 
+java.io.FileNotFoundException: pub/PRN120/y2014/d259/h12.ems
+	at sun.net.www.protocol.ftp.FtpURLConnection.getInputStream(Unknown Source)
+	at java.net.URL.openStream(Unknown Source)
+	at Model.Jget.Dowload(Jget.java:62)
+	at rodrigo.sampedro.ems2ionex.emsdecoder.DowloadData(emsdecoder.java:633)
+	at rodrigo.sampedro.ems2ionex.emsdecoder.main(emsdecoder.java:309)
+
+reintent 1º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h13.ems
+reintent 2º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h13.ems
+reintent 3º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h13.ems
+
+ FTP download was Wrong.
+
+ 
+
+ ***************************** 
+
+ Traying to dowload from url: ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h13.ems
+
+ ***************************** 
+java.io.FileNotFoundException: pub/PRN120/y2014/d259/h13.ems
+	at sun.net.www.protocol.ftp.FtpURLConnection.getInputStream(Unknown Source)
+	at java.net.URL.openStream(Unknown Source)
+	at Model.Jget.Dowload(Jget.java:62)
+	at rodrigo.sampedro.ems2ionex.emsdecoder.DowloadData(emsdecoder.java:633)
+	at rodrigo.sampedro.ems2ionex.emsdecoder.main(emsdecoder.java:309)
+
+reintent 1º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h14.ems
+reintent 2º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h14.ems
+reintent 3º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h14.ems
+
+ FTP download was Wrong.
+
+ 
+
+ ***************************** 
+
+ Traying to dowload from url: ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h14.ems
+
+ ***************************** 
+java.io.FileNotFoundException: pub/PRN120/y2014/d259/h14.ems
+	at sun.net.www.protocol.ftp.FtpURLConnection.getInputStream(Unknown Source)
+	at java.net.URL.openStream(Unknown Source)
+	at Model.Jget.Dowload(Jget.java:62)
+	at rodrigo.sampedro.ems2ionex.emsdecoder.DowloadData(emsdecoder.java:633)
+	at rodrigo.sampedro.ems2ionex.emsdecoder.main(emsdecoder.java:309)
+
+reintent 1º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h15.ems
+reintent 2º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h15.ems
+reintent 3º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h15.ems
+
+ FTP download was Wrong.
+
+ 
+
+ ***************************** 
+
+ Traying to dowload from url: ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h15.ems
+
+ ***************************** 
+java.io.FileNotFoundException: pub/PRN120/y2014/d259/h15.ems
+	at sun.net.www.protocol.ftp.FtpURLConnection.getInputStream(Unknown Source)
+	at java.net.URL.openStream(Unknown Source)
+	at Model.Jget.Dowload(Jget.java:62)
+	at rodrigo.sampedro.ems2ionex.emsdecoder.DowloadData(emsdecoder.java:633)
+	at rodrigo.sampedro.ems2ionex.emsdecoder.main(emsdecoder.java:309)
+
+reintent 1º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h16.ems
+reintent 2º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h16.ems
+reintent 3º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h16.ems
+
+ FTP download was Wrong.
+
+ 
+
+ ***************************** 
+
+ Traying to dowload from url: ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h16.ems
+
+ ***************************** 
+java.io.FileNotFoundException: pub/PRN120/y2014/d259/h16.ems
+	at sun.net.www.protocol.ftp.FtpURLConnection.getInputStream(Unknown Source)
+	at java.net.URL.openStream(Unknown Source)
+	at Model.Jget.Dowload(Jget.java:62)
+	at rodrigo.sampedro.ems2ionex.emsdecoder.DowloadData(emsdecoder.java:633)
+	at rodrigo.sampedro.ems2ionex.emsdecoder.main(emsdecoder.java:309)
+
+reintent 1º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h17.ems
+reintent 2º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h17.ems
+reintent 3º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h17.ems
+
+ FTP download was Wrong.
+
+ 
+
+ ***************************** 
+
+ Traying to dowload from url: ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h17.ems
+
+ ***************************** 
+java.io.FileNotFoundException: pub/PRN120/y2014/d259/h17.ems
+	at sun.net.www.protocol.ftp.FtpURLConnection.getInputStream(Unknown Source)
+	at java.net.URL.openStream(Unknown Source)
+	at Model.Jget.Dowload(Jget.java:62)
+	at rodrigo.sampedro.ems2ionex.emsdecoder.DowloadData(emsdecoder.java:633)
+	at rodrigo.sampedro.ems2ionex.emsdecoder.main(emsdecoder.java:309)
+
+reintent 1º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h18.ems
+reintent 2º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h18.ems
+reintent 3º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h18.ems
+
+ FTP download was Wrong.
+
+ 
+
+ ***************************** 
+
+ Traying to dowload from url: ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h18.ems
+
+ ***************************** 
+java.io.FileNotFoundException: pub/PRN120/y2014/d259/h18.ems
+	at sun.net.www.protocol.ftp.FtpURLConnection.getInputStream(Unknown Source)
+	at java.net.URL.openStream(Unknown Source)
+	at Model.Jget.Dowload(Jget.java:62)
+	at rodrigo.sampedro.ems2ionex.emsdecoder.DowloadData(emsdecoder.java:633)
+	at rodrigo.sampedro.ems2ionex.emsdecoder.main(emsdecoder.java:309)
+
+reintent 1º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h19.ems
+reintent 2º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h19.ems
+reintent 3º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h19.ems
+
+ FTP download was Wrong.
+
+ 
+
+ ***************************** 
+
+ Traying to dowload from url: ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h19.ems
+
+ ***************************** 
+java.io.FileNotFoundException: pub/PRN120/y2014/d259/h19.ems
+	at sun.net.www.protocol.ftp.FtpURLConnection.getInputStream(Unknown Source)
+	at java.net.URL.openStream(Unknown Source)
+	at Model.Jget.Dowload(Jget.java:62)
+	at rodrigo.sampedro.ems2ionex.emsdecoder.DowloadData(emsdecoder.java:633)
+	at rodrigo.sampedro.ems2ionex.emsdecoder.main(emsdecoder.java:309)
+
+reintent 1º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h20.ems
+reintent 2º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h20.ems
+reintent 3º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h20.ems
+
+ FTP download was Wrong.
+
+ 
+
+ ***************************** 
+
+ Traying to dowload from url: ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h20.ems
+
+ ***************************** 
+java.io.FileNotFoundException: pub/PRN120/y2014/d259/h20.ems
+	at sun.net.www.protocol.ftp.FtpURLConnection.getInputStream(Unknown Source)
+	at java.net.URL.openStream(Unknown Source)
+	at Model.Jget.Dowload(Jget.java:62)
+	at rodrigo.sampedro.ems2ionex.emsdecoder.DowloadData(emsdecoder.java:633)
+	at rodrigo.sampedro.ems2ionex.emsdecoder.main(emsdecoder.java:309)
+
+reintent 1º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h21.ems
+reintent 2º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h21.ems
+reintent 3º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h21.ems
+
+ FTP download was Wrong.
+
+ 
+
+ ***************************** 
+
+ Traying to dowload from url: ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h21.ems
+
+ ***************************** 
+java.io.FileNotFoundException: pub/PRN120/y2014/d259/h21.ems
+	at sun.net.www.protocol.ftp.FtpURLConnection.getInputStream(Unknown Source)
+	at java.net.URL.openStream(Unknown Source)
+	at Model.Jget.Dowload(Jget.java:62)
+	at rodrigo.sampedro.ems2ionex.emsdecoder.DowloadData(emsdecoder.java:633)
+	at rodrigo.sampedro.ems2ionex.emsdecoder.main(emsdecoder.java:309)
+
+reintent 1º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h22.ems
+reintent 2º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h22.ems
+reintent 3º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h22.ems
+
+ FTP download was Wrong.
+
+ 
+
+ ***************************** 
+
+ Traying to dowload from url: ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h22.ems
+
+ ***************************** 
+java.io.FileNotFoundException: pub/PRN120/y2014/d259/h22.ems
+	at sun.net.www.protocol.ftp.FtpURLConnection.getInputStream(Unknown Source)
+	at java.net.URL.openStream(Unknown Source)
+	at Model.Jget.Dowload(Jget.java:62)
+	at rodrigo.sampedro.ems2ionex.emsdecoder.DowloadData(emsdecoder.java:633)
+	at rodrigo.sampedro.ems2ionex.emsdecoder.main(emsdecoder.java:309)
+
+reintent 1º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h23.ems
+reintent 2º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h23.ems
+reintent 3º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h23.ems
+
+ FTP download was Wrong.
+
+ 
+
+ ***************************** 
+
+ Traying to dowload from url: ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h23.ems
+
+ ***************************** 
+java.io.FileNotFoundException: pub/PRN120/y2014/d259/h23.ems
+	at sun.net.www.protocol.ftp.FtpURLConnection.getInputStream(Unknown Source)
+	at java.net.URL.openStream(Unknown Source)
+	at Model.Jget.Dowload(Jget.java:62)
+	at rodrigo.sampedro.ems2ionex.emsdecoder.DowloadData(emsdecoder.java:633)
+	at rodrigo.sampedro.ems2ionex.emsdecoder.main(emsdecoder.java:309)
+
+Creating directory: 2014_259
+reintent 1º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h02.ems
+reintent 2º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h02.ems
+reintent 3º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h02.ems
+
+ FTP download was Wrong.
+
+ 
+
+ ***************************** 
+
+ Traying to dowload from url: ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h02.ems
+
+ ***************************** 
+java.io.FileNotFoundException: pub/PRN120/y2014/d259/h02.ems
+	at sun.net.www.protocol.ftp.FtpURLConnection.getInputStream(Unknown Source)
+	at java.net.URL.openStream(Unknown Source)
+	at Model.Jget.Dowload(Jget.java:62)
+	at rodrigo.sampedro.ems2ionex.emsdecoder.DowloadData(emsdecoder.java:633)
+	at rodrigo.sampedro.ems2ionex.emsdecoder.main(emsdecoder.java:309)
+
+reintent 1º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h03.ems
+reintent 2º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h03.ems
+reintent 3º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h03.ems
+
+ FTP download was Wrong.
+
+ 
+
+ ***************************** 
+
+ Traying to dowload from url: ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h03.ems
+
+ ***************************** 
+java.io.FileNotFoundException: pub/PRN120/y2014/d259/h03.ems
+	at sun.net.www.protocol.ftp.FtpURLConnection.getInputStream(Unknown Source)
+	at java.net.URL.openStream(Unknown Source)
+	at Model.Jget.Dowload(Jget.java:62)
+	at rodrigo.sampedro.ems2ionex.emsdecoder.DowloadData(emsdecoder.java:633)
+	at rodrigo.sampedro.ems2ionex.emsdecoder.main(emsdecoder.java:309)
+
+reintent 1º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h04.ems
+reintent 2º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h04.ems
+reintent 3º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h04.ems
+
+ FTP download was Wrong.
+
+ 
+
+ ***************************** 
+
+ Traying to dowload from url: ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h04.ems
+
+ ***************************** 
+java.io.FileNotFoundException: pub/PRN120/y2014/d259/h04.ems
+	at sun.net.www.protocol.ftp.FtpURLConnection.getInputStream(Unknown Source)
+	at java.net.URL.openStream(Unknown Source)
+	at Model.Jget.Dowload(Jget.java:62)
+	at rodrigo.sampedro.ems2ionex.emsdecoder.DowloadData(emsdecoder.java:633)
+	at rodrigo.sampedro.ems2ionex.emsdecoder.main(emsdecoder.java:309)
+
+reintent 1º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h05.ems
+reintent 2º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h05.ems
+reintent 3º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h05.ems
+
+ FTP download was Wrong.
+
+ 
+
+ ***************************** 
+
+ Traying to dowload from url: ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h05.ems
+
+ ***************************** 
+java.io.FileNotFoundException: pub/PRN120/y2014/d259/h05.ems
+	at sun.net.www.protocol.ftp.FtpURLConnection.getInputStream(Unknown Source)
+	at java.net.URL.openStream(Unknown Source)
+	at Model.Jget.Dowload(Jget.java:62)
+	at rodrigo.sampedro.ems2ionex.emsdecoder.DowloadData(emsdecoder.java:633)
+	at rodrigo.sampedro.ems2ionex.emsdecoder.main(emsdecoder.java:309)
+
+reintent 1º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h06.ems
+reintent 2º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h06.ems
+reintent 3º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h06.ems
+
+ FTP download was Wrong.
+
+ 
+
+ ***************************** 
+
+ Traying to dowload from url: ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h06.ems
+
+ ***************************** 
+java.io.FileNotFoundException: pub/PRN120/y2014/d259/h06.ems
+	at sun.net.www.protocol.ftp.FtpURLConnection.getInputStream(Unknown Source)
+	at java.net.URL.openStream(Unknown Source)
+	at Model.Jget.Dowload(Jget.java:62)
+	at rodrigo.sampedro.ems2ionex.emsdecoder.DowloadData(emsdecoder.java:633)
+	at rodrigo.sampedro.ems2ionex.emsdecoder.main(emsdecoder.java:309)
+
+reintent 1º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h07.ems
+reintent 2º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h07.ems
+reintent 3º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h07.ems
+
+ FTP download was Wrong.
+
+ 
+
+ ***************************** 
+
+ Traying to dowload from url: ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h07.ems
+
+ ***************************** 
+java.io.FileNotFoundException: pub/PRN120/y2014/d259/h07.ems
+	at sun.net.www.protocol.ftp.FtpURLConnection.getInputStream(Unknown Source)
+	at java.net.URL.openStream(Unknown Source)
+	at Model.Jget.Dowload(Jget.java:62)
+	at rodrigo.sampedro.ems2ionex.emsdecoder.DowloadData(emsdecoder.java:633)
+	at rodrigo.sampedro.ems2ionex.emsdecoder.main(emsdecoder.java:309)
+
+reintent 1º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h08.ems
+reintent 2º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h08.ems
+reintent 3º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h08.ems
+
+ FTP download was Wrong.
+
+ 
+
+ ***************************** 
+
+ Traying to dowload from url: ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h08.ems
+
+ ***************************** 
+java.io.FileNotFoundException: pub/PRN120/y2014/d259/h08.ems
+	at sun.net.www.protocol.ftp.FtpURLConnection.getInputStream(Unknown Source)
+	at java.net.URL.openStream(Unknown Source)
+	at Model.Jget.Dowload(Jget.java:62)
+	at rodrigo.sampedro.ems2ionex.emsdecoder.DowloadData(emsdecoder.java:633)
+	at rodrigo.sampedro.ems2ionex.emsdecoder.main(emsdecoder.java:309)
+
+reintent 1º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h09.ems
+reintent 2º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h09.ems
+reintent 3º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h09.ems
+
+ FTP download was Wrong.
+
+ 
+
+ ***************************** 
+
+ Traying to dowload from url: ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h09.ems
+
+ ***************************** 
+java.io.FileNotFoundException: pub/PRN120/y2014/d259/h09.ems
+	at sun.net.www.protocol.ftp.FtpURLConnection.getInputStream(Unknown Source)
+	at java.net.URL.openStream(Unknown Source)
+	at Model.Jget.Dowload(Jget.java:62)
+	at rodrigo.sampedro.ems2ionex.emsdecoder.DowloadData(emsdecoder.java:633)
+	at rodrigo.sampedro.ems2ionex.emsdecoder.main(emsdecoder.java:309)
+
+reintent 1º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h10.ems
+reintent 2º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h10.ems
+reintent 3º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h10.ems
+
+ FTP download was Wrong.
+
+ 
+
+ ***************************** 
+
+ Traying to dowload from url: ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h10.ems
+
+ ***************************** 
+java.io.FileNotFoundException: pub/PRN120/y2014/d259/h10.ems
+	at sun.net.www.protocol.ftp.FtpURLConnection.getInputStream(Unknown Source)
+	at java.net.URL.openStream(Unknown Source)
+	at Model.Jget.Dowload(Jget.java:62)
+	at rodrigo.sampedro.ems2ionex.emsdecoder.DowloadData(emsdecoder.java:633)
+	at rodrigo.sampedro.ems2ionex.emsdecoder.main(emsdecoder.java:309)
+
+reintent 1º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h11.ems
+reintent 2º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h11.ems
+reintent 3º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h11.ems
+
+ FTP download was Wrong.
+
+ 
+
+ ***************************** 
+
+ Traying to dowload from url: ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h11.ems
+
+ ***************************** 
+java.io.FileNotFoundException: pub/PRN120/y2014/d259/h11.ems
+	at sun.net.www.protocol.ftp.FtpURLConnection.getInputStream(Unknown Source)
+	at java.net.URL.openStream(Unknown Source)
+	at Model.Jget.Dowload(Jget.java:62)
+	at rodrigo.sampedro.ems2ionex.emsdecoder.DowloadData(emsdecoder.java:633)
+	at rodrigo.sampedro.ems2ionex.emsdecoder.main(emsdecoder.java:309)
+
+reintent 1º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h12.ems
+reintent 2º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h12.ems
+reintent 3º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h12.ems
+
+ FTP download was Wrong.
+
+ 
+
+ ***************************** 
+
+ Traying to dowload from url: ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h12.ems
+
+ ***************************** 
+java.io.FileNotFoundException: pub/PRN120/y2014/d259/h12.ems
+	at sun.net.www.protocol.ftp.FtpURLConnection.getInputStream(Unknown Source)
+	at java.net.URL.openStream(Unknown Source)
+	at Model.Jget.Dowload(Jget.java:62)
+	at rodrigo.sampedro.ems2ionex.emsdecoder.DowloadData(emsdecoder.java:633)
+	at rodrigo.sampedro.ems2ionex.emsdecoder.main(emsdecoder.java:309)
+
+reintent 1º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h13.ems
+reintent 2º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h13.ems
+reintent 3º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h13.ems
+
+ FTP download was Wrong.
+
+ 
+
+ ***************************** 
+
+ Traying to dowload from url: ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h13.ems
+
+ ***************************** 
+java.io.FileNotFoundException: pub/PRN120/y2014/d259/h13.ems
+	at sun.net.www.protocol.ftp.FtpURLConnection.getInputStream(Unknown Source)
+	at java.net.URL.openStream(Unknown Source)
+	at Model.Jget.Dowload(Jget.java:62)
+	at rodrigo.sampedro.ems2ionex.emsdecoder.DowloadData(emsdecoder.java:633)
+	at rodrigo.sampedro.ems2ionex.emsdecoder.main(emsdecoder.java:309)
+
+reintent 1º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h14.ems
+reintent 2º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h14.ems
+reintent 3º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h14.ems
+
+ FTP download was Wrong.
+
+ 
+
+ ***************************** 
+
+ Traying to dowload from url: ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h14.ems
+
+ ***************************** 
+java.io.FileNotFoundException: pub/PRN120/y2014/d259/h14.ems
+	at sun.net.www.protocol.ftp.FtpURLConnection.getInputStream(Unknown Source)
+	at java.net.URL.openStream(Unknown Source)
+	at Model.Jget.Dowload(Jget.java:62)
+	at rodrigo.sampedro.ems2ionex.emsdecoder.DowloadData(emsdecoder.java:633)
+	at rodrigo.sampedro.ems2ionex.emsdecoder.main(emsdecoder.java:309)
+
+reintent 1º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h15.ems
+reintent 2º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h15.ems
+reintent 3º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h15.ems
+
+ FTP download was Wrong.
+
+ 
+
+ ***************************** 
+
+ Traying to dowload from url: ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h15.ems
+
+ ***************************** 
+java.io.FileNotFoundException: pub/PRN120/y2014/d259/h15.ems
+	at sun.net.www.protocol.ftp.FtpURLConnection.getInputStream(Unknown Source)
+	at java.net.URL.openStream(Unknown Source)
+	at Model.Jget.Dowload(Jget.java:62)
+	at rodrigo.sampedro.ems2ionex.emsdecoder.DowloadData(emsdecoder.java:633)
+	at rodrigo.sampedro.ems2ionex.emsdecoder.main(emsdecoder.java:309)
+
+reintent 1º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h16.ems
+reintent 2º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h16.ems
+reintent 3º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h16.ems
+
+ FTP download was Wrong.
+
+ 
+
+ ***************************** 
+
+ Traying to dowload from url: ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h16.ems
+
+ ***************************** 
+java.io.FileNotFoundException: pub/PRN120/y2014/d259/h16.ems
+	at sun.net.www.protocol.ftp.FtpURLConnection.getInputStream(Unknown Source)
+	at java.net.URL.openStream(Unknown Source)
+	at Model.Jget.Dowload(Jget.java:62)
+	at rodrigo.sampedro.ems2ionex.emsdecoder.DowloadData(emsdecoder.java:633)
+	at rodrigo.sampedro.ems2ionex.emsdecoder.main(emsdecoder.java:309)
+
+reintent 1º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h17.ems
+reintent 2º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h17.ems
+reintent 3º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h17.ems
+
+ FTP download was Wrong.
+
+ 
+
+ ***************************** 
+
+ Traying to dowload from url: ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h17.ems
+
+ ***************************** 
+java.io.FileNotFoundException: pub/PRN120/y2014/d259/h17.ems
+	at sun.net.www.protocol.ftp.FtpURLConnection.getInputStream(Unknown Source)
+	at java.net.URL.openStream(Unknown Source)
+	at Model.Jget.Dowload(Jget.java:62)
+	at rodrigo.sampedro.ems2ionex.emsdecoder.DowloadData(emsdecoder.java:633)
+	at rodrigo.sampedro.ems2ionex.emsdecoder.main(emsdecoder.java:309)
+
+reintent 1º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h18.ems
+reintent 2º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h18.ems
+reintent 3º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h18.ems
+
+ FTP download was Wrong.
+
+ 
+
+ ***************************** 
+
+ Traying to dowload from url: ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h18.ems
+
+ ***************************** 
+java.io.FileNotFoundException: pub/PRN120/y2014/d259/h18.ems
+	at sun.net.www.protocol.ftp.FtpURLConnection.getInputStream(Unknown Source)
+	at java.net.URL.openStream(Unknown Source)
+	at Model.Jget.Dowload(Jget.java:62)
+	at rodrigo.sampedro.ems2ionex.emsdecoder.DowloadData(emsdecoder.java:633)
+	at rodrigo.sampedro.ems2ionex.emsdecoder.main(emsdecoder.java:309)
+
+reintent 1º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h19.ems
+reintent 2º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h19.ems
+reintent 3º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h19.ems
+
+ FTP download was Wrong.
+
+ 
+
+ ***************************** 
+
+ Traying to dowload from url: ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h19.ems
+
+ ***************************** 
+java.io.FileNotFoundException: pub/PRN120/y2014/d259/h19.ems
+	at sun.net.www.protocol.ftp.FtpURLConnection.getInputStream(Unknown Source)
+	at java.net.URL.openStream(Unknown Source)
+	at Model.Jget.Dowload(Jget.java:62)
+	at rodrigo.sampedro.ems2ionex.emsdecoder.DowloadData(emsdecoder.java:633)
+	at rodrigo.sampedro.ems2ionex.emsdecoder.main(emsdecoder.java:309)
+
+reintent 1º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h20.ems
+reintent 2º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h20.ems
+reintent 3º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h20.ems
+
+ FTP download was Wrong.
+
+ 
+
+ ***************************** 
+
+ Traying to dowload from url: ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h20.ems
+
+ ***************************** 
+java.io.FileNotFoundException: pub/PRN120/y2014/d259/h20.ems
+	at sun.net.www.protocol.ftp.FtpURLConnection.getInputStream(Unknown Source)
+	at java.net.URL.openStream(Unknown Source)
+	at Model.Jget.Dowload(Jget.java:62)
+	at rodrigo.sampedro.ems2ionex.emsdecoder.DowloadData(emsdecoder.java:633)
+	at rodrigo.sampedro.ems2ionex.emsdecoder.main(emsdecoder.java:309)
+
+reintent 1º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h21.ems
+reintent 2º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h21.ems
+reintent 3º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h21.ems
+
+ FTP download was Wrong.
+
+ 
+
+ ***************************** 
+
+ Traying to dowload from url: ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h21.ems
+
+ ***************************** 
+java.io.FileNotFoundException: pub/PRN120/y2014/d259/h21.ems
+	at sun.net.www.protocol.ftp.FtpURLConnection.getInputStream(Unknown Source)
+	at java.net.URL.openStream(Unknown Source)
+	at Model.Jget.Dowload(Jget.java:62)
+	at rodrigo.sampedro.ems2ionex.emsdecoder.DowloadData(emsdecoder.java:633)
+	at rodrigo.sampedro.ems2ionex.emsdecoder.main(emsdecoder.java:309)
+
+reintent 1º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h22.ems
+reintent 2º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h22.ems
+reintent 3º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h22.ems
+
+ FTP download was Wrong.
+
+ 
+
+ ***************************** 
+
+ Traying to dowload from url: ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h22.ems
+
+ ***************************** 
+java.io.FileNotFoundException: pub/PRN120/y2014/d259/h22.ems
+	at sun.net.www.protocol.ftp.FtpURLConnection.getInputStream(Unknown Source)
+	at java.net.URL.openStream(Unknown Source)
+	at Model.Jget.Dowload(Jget.java:62)
+	at rodrigo.sampedro.ems2ionex.emsdecoder.DowloadData(emsdecoder.java:633)
+	at rodrigo.sampedro.ems2ionex.emsdecoder.main(emsdecoder.java:309)
+
+reintent 1º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h23.ems
+reintent 2º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h23.ems
+reintent 3º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h23.ems
+
+ FTP download was Wrong.
+
+ 
+
+ ***************************** 
+
+ Traying to dowload from url: ftp://ems.estec.esa.int/pub/PRN120/y2014/d259/h23.ems
+
+ ***************************** 
+java.io.FileNotFoundException: pub/PRN120/y2014/d259/h23.ems
+	at sun.net.www.protocol.ftp.FtpURLConnection.getInputStream(Unknown Source)
+	at java.net.URL.openStream(Unknown Source)
+	at Model.Jget.Dowload(Jget.java:62)
+	at rodrigo.sampedro.ems2ionex.emsdecoder.DowloadData(emsdecoder.java:633)
+	at rodrigo.sampedro.ems2ionex.emsdecoder.main(emsdecoder.java:309)
+
+reintent 1º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d260/h00.ems
+reintent 2º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d260/h00.ems
+reintent 3º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d260/h00.ems
+
+ FTP download was Wrong.
+
+ 
+
+ ***************************** 
+
+ Traying to dowload from url: ftp://ems.estec.esa.int/pub/PRN120/y2014/d260/h00.ems
+
+ ***************************** 
+java.io.FileNotFoundException: pub/PRN120/y2014/d260/h00.ems
+	at sun.net.www.protocol.ftp.FtpURLConnection.getInputStream(Unknown Source)
+	at java.net.URL.openStream(Unknown Source)
+	at Model.Jget.Dowload(Jget.java:62)
+	at rodrigo.sampedro.ems2ionex.emsdecoder.DowloadData(emsdecoder.java:633)
+	at rodrigo.sampedro.ems2ionex.emsdecoder.main(emsdecoder.java:309)
+
+reintent 1º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d260/h01.ems
+reintent 2º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d260/h01.ems
+reintent 3º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d260/h01.ems
+
+ FTP download was Wrong.
+
+ 
+
+ ***************************** 
+
+ Traying to dowload from url: ftp://ems.estec.esa.int/pub/PRN120/y2014/d260/h01.ems
+
+ ***************************** 
+java.io.FileNotFoundException: pub/PRN120/y2014/d260/h01.ems
+	at sun.net.www.protocol.ftp.FtpURLConnection.getInputStream(Unknown Source)
+	at java.net.URL.openStream(Unknown Source)
+	at Model.Jget.Dowload(Jget.java:62)
+	at rodrigo.sampedro.ems2ionex.emsdecoder.DowloadData(emsdecoder.java:633)
+	at rodrigo.sampedro.ems2ionex.emsdecoder.main(emsdecoder.java:309)
+
+reintent 1º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d260/h02.ems
+reintent 2º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d260/h02.ems
+reintent 3º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d260/h02.ems
+
+ FTP download was Wrong.
+
+ 
+
+ ***************************** 
+
+ Traying to dowload from url: ftp://ems.estec.esa.int/pub/PRN120/y2014/d260/h02.ems
+
+ ***************************** 
+java.io.FileNotFoundException: pub/PRN120/y2014/d260/h02.ems
+	at sun.net.www.protocol.ftp.FtpURLConnection.getInputStream(Unknown Source)
+	at java.net.URL.openStream(Unknown Source)
+	at Model.Jget.Dowload(Jget.java:62)
+	at rodrigo.sampedro.ems2ionex.emsdecoder.DowloadData(emsdecoder.java:633)
+	at rodrigo.sampedro.ems2ionex.emsdecoder.main(emsdecoder.java:309)
+
+reintent 1º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d260/h03.ems
+reintent 2º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d260/h03.ems
+reintent 3º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d260/h03.ems
+
+ FTP download was Wrong.
+
+ 
+
+ ***************************** 
+
+ Traying to dowload from url: ftp://ems.estec.esa.int/pub/PRN120/y2014/d260/h03.ems
+
+ ***************************** 
+java.io.FileNotFoundException: pub/PRN120/y2014/d260/h03.ems
+	at sun.net.www.protocol.ftp.FtpURLConnection.getInputStream(Unknown Source)
+	at java.net.URL.openStream(Unknown Source)
+	at Model.Jget.Dowload(Jget.java:62)
+	at rodrigo.sampedro.ems2ionex.emsdecoder.DowloadData(emsdecoder.java:633)
+	at rodrigo.sampedro.ems2ionex.emsdecoder.main(emsdecoder.java:309)
+
+reintent 1º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d260/h04.ems
+reintent 2º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d260/h04.ems
+reintent 3º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d260/h04.ems
+
+ FTP download was Wrong.
+
+ 
+
+ ***************************** 
+
+ Traying to dowload from url: ftp://ems.estec.esa.int/pub/PRN120/y2014/d260/h04.ems
+
+ ***************************** 
+java.io.FileNotFoundException: pub/PRN120/y2014/d260/h04.ems
+	at sun.net.www.protocol.ftp.FtpURLConnection.getInputStream(Unknown Source)
+	at java.net.URL.openStream(Unknown Source)
+	at Model.Jget.Dowload(Jget.java:62)
+	at rodrigo.sampedro.ems2ionex.emsdecoder.DowloadData(emsdecoder.java:633)
+	at rodrigo.sampedro.ems2ionex.emsdecoder.main(emsdecoder.java:309)
+
+reintent 1º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d260/h05.ems
+reintent 2º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d260/h05.ems
+reintent 3º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d260/h05.ems
+
+ FTP download was Wrong.
+
+ 
+
+ ***************************** 
+
+ Traying to dowload from url: ftp://ems.estec.esa.int/pub/PRN120/y2014/d260/h05.ems
+
+ ***************************** 
+java.io.FileNotFoundException: pub/PRN120/y2014/d260/h05.ems
+	at sun.net.www.protocol.ftp.FtpURLConnection.getInputStream(Unknown Source)
+	at java.net.URL.openStream(Unknown Source)
+	at Model.Jget.Dowload(Jget.java:62)
+	at rodrigo.sampedro.ems2ionex.emsdecoder.DowloadData(emsdecoder.java:633)
+	at rodrigo.sampedro.ems2ionex.emsdecoder.main(emsdecoder.java:309)
+
+reintent 1º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d260/h06.ems
+reintent 2º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d260/h06.ems
+reintent 3º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d260/h06.ems
+
+ FTP download was Wrong.
+
+ 
+
+ ***************************** 
+
+ Traying to dowload from url: ftp://ems.estec.esa.int/pub/PRN120/y2014/d260/h06.ems
+
+ ***************************** 
+java.io.FileNotFoundException: pub/PRN120/y2014/d260/h06.ems
+	at sun.net.www.protocol.ftp.FtpURLConnection.getInputStream(Unknown Source)
+	at java.net.URL.openStream(Unknown Source)
+	at Model.Jget.Dowload(Jget.java:62)
+	at rodrigo.sampedro.ems2ionex.emsdecoder.DowloadData(emsdecoder.java:633)
+	at rodrigo.sampedro.ems2ionex.emsdecoder.main(emsdecoder.java:309)
+
+reintent 1º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d260/h07.ems
+reintent 2º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d260/h07.ems
+reintent 3º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d260/h07.ems
+
+ FTP download was Wrong.
+
+ 
+
+ ***************************** 
+
+ Traying to dowload from url: ftp://ems.estec.esa.int/pub/PRN120/y2014/d260/h07.ems
+
+ ***************************** 
+java.io.FileNotFoundException: pub/PRN120/y2014/d260/h07.ems
+	at sun.net.www.protocol.ftp.FtpURLConnection.getInputStream(Unknown Source)
+	at java.net.URL.openStream(Unknown Source)
+	at Model.Jget.Dowload(Jget.java:62)
+	at rodrigo.sampedro.ems2ionex.emsdecoder.DowloadData(emsdecoder.java:633)
+	at rodrigo.sampedro.ems2ionex.emsdecoder.main(emsdecoder.java:309)
+
+reintent 1º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d260/h08.ems
+reintent 2º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d260/h08.ems
+reintent 3º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d260/h08.ems
+
+ FTP download was Wrong.
+
+ 
+
+ ***************************** 
+
+ Traying to dowload from url: ftp://ems.estec.esa.int/pub/PRN120/y2014/d260/h08.ems
+
+ ***************************** 
+java.io.FileNotFoundException: pub/PRN120/y2014/d260/h08.ems
+	at sun.net.www.protocol.ftp.FtpURLConnection.getInputStream(Unknown Source)
+	at java.net.URL.openStream(Unknown Source)
+	at Model.Jget.Dowload(Jget.java:62)
+	at rodrigo.sampedro.ems2ionex.emsdecoder.DowloadData(emsdecoder.java:633)
+	at rodrigo.sampedro.ems2ionex.emsdecoder.main(emsdecoder.java:309)
+
+Creating directory: 2014_260
+Creating directory: 2014_261
+reintent 1º : ftp://ems.estec.esa.int/pub/PRN120/y2014/d262/h21.ems
+Creating directory: 2014_262

@@ -40,12 +40,12 @@ public class ErrorLog {
 	}
 
 	// Functions
-	public void AddError(String error) {
+	public void AddFileError(String error) {
 
 		this.fileerror.add(error);
 	}
 
-	public void AddFileError(String error) {
+	public void AddError(String error) {
 
 		this.errors.add(error);
 	}
@@ -58,8 +58,10 @@ public class ErrorLog {
 
 	public void WriteFileError(String day) {
 		writer = new WriteCurrentData();
-		writer.setFilename("//error//missingdata_" + day + ".txt");
-		if (fileerror.size() > 2)
+		writer.setSubFolder("error");
+		writer.CheckSubFolder();
+		writer.setFilename("missingdata_" + day + ".txt");
+		if (fileerror.size() > 1)
 			writer.Write(fileerror);
 	}
 	

@@ -58,7 +58,7 @@ public class FunctionsExtra {
 
 	public static float getGIVEITABLE(int a) {
 
-		return (matrixgivei[a]);
+		return (float) (Math.sqrt(matrixgiveisigma[a]));
 	}
 	
 	public static int getTimeOutMT18() {

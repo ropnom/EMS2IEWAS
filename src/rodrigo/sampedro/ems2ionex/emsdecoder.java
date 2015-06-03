@@ -87,7 +87,7 @@ public class emsdecoder {
 
 	public static void PrintHelp() {
 		System.out.println("-------------------------------------------------------------------------------------");
-		System.out.println(" ***                      EMS DECODER 0.9 BETA   --HELP                           ***");
+		System.out.println(" ***                      EMS DECODER 1.0 BETA   --HELP                           ***");
 		System.out.println(" -------------------------------------------------------------------------------------");
 		System.out.println("");
 		System.out.println(" -ModeFileC  				: Use currentmessage.txt as server of Egnos information.");
@@ -118,6 +118,7 @@ public class emsdecoder {
 		System.out.println(" emsdecoder -TODAY -Show");
 		System.out.println(" emsdecoder -ModeFileC");
 		System.out.println(" emsdecoder -ModeFile data.txt");
+		System.out.println(" emsdecoder -Show -YD1D2 2015 5 45");
 	}
 
 	public static void Countline() {
@@ -214,15 +215,17 @@ public class emsdecoder {
 		// code debug
 		mode = 0;
 
-		// args = new String[] { "-TODAY", "-Show" };
-		// args = new String[] { "-RYearD1D2", "2015", "13", "18", "-Show" };
+		 //args = new String[] { "-TODAY", "-Show" };
+		args = new String[] { "-RYearD1D2", "2014", "259", "262", "-Show",  "-whuman" };
 
 		// // *********** INPUT TEST PROGRAM AND MENUS ***********
 		// args = new String[] { "-PRN120", "-TODAY" };
 		// args = new String[] { "-PRN126", "-TODAY" };
-		// args = new String[] { "-PRN120", "-D", "120", "-Y", "2015" };
+		// args = new String[] { "-PRN120", "-D", "83", "-Y", "2015", "-Show", "-whuman"  };
 		// args = new String[] { "-PRN120", "-D" , "25", "-H", "14"};
-		//args = new String[] { "-PRN120", "-D", "4", "-Show" };
+		//args = new String[] { "-PRN120", "-D", "73", "-Show", "-whuman" };
+		// args = new String[] { "-whuman", "-D", "73", };
+		// mode=1;
 		//
 		// // *************************************************
 
@@ -253,11 +256,11 @@ public class emsdecoder {
 		pasarGarbageCollector();
 		// PROCESING PART
 		mygrid = new MapGrid();
-		// cargamos la matriz
-		// Cargamos la matrix de datos
+		reorder = new Reciverorder();
+		
 		if (show)
 			System.out.println("** Loading previous matrix and reorder...");
-		reorder = new Reciverorder();
+
 
 		if (mode == 0) {
 
@@ -297,7 +300,7 @@ public class emsdecoder {
 					while (initday <= rangeendday & initday != (MAXDAY + 1)) {
 						// clear data array
 						ErrorLog.ReInstanceDay();
-						log.AddError(" INPUT PARAMETERS: '" + ArraytoString(args) + "' \n");
+						log.AddFileError(" INPUT PARAMETERS: '" + ArraytoString(args) + "' \n");
 						originalmessage = new ArrayList<String>();
 						human = new ArrayList<String>();
 						ionosphericdata = new ArrayList<String>();
@@ -319,6 +322,13 @@ public class emsdecoder {
 					initday = 1;
 				}
 			} else {
+				
+				
+				year = inityear;
+				originalmessage = new ArrayList<String>();
+				human = new ArrayList<String>();
+				ionosphericdata = new ArrayList<String>();
+				ionosfericmessage = new ArrayList<Message>();
 				DowloadData();
 				pasarGarbageCollector();
 				Filter();
@@ -327,6 +337,10 @@ public class emsdecoder {
 			}
 		} else if (mode == 1) {
 			// LOAD DATA FROM FILE
+			originalmessage = new ArrayList<String>();
+			human = new ArrayList<String>();
+			ionosphericdata = new ArrayList<String>();
+			ionosfericmessage = new ArrayList<Message>();
 			LoadDataFile load = new LoadDataFile();
 			if (datafile != null)
 				load.setFile(datafile);
@@ -661,9 +675,10 @@ public class emsdecoder {
 			if (message.getMessagetype() > 0) {
 				ionosfericmessage.add(message);
 				ionosphericdata.add(message.getOriginal());
+				if (humanwrite)
+					human.addAll(message.WriteHumanFile());
 			}
-			if (humanwrite)
-				human.addAll(message.WriteHumanFile());
+			
 
 		}
 	}
@@ -679,7 +694,7 @@ public class emsdecoder {
 			if (show)
 				System.out.println("** Writing human decode dates ...");
 			writer = new WriteCurrentData();
-			writer.setFilename("ionohumanmessage.txt");
+			writer.setFilename("ionohumanmessage_"+(day-1)+".txt");
 			writer.Write(human);
 		}
 
@@ -728,7 +743,7 @@ public class emsdecoder {
 			if (show)
 				System.out.println("** Fin de generacion de archivos : " + finalizacion);
 
-			mygrid.setInit(ionosfericmessage.get(1).getTime());
+			mygrid.setInit(FunctionsExtra.decreaseSecondsToDate(intervaloseg, referencia));
 			mygrid.setFinish(referencia);
 
 			int j = 0;
@@ -745,6 +760,7 @@ public class emsdecoder {
 					} else {
 						// see iodi and is valid date?
 						mt26 = (MessageType26) ionosfericmessage.get(i).getPayload();
+						System.out.println(ionosfericmessage.get(i).getTime());
 						if (reorder.IsValidMessage(ionosfericmessage.get(i).getTime(), mt26.getIoid(), mt26.getBandnumber())) {
 
 							// get list of value to insert into matrix

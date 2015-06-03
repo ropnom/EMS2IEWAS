@@ -878,8 +878,7 @@ public class MapGrid {
 		// check valid time for grid point
 		Date referecia = (Date) init.clone();
 
-		referecia = FunctionsExtra.decreaseMinutesToDate(5, referecia);
-		referecia = FunctionsExtra.decreaseMinutesToDate(FunctionsExtra.getTimeOutMT26(), referecia);
+		referecia = FunctionsExtra.decreaseSecondsToDate(FunctionsExtra.getTimeOutMT26(), referecia);
 
 		if (grid[i][j].getTimestamp() == null) {
 			return (false);

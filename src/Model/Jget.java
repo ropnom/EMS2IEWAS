@@ -79,7 +79,7 @@ public class Jget {
 				//log.AddError("reintent " + (i + 1) + "º : " + url);
 				log.AddError("reintent " + (i + 1) + "º : " + url);
 				// wait 100 ms, 300 ms, 500 ms, 700 ms...
-				Thread.sleep(100 + (i * 200));
+				Thread.sleep(200 + (i * 200));
 				i++;
 				if (i >= intentos) {
 					throw e;
