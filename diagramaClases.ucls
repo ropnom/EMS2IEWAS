@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class-diagram version="1.1.8" icons="true" always-add-relationships="false" generalizations="true" realizations="true" 
+  associations="true" dependencies="false" nesting-relationships="true">  
+  <class id="1" language="java" name="Model.ErrorLog" project="EMS2IEWAS" file="/EMS2IEWAS/src/Model/ErrorLog.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="494" y="857"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="2" language="java" name="Model.map.Reciverorder.Bandorder" project="EMS2IEWAS" 
+    file="/EMS2IEWAS/src/Model/map/Reciverorder.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="961" y="822"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="3" language="java" name="Model.Jget" project="EMS2IEWAS" file="/EMS2IEWAS/src/Model/Jget.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="969" y="293"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="4" language="java" name="Model.map.MapGrid" project="EMS2IEWAS" 
+    file="/EMS2IEWAS/src/Model/map/MapGrid.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="746" y="101"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="5" language="java" name="Model.TypeMessage.MessageType26.GridPointMT26" project="EMS2IEWAS" 
+    file="/EMS2IEWAS/src/Model/TypeMessage/MessageType26.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1928" y="1328"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="6" language="java" name="Model.TypeMessage.MessageType3" project="EMS2IEWAS" 
+    file="/EMS2IEWAS/src/Model/TypeMessage/MessageType3.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="728" y="1584"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="7" language="java" name="Model.TypeMessage.MessageType18" project="EMS2IEWAS" 
+    file="/EMS2IEWAS/src/Model/TypeMessage/MessageType18.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="498" y="1317"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="8" language="java" name="Model.TypeMessage.MessageType2" project="EMS2IEWAS" 
+    file="/EMS2IEWAS/src/Model/TypeMessage/MessageType2.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="730" y="1375"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="9" language="java" name="Model.TypeMessage.MessageType7" project="EMS2IEWAS" 
+    file="/EMS2IEWAS/src/Model/TypeMessage/MessageType7.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1707" y="1527"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="10" language="java" name="Model.TypeMessage.MessageType6" project="EMS2IEWAS" 
+    file="/EMS2IEWAS/src/Model/TypeMessage/MessageType6.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1712" y="1152"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="11" language="java" name="Model.TypeMessage.MessageType5" project="EMS2IEWAS" 
+    file="/EMS2IEWAS/src/Model/TypeMessage/MessageType5.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="990" y="1532"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="12" language="java" name="Model.TypeMessage.MessageType4" project="EMS2IEWAS" 
+    file="/EMS2IEWAS/src/Model/TypeMessage/MessageType4.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="999" y="1373"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="13" language="java" name="Model.message.Message" project="EMS2IEWAS" 
+    file="/EMS2IEWAS/src/Model/message/Message.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="891" width="174" x="1662" y="-176"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="14" language="java" name="Model.TypeMessage.MessageType25.ErrorCorrections" project="EMS2IEWAS" 
+    file="/EMS2IEWAS/src/Model/TypeMessage/MessageType25.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1335" y="1626"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="15" language="java" name="Model.TypeMessage.MessageType10" project="EMS2IEWAS" 
+    file="/EMS2IEWAS/src/Model/TypeMessage/MessageType10.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1548" y="1414"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="16" language="java" name="Model.message.Payload" project="EMS2IEWAS" 
+    file="/EMS2IEWAS/src/Model/message/Payload.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1542" y="790"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="17" language="java" name="Model.Throwables" project="EMS2IEWAS" file="/EMS2IEWAS/src/Model/Throwables.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1239" y="191"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="18" language="java" name="Model.map.Reciverorder" project="EMS2IEWAS" 
+    file="/EMS2IEWAS/src/Model/map/Reciverorder.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1233" y="524"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="19" language="java" name="Model.FunctionsExtra" project="EMS2IEWAS" 
+    file="/EMS2IEWAS/src/Model/FunctionsExtra.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="315" width="217" x="885" y="-176"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="20" language="java" name="Model.LoadDataFile" project="EMS2IEWAS" 
+    file="/EMS2IEWAS/src/Model/LoadDataFile.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="297" width="179" x="1142" y="-176"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="21" language="java" name="Model.map.Gridpoint" project="EMS2IEWAS" 
+    file="/EMS2IEWAS/src/Model/map/Gridpoint.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="745" y="742"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="22" language="java" name="Model.map.historial" project="EMS2IEWAS" 
+    file="/EMS2IEWAS/src/Model/map/historial.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="485" y="-102"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="23" language="java" name="Model.map.ImageMap" project="EMS2IEWAS" 
+    file="/EMS2IEWAS/src/Model/map/ImageMap.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="483" y="107"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="24" language="java" name="Model.TypeMessage.MessageType25" project="EMS2IEWAS" 
+    file="/EMS2IEWAS/src/Model/TypeMessage/MessageType25.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1341" y="1121"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="25" language="java" name="Model.TypeMessage.MessageType26" project="EMS2IEWAS" 
+    file="/EMS2IEWAS/src/Model/TypeMessage/MessageType26.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1933" y="908"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="26" language="java" name="Model.map.IonexInputFile" project="EMS2IEWAS" 
+    file="/EMS2IEWAS/src/Model/map/IonexInputFile.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="729" width="261" x="1361" y="-176"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="27" language="java" name="Model.WriteCurrentData" project="EMS2IEWAS" 
+    file="/EMS2IEWAS/src/Model/WriteCurrentData.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="486" y="381"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <association id="28">    
+    <end type="SOURCE" refId="22" navigable="false">      
+      <attribute id="29" name="historialimages"/>      
+      <multiplicity id="30" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="23" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="31">    
+    <end type="SOURCE" refId="15"/>    
+    <end type="TARGET" refId="16"/>  
+  </generalization>  
+  <generalization id="32">    
+    <end type="SOURCE" refId="10"/>    
+    <end type="TARGET" refId="16"/>  
+  </generalization>  
+  <generalization id="33">    
+    <end type="SOURCE" refId="24"/>    
+    <end type="TARGET" refId="16"/>  
+  </generalization>  
+  <association id="34">    
+    <end type="SOURCE" refId="18" navigable="false">      
+      <attribute id="35" name="matrix"/>      
+      <multiplicity id="36" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="2" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="37">    
+    <end type="SOURCE" refId="13" navigable="false">      
+      <attribute id="38" name="payload"/>      
+      <multiplicity id="39" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="16" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="40">    
+    <end type="SOURCE" refId="27" navigable="false">      
+      <attribute id="41" name="log"/>      
+      <multiplicity id="42" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="1" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="43">    
+    <end type="SOURCE" refId="1" navigable="false">      
+      <attribute id="44" name="writer"/>      
+      <multiplicity id="45" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="27" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="46">    
+    <end type="SOURCE" refId="11"/>    
+    <end type="TARGET" refId="8"/>  
+  </generalization>  
+  <nesting id="47">    
+    <end type="SOURCE" refId="25"/>    
+    <end type="TARGET" refId="5"/>  
+  </nesting>  
+  <generalization id="48">    
+    <end type="SOURCE" refId="12"/>    
+    <end type="TARGET" refId="8"/>  
+  </generalization>  
+  <generalization id="49">    
+    <end type="SOURCE" refId="25"/>    
+    <end type="TARGET" refId="16"/>  
+  </generalization>  
+  <association id="50">    
+    <end type="SOURCE" refId="25" navigable="false">      
+      <attribute id="51" name="gridpoints"/>      
+      <multiplicity id="52" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="5" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="53">    
+    <end type="SOURCE" refId="6"/>    
+    <end type="TARGET" refId="8"/>  
+  </generalization>  
+  <generalization id="54">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="16"/>  
+  </generalization>  
+  <association id="55">    
+    <end type="SOURCE" refId="24" navigable="false">      
+      <attribute id="56" name="errorcorrections"/>      
+      <multiplicity id="57" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="14" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <nesting id="58">    
+    <end type="SOURCE" refId="24"/>    
+    <end type="TARGET" refId="14"/>  
+  </nesting>  
+  <generalization id="59">    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="16"/>  
+  </generalization>  
+  <association id="60">    
+    <end type="SOURCE" refId="1" navigable="false">      
+      <attribute id="61" name="instance"/>      
+      <multiplicity id="62" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="1" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="63">    
+    <end type="SOURCE" refId="9"/>    
+    <end type="TARGET" refId="16"/>  
+  </generalization>  
+  <association id="64">    
+    <end type="SOURCE" refId="4" navigable="false">      
+      <attribute id="65" name="grid"/>      
+      <multiplicity id="66" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="21" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <nesting id="67">    
+    <end type="SOURCE" refId="18"/>    
+    <end type="TARGET" refId="2"/>  
+  </nesting>  
+  <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    sort-features="false" accessors="true" visibility="true">    
+    <attributes public="true" package="true" protected="true" private="true" static="true"/>    
+    <operations public="true" package="true" protected="true" private="true" static="true"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>

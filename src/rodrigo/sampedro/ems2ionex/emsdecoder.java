@@ -216,7 +216,7 @@ public class emsdecoder {
 		mode = 0;
 
 		 //args = new String[] { "-TODAY", "-Show" };
-		args = new String[] { "-RYearD1D2", "2014", "259", "262", "-Show",  "-whuman" };
+		//args = new String[] { "-RYearD1D2", "2015", "71", "83", "-Show",  "-whuman" };
 
 		// // *********** INPUT TEST PROGRAM AND MENUS ***********
 		// args = new String[] { "-PRN120", "-TODAY" };
@@ -224,7 +224,7 @@ public class emsdecoder {
 		// args = new String[] { "-PRN120", "-D", "83", "-Y", "2015", "-Show", "-whuman"  };
 		// args = new String[] { "-PRN120", "-D" , "25", "-H", "14"};
 		//args = new String[] { "-PRN120", "-D", "73", "-Show", "-whuman" };
-		// args = new String[] { "-whuman", "-D", "73", };
+		args = new String[] { "-whuman", "-D", "83", };
 		// mode=1;
 		//
 		// // *************************************************
