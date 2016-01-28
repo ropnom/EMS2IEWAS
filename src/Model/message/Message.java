@@ -98,78 +98,78 @@ public class Message {
 		
 		switch (this.messagetype) {
 				
-		case 0:
-			//type = "SBAS TEST";
-			this.payload = new Payload(egnosmessage);
-			break;
-		case 1:
-			//type = "PRN MASK";
-			this.payload = new Payload(egnosmessage);
-			break;
-		case 2:
-			//type = "PRN MASK";
-			this.payload = new MessageType2(egnosmessage);
-			break;
-		case 3:
-			//type = "PRN MASK";
-			this.payload = new MessageType3(egnosmessage);
-			break;
-		case 4:
-			//type = "PRN MASK";
-			this.payload = new MessageType4(egnosmessage);
-			break;
-		case 5:
-			//type = "FAST CORRECTIONS";
-			this.payload = new MessageType5(egnosmessage);
-			break;
-		case 6:
-			//type = "INTEGRITY INF";
-			this.payload = new MessageType6(egnosmessage);
-			break;
-		case 7:
-			//type = "FAST CORRECTIONS DEGRADATION FACTOR";
-			this.payload = new MessageType7(egnosmessage);
-			break;
-		case 9:
-			//type = "GEO NAV MESSAGE";
-			this.payload = new Payload(egnosmessage);
-			break;
-		case 10:
-			//type = "DEGRADATION PARAMETERS";
-			this.payload = new Payload(egnosmessage);
-			break;
-		case 12:
-			//type = "SBAS NETWORK TIME, UTC offset";
-			this.payload = new Payload(egnosmessage);
-			break;
-		case 17:
-			//type = "GEO satellite almanacs";
-			this.payload = new Payload(egnosmessage);
-			break;
-		case 24:
-			//type = "FAST & LONG TEMR ERROR CORRECTIONS";
-			this.payload = new Payload(egnosmessage);
-			break;
-		case 25:
-			//type = "LONG TERM ERROR CORRECTIONS";
-			this.payload = new MessageType25(egnosmessage);
-			break;
-		case 27:
-			//type = "SBAS SERVICE MESSAGE";
-			this.payload = new Payload(egnosmessage);
-			break;
-		case 28:
-			//type = "CLOCK EPHEMERIS COVARIANCE MATRIX";
-			this.payload = new Payload(egnosmessage);
-			break;
-		case 62:
-			//type = "INTERNAL TEST MESSAGE";
-			this.payload = new Payload(egnosmessage);
-			break;
-		case 63:
-			//type = "NULL MESSAGE";
-			this.payload = new Payload(egnosmessage);
-			break;
+//		case 0:
+//			//type = "SBAS TEST";
+//			this.payload = new Payload(egnosmessage);
+//			break;
+//		case 1:
+//			//type = "PRN MASK";
+//			this.payload = new Payload(egnosmessage);
+//			break;
+//		case 2:
+//			//type = "PRN MASK";
+//			this.payload = new Payload(egnosmessage);
+//			break;
+//		case 3:
+//			//type = "PRN MASK";
+//			this.payload = new Payload(egnosmessage);
+//			break;
+//		case 4:
+//			//type = "PRN MASK";
+//			this.payload = new Payload(egnosmessage);
+//			break;
+//		case 5:
+//			//type = "FAST CORRECTIONS";
+//			this.payload = new Payload(egnosmessage);
+//			break;
+//		case 6:
+//			//type = "INTEGRITY INF";
+//			this.payload = new Payload(egnosmessage);
+//			break;
+//		case 7:
+//			//type = "FAST CORRECTIONS DEGRADATION FACTOR";
+//			this.payload = new Payload(egnosmessage);
+//			break;
+//		case 9:
+//			//type = "GEO NAV MESSAGE";
+//			this.payload = new Payload(egnosmessage);
+//			break;
+//		case 10:
+//			//type = "DEGRADATION PARAMETERS";
+//			this.payload = new Payload(egnosmessage);
+//			break;
+//		case 12:
+//			//type = "SBAS NETWORK TIME, UTC offset";
+//			this.payload = new Payload(egnosmessage);
+//			break;
+//		case 17:
+//			//type = "GEO satellite almanacs";
+//			this.payload = new Payload(egnosmessage);
+//			break;
+//		case 24:
+//			//type = "FAST & LONG TEMR ERROR CORRECTIONS";
+//			this.payload = new Payload(egnosmessage);
+//			break;
+//		case 25:
+//			//type = "LONG TERM ERROR CORRECTIONS";
+//			this.payload = new Payload(egnosmessage);
+//			break;
+//		case 27:
+//			//type = "SBAS SERVICE MESSAGE";
+//			this.payload = new Payload(egnosmessage);
+//			break;
+//		case 28:
+//			//type = "CLOCK EPHEMERIS COVARIANCE MATRIX";
+//			this.payload = new Payload(egnosmessage);
+//			break;
+//		case 62:
+//			//type = "INTERNAL TEST MESSAGE";
+//			this.payload = new Payload(egnosmessage);
+//			break;
+//		case 63:
+//			//type = "NULL MESSAGE";
+//			this.payload = new Payload(egnosmessage);
+//			break;
 			
 		case 18:
 			//type = "IONOSPHERIC grid point mask";

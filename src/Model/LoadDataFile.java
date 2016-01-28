@@ -38,9 +38,8 @@ public class LoadDataFile {
 			String line = br.readLine();
 
 			while (line != null) {
+				messages.add(line);
 				line = br.readLine();
-				if (line != null)
-					messages.add(line);
 			}
 
 		} catch (Exception e) {

@@ -1,3 +1,0 @@
- INPUT PARAMETERS: '-whuman -D 83 ' 
-
-Creating directory: 2015_083

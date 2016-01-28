@@ -18,7 +18,7 @@ import Model.map.MapGrid;
 import Model.map.Reciverorder;
 import Model.message.Message;
 
-public class emsdecoder {
+public class emsdecoder_File {
 
 	// ------------------------------------------------------
 	// ******** VARAIABLES AND PARAMETERS OF PROGRAM ********
@@ -227,7 +227,14 @@ public class emsdecoder {
 		//args = new String[] { "-whuman", "-D", "83", };
 		// mode=1;
 		
-		//args = new String[] { "ModeFileC", "-Today -kml" };
+		String[] name = args[0].split(".");
+		String[] data = name[0].split("_");
+		int refyear = Integer.parseInt(name[0]);
+		int refday = Integer.parseInt(name[1]);
+		
+		args = new String[] { "-ModeFileC", ""+args[0],"-D", ""+refday, "-Y", ""+refyear, };
+		
+		//args = new String[] { "-PRN120",  "-Show", "-whuman"  };
 		//
 		// // *************************************************
 

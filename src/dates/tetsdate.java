@@ -1,6 +1,7 @@
 package dates;
 
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 
 public class tetsdate {
@@ -11,6 +12,12 @@ public class tetsdate {
 		String format2 = new SimpleDateFormat("yyyy MM dd HH mm ss").format(now);
 		
 		System.out.println(format2);
+		
+		System.out.println("EEEEEEEE");
+		
+		Calendar calendar = Calendar.getInstance();
+		
+	System.out.println( Calendar.getInstance().get(Calendar.DAY_OF_YEAR));
 
 	}
 
